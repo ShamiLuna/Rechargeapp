@@ -92,7 +92,7 @@ class NineScreen extends GetWidget<NineController> {
                            itemBuilder: (BuildContext context, int index) {
                 Viewhierarchy1ItemModel model = controller
                     .nineModelObj.value.viewhierarchy1ItemList.value[index];
-                return Viewhierarchy1ItemWidget(model, onTapViewHierarchy: () {onTapViewHierarchy();},onTapViewHierarchye: (){onTapViewHierarchye();}, onTapWidget: () {onTapWidget();},onTapWidgete: (){onTapWidgete();},);
+                return Viewhierarchy1ItemWidget(model, onTapViewHierarchy: () {onTapViewHierarchy();},onTapViewGas: (){onTapViewGas();},onTapViewWatter: (){onTapViewWatter();},onTapViewHierarchye: (){onTapViewHierarchye();}, onTapWidget: () {onTapWidget();},onTapWidgete: (){onTapWidgete();},);
                            } ),
              ),
     ));
