@@ -1,3 +1,7 @@
+import 'package:country_pickers/country.dart';
+import 'package:country_pickers/country_picker_dropdown.dart';
+import 'package:country_pickers/utils/utils.dart';
+import 'package:faz/presentation/eight_screen/binding/eight_binding.dart';
 import 'package:faz/presentation/eight_screen/eight_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -16,6 +20,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  Country selectedCountry =
+      CountryPickerUtils.getCountryByPhoneCode('91');
   TextEditingController _codecontroller = new TextEditingController();
   String phoneNumber = "", data = "";
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -66,7 +72,7 @@ class _LoginState extends State<Login> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => EightScreen()));
+                                    builder: (context) => eight()));
                                                     }).catchError((e) {
                             print(e);
                           });
@@ -103,8 +109,8 @@ class _LoginState extends State<Login> {
                           Align(
                               alignment: Alignment.center,
                               child: Container(
-                                  height: 771.v,
-                                  width: 333.h,
+                                  height: 1000.v,
+                                  width: 395.h,
                                   decoration: BoxDecoration(
                                       color: appTheme.gray90001,
                                       borderRadius:
@@ -174,7 +180,7 @@ class _LoginState extends State<Login> {
                                         SizedBox(height: 30.v),
                                         Align(
                                             alignment:
-                                            Alignment.centerLeft,
+                                            Alignment.center,
                                             child: GestureDetector(
                                               onTap: (){
 
@@ -299,6 +305,8 @@ class _LoginState extends State<Login> {
                                                   //bottomsheet
 
                                                   Get.bottomSheet(Container(
+                                                    height: 329.v,
+                                                    width: 400.h,
                                                     child: Wrap(
                                                       children: <Widget>[
                                                         NumericPad(
@@ -345,15 +353,31 @@ class _LoginState extends State<Login> {
                                                 // );
 
                                               child: Container(
+
                                                 decoration: BoxDecoration(
-                                                  color: Colors.purple,
+                                                  // border: Border.all(),
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  color: Colors.black38,
+                                                  // color: Colors.pule.shade400,
                                                 ),
                                                 height: 60,
                                                 width: 400,
-                                                child: Text(
-                                                    phoneNumber,
-                                                    style: CustomTextStyles
-                                                        .bodySmallRobotoWhiteA700_1),
+                                                child: Row(
+                                                  children: [
+                                                    // ElevatedButton(onPressed: (){
+                                                    // }, child: Text(selectedCountry.isoCode)),
+                                                    SizedBox(width: 8,),
+                                                    Text("+91",style: TextStyle(
+                                                      fontSize: 20
+                                                    ),),
+                                                    SizedBox(width: 8),
+                                                    Text(
+                                                        phoneNumber,
+                                                         style: CustomTextStyles
+                                                            .bodySmallRobotoWhiteA700_1),
+                                                    SizedBox(width: 8,)
+                                                  ],
+                                                ),
                                               ),
                                             )),
                                         // GestureDetector(
@@ -386,29 +410,96 @@ class _LoginState extends State<Login> {
                                         // ),
                                         // ),
                                         SizedBox(height: 30.v),
-                                        CustomElevatedButton(
-                                            text: "lbl_send_via_sms"
-                                                .tr
-                                                .toUpperCase(),
-                                            buttonTextStyle:
-                                            CustomTextStyles
-                                                .titleSmallRoboto,
-                                            onPressed: () {
-                                              data = phoneNumber;
-                                              phoneNumber = "";
+                                        // CustomElevatedButton(
+                                        //
+                                        //     text: "lbl_send_via_sms"
+                                        //         .tr
+                                        //         .toUpperCase(),
+                                        //     buttonTextStyle:
+                                        //     CustomTextStyles
+                                        //         .titleSmallRoboto,
+                                        //     onPressed: () {
+                                        //       data = phoneNumber;
+                                        //       phoneNumber = "";
+                                        //
+                                        //       setState(() {});
+                                        //
+                                        //       _signInWithMobileNumber();
+                                        //     }),
+                                        Center(
+                                          child: ElevatedButton(
+                                            // decoration: BoxDecoration(
+                                            //   color: Colors.purple,
+                                            // // ),
+                                            // key:
+                                            //     "lbl_get_started".tr.toUpperCase(),
 
-                                              setState(() {});
+                                            // buttonTextStyle:
+                                            //     CustomTextStyles.titleSmallRoboto_1,
+                                            // onPressed: () {
+                                            //   navitoregis();
+                                            // },
+                                            // alignment: Alignment.center,
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 20,
+                                                  top: 12,
+                                                  bottom: 12,
+                                                  right: 20),
+                                              child: Text(
+                                                "Send via Sms",
+                                                style: TextStyle(fontSize: 21),
+                                              ),
+                                            ),
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.purple,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                  BorderRadius.circular(8),
+                                                )), onPressed: () {
+                                            data = phoneNumber;
+                                            phoneNumber = "";
 
-                                              _signInWithMobileNumber();
-                                            }),
+                                            setState(() {});
+
+                                            _signInWithMobileNumber();
+                                          },
+                                          ),
+                                        ),
                                         SizedBox(height: 16.v),
-                                        CustomElevatedButton(
-                                            text: "msg_send_via_whatsapp"
-                                                .tr
-                                                .toUpperCase(),
-                                            buttonTextStyle:
-                                            CustomTextStyles
-                                                .titleSmallRoboto),
+                                        Center(
+                                          child: ElevatedButton(
+                                            // decoration: BoxDecoration(
+                                            //   color: Colors.purple,
+                                            // // ),
+                                            // key:
+                                            //     "lbl_get_started".tr.toUpperCase(),
+
+                                            // buttonTextStyle:
+                                            //     CustomTextStyles.titleSmallRoboto_1,
+                                            // onPressed: () {
+                                            //   navitoregis();
+                                            // },
+                                            // alignment: Alignment.center,
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 15,
+                                                  top: 12,
+                                                  bottom: 12,
+                                                  right: 15),
+                                              child: Text(
+                                                "Send via Email",
+                                                style: TextStyle(fontSize: 21),
+                                              ),
+                                            ),
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.purple,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                  BorderRadius.circular(8),
+                                                )), onPressed: () {  },
+                                          ),
+                                        ),
                                         SizedBox(height: 71.v),
                                         Container(
                                             width: 227.h,
@@ -443,6 +534,10 @@ class _LoginState extends State<Login> {
           ])
       ),
     );
+  }
+
+  eight() {
+    Get.offNamed(AppRoutes.eightScreen);
   }
 }
 

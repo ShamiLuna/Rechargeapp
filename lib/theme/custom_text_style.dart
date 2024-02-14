@@ -84,7 +84,7 @@ class CustomTextStyles {
       );
   static get bodySmallRobotoWhiteA700_1 =>
       theme.textTheme.bodySmall!.roboto.copyWith(
-        color: appTheme.whiteA700.withOpacity(0.53),
+        color: appTheme.whiteA700.withOpacity(0.53),fontSize: 30
       );
   static get bodySmallTitilliumWebErrorContainer =>
       theme.textTheme.bodySmall!.titilliumWeb.copyWith(

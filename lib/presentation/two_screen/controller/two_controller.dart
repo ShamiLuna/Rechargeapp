@@ -1,3 +1,5 @@
+import 'package:country_pickers/country.dart';
+import 'package:country_pickers/utils/utils.dart';
 import 'package:faz/core/app_export.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +25,10 @@ class TwoController extends GetxController {
   //   phoneNumberController.dispose();
   // }
 
-  // @override
-  // void onReady() {
-  //   Get.offNamed(
-  //     AppRoutes.threeScreen,
-  //   );
-  // }
+  @override
+  void onReady() {
+    Get.offNamed(
+      AppRoutes.eightScreen,
+    );
+  }
 }

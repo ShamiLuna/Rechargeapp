@@ -30,7 +30,6 @@ class CustomElevatedButton extends BaseButton {
         );
 
   final BoxDecoration? decoration;
-
   final Widget? leftIcon;
 
   final Widget? rightIcon;

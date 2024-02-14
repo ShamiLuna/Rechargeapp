@@ -8,6 +8,8 @@ class NumericPad extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // height: 300,
+      // width: 400,
       color: Color(0xFFF5F4F9),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -75,8 +77,9 @@ class NumericPad extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(10),
           child: Container(
+
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.purpleAccent,
               borderRadius: BorderRadius.all(
                 Radius.circular(15),
               ),

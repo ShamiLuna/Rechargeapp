@@ -10,7 +10,7 @@ class OneScreen extends GetWidget<OneController> {
     return SafeArea(
         child: Scaffold(
             body: SizedBox(
-                height: 1000,
+                height: 1000.v,
                 width: 395.h,
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
                   SizedBox(height: 10.v),
@@ -49,7 +49,7 @@ class OneScreen extends GetWidget<OneController> {
                                         child: Container(
                                             height: 180,
                                             width: 299.h,
-                                            margin: EdgeInsets.only(right: 5.h),
+                                            margin: EdgeInsets.only(right: 15.h),
                                             child: RichText(
                                                 text: TextSpan(children: [
                                                   TextSpan(
@@ -74,21 +74,21 @@ class OneScreen extends GetWidget<OneController> {
                                                 ]),
                                                 textAlign: TextAlign.left))),
                                     SizedBox(height: 4.v),
-                                    Container(
-                                        width: 270.h,
-                                        margin: EdgeInsets.only(
-                                            left: 21.h,
-                                            right: 7.h,
-                                            bottom: 10,
-                                            top: 20),
-                                        child: Expanded(
+                                    Align(alignment: Alignment.center,
+                                      child: Container(
+                                          width: 270.h,
+                                          margin: EdgeInsets.only(
+                                              left: 25.h,
+                                              // right: 15.h,
+                                              bottom: 10,
+                                              top: 20),
                                           child: Text(
                                               "Connect your money to your friends & brands.                           ",
                                               maxLines: 2,
                                               overflow: TextOverflow.ellipsis,
                                               style: CustomTextStyles
-                                                  .titleLargeRoboto),
-                                        )),
+                                                  .titleLargeRoboto)),
+                                    ),
                                     SizedBox(height: 80.v),
                                     Center(
                                       child: ElevatedButton(
@@ -119,7 +119,7 @@ class OneScreen extends GetWidget<OneController> {
                                             backgroundColor: Colors.purple,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
-                                                  BorderRadius.circular(30),
+                                                  BorderRadius.circular(8),
                                             )),
                                       ),
                                     ),
