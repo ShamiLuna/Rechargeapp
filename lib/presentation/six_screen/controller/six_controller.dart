@@ -10,6 +10,7 @@ Rx<SixModel> sixModelObj = SixModel().obs;
 
 Rx<bool> isShowPassword = true.obs;
 
-@override void onClose() { super.onClose(); newpasswordController.dispose(); passwordController.dispose(); } 
-@override void onReady() { Get.offNamed(AppRoutes.eightScreen,); } 
+@override void onClose() {
+ super.onClose(); newpasswordController.dispose(); passwordController.dispose(); }
+// @override void onReady() { Get.offNamed(AppRoutes.eightScreen,); }
  }

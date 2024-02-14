@@ -24,7 +24,6 @@ class NineScreen extends GetWidget<NineController> {
                   _buildViewHierarchy()
                 ]))));
   }
-
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
@@ -39,11 +38,10 @@ class NineScreen extends GetWidget<NineController> {
             text: "lbl_see_all".tr, margin: EdgeInsets.only(left: 13.h)),
         styleType: Style.bgFill);
   }
-
   /// Section Widget
   Widget _buildViewHierarchy() {
     return Expanded(
-        child: Obx(() => 
+        child: Obx(() =>
             // GridView.builder(
             // shrinkWrap: true,
             // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -86,6 +84,7 @@ class NineScreen extends GetWidget<NineController> {
                // height: 100,
                // width: 400,
                child: ListView.builder(
+                   padding: EdgeInsets.only(right: 18.h),
                            itemCount: controller
                        .nineModelObj.value.viewhierarchy1ItemList.value.length,
                            scrollDirection: Axis.horizontal,
@@ -97,8 +96,7 @@ class NineScreen extends GetWidget<NineController> {
              ),
     ));
   }
-
-  /// Navigates to the gasHomefiftyoneScreen when the action is triggered.
+  /// Navigates to the mobileScreen when the action is triggered.
   onTapViewHierarchy() {
     Get.toNamed(AppRoutes.tenScreen);
   }

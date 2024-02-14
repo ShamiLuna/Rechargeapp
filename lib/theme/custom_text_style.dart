@@ -397,7 +397,7 @@ class CustomTextStyles {
       );
   static get titleSmallRoboto_1 => theme.textTheme.titleSmall!.roboto;
   static get titleSmallff000000 => theme.textTheme.titleSmall!.copyWith(
-        color: Color(0XFF000000),
+        color: Color(0XFFA650FF),
         fontSize: 14.fSize,
       );
   static get titleSmallff76d4b5 => theme.textTheme.titleSmall!.copyWith(

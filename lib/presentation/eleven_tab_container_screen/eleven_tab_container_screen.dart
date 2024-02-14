@@ -28,20 +28,20 @@ class ElevenTabContainerScreen extends GetWidget<ElevenTabContainerController> {
                               child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
-                                        height: 15.v,
-                                        width: double.maxFinite,
-                                        decoration: BoxDecoration(
-                                            color: appTheme.deepPurpleA200)),
+                                    // Container(
+                                    //     height: 15.v,
+                                    //     width: double.maxFinite,
+                                    //     decoration: BoxDecoration(
+                                    //         color: appTheme.deepPurpleA200)),
                                     SizedBox(height: 5.v),
-                                    Padding(
-                                        padding: EdgeInsets.only(left: 25.h),
-                                        child: _buildBack(
-                                            selectRecharge:
-                                                "msg_select_recharge".tr,
-                                            onTapBack: () {
-                                              onTapBack();
-                                            })),
+                                    // Padding(
+                                    //     padding: EdgeInsets.only(left: 25.h),
+                                    //     child: _buildBack(
+                                    //         selectRecharge:
+                                    //             "msg_select_recharge".tr,
+                                    //         onTapBack: () {
+                                    //           onTapBack();
+                                    //         })),
                                     SizedBox(height: 19.v),
                                     _buildStackView(),
                                     SizedBox(height: 14.v),
@@ -124,7 +124,7 @@ class ElevenTabContainerScreen extends GetWidget<ElevenTabContainerController> {
               hintText: "lbl_jio_prepaid".tr,
               hintStyle: CustomTextStyles.bodySmallTitilliumWebGray60001,
               items: controller
-                  .elevenTabContainerModelObj.value.dropdownItemList!.value,
+                  .elevenTabContainerModelObj.value.dropdownItemList.value,
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 11.h, vertical: 4.v),
               onChanged: (value) {
@@ -134,7 +134,7 @@ class ElevenTabContainerScreen extends GetWidget<ElevenTabContainerController> {
               width: 91.h,
               hintText: "lbl_locality".tr,
               items: controller
-                  .elevenTabContainerModelObj.value.dropdownItemList1!.value,
+                  .elevenTabContainerModelObj.value.dropdownItemList1.value,
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 17.h, vertical: 4.v),
               onChanged: (value) {
@@ -214,7 +214,7 @@ class ElevenTabContainerScreen extends GetWidget<ElevenTabContainerController> {
               hintText: "lbl_jio_prepaid".tr,
               hintStyle: CustomTextStyles.bodySmallTitilliumWebGray60001,
               items: controller
-                  .elevenTabContainerModelObj.value.dropdownItemList2!.value,
+                  .elevenTabContainerModelObj.value.dropdownItemList2.value,
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 11.h, vertical: 4.v),
               onChanged: (value) {
@@ -224,7 +224,7 @@ class ElevenTabContainerScreen extends GetWidget<ElevenTabContainerController> {
               width: 91.h,
               hintText: "lbl_locality".tr,
               items: controller
-                  .elevenTabContainerModelObj.value.dropdownItemList3!.value,
+                  .elevenTabContainerModelObj.value.dropdownItemList3.value,
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 17.h, vertical: 4.v),
               onChanged: (value) {

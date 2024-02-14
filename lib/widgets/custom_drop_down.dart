@@ -76,7 +76,7 @@ class CustomDropDown extends StatelessWidget {
   }
 
   Widget get dropDownWidget => SizedBox(
-        width: width ?? double.maxFinite,
+        width:100,
         child: DropdownButtonFormField<SelectionPopupModel>(
           focusNode: focusNode ?? FocusNode(),
           icon: icon,

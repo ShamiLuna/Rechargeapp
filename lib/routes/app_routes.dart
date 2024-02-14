@@ -417,7 +417,7 @@ class AppRoutes {
     ),
     GetPage(
       name: twoScreen,
-      page: () => TwoScreen(),
+      page: () => Login(),
       bindings: [
         TwoBinding(),
       ],
@@ -445,7 +445,7 @@ class AppRoutes {
     ),
     GetPage(
       name: oneScreen,
-      page: () => OneScreen(),
+      page: () =>  OneScreen(),
       bindings: [
         OneBinding(),
       ],

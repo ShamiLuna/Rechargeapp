@@ -8,5 +8,5 @@ Rx<ThreeModel> threeModelObj = ThreeModel().obs;
 
 @override void codeUpdated() { otpController.value.text = code ?? ''; } 
 @override void onInit() { super.onInit(); listenForCode(); } 
-@override void onReady() { Get.offNamed(AppRoutes.fourScreen,); } 
+// @override void onReady() { Get.offNamed(AppRoutes.fourScreen,); }
  }

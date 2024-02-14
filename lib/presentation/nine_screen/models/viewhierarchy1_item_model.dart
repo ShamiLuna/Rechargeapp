@@ -20,26 +20,26 @@ class Viewhierarchy1ItemModel {
     this.GasText,
     this.id5,
     this.Watter,
-    this.WatterText,
+    this.WaterText,
     this.id6,
   }) {
     cable = cable ?? Rx(ImageConstant.imgBxCableCar);
     cableText = cableText ?? Rx("Cable");
     id = id ?? Rx("");
-    Mobile = Mobile ?? Rx(ImageConstant.imgBxCableCar);
+    Mobile = Mobile ?? Rx(ImageConstant.imgThumbsUpPrimary);
     MobileText = MobileText ?? Rx("Cable");
     id2 = id ?? Rx("");
-    Electricity = Electricity ?? Rx(ImageConstant.imgBxCableCar);
+    Electricity = Electricity ?? Rx(ImageConstant.imgThumbsUpPrimary24x22);
     ElectricityText = ElectricityText ?? Rx("Cable");
     id3 = id ?? Rx("");
-    DTH = DTH ?? Rx(ImageConstant.imgBxCableCar);
+    DTH = DTH ?? Rx(ImageConstant.imgMaskGroup);
     DTHText = DTHText ?? Rx("Cable");
     id4 = id ?? Rx("");
-    Gas = Gas ?? Rx(ImageConstant.imgBxCableCar);
+    Gas = Gas ?? Rx(ImageConstant.imgIconoirGas);
     GasText = GasText ?? Rx("Cable");
     id5 = id ?? Rx("");
-    Watter = Watter ?? Rx(ImageConstant.imgBxCableCar);
-    WatterText = WatterText ?? Rx("Cable");
+    Watter = Watter ?? Rx(ImageConstant.imgGroup33703);
+    WaterText = WaterText ?? Rx("Cable");
     id6 = id ?? Rx("");
 
 
@@ -77,7 +77,7 @@ class Viewhierarchy1ItemModel {
 
   Rx<String>? Watter;
 
-  Rx<String>? WatterText;
+  Rx<String>? WaterText;
 
   Rx<String>? id6;
 

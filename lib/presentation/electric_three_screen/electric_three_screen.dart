@@ -162,6 +162,7 @@ class ElectricThreeScreen extends GetWidget<ElectricThreeController> {
         width: 189.h,
         text: "lbl_done".tr.toUpperCase(),
         onPressed: () {
+          
           onTapDone();
         });
   }

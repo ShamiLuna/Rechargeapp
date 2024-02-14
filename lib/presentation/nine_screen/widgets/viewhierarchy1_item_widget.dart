@@ -21,7 +21,6 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
   Viewhierarchy1ItemModel viewhierarchy1ItemModelObj;
 
   var controller = Get.find<NineController>();
-
   VoidCallback? onTapViewHierarchy;
   VoidCallback? onTapViewHierarchye;
   VoidCallback? onTapWidgete;
@@ -34,6 +33,9 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
+        // SizedBox(
+        //   width: 10,
+        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -50,7 +52,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     height: 32.v,
                     width: 52.h,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 14.h,
+                      horizontal: 12.h,
                       vertical: 10.v,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
@@ -59,8 +61,8 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     child: Obx(
                       () => CustomImageView(
                         imagePath: viewhierarchy1ItemModelObj.cable!.value,
-                        height: 2.adaptSize,
-                        width: 2.adaptSize,
+                        height: 24.adaptSize,
+                        width: 24.adaptSize,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -84,7 +86,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 1),
+            SizedBox(width: 8),
             Column(
               children: [
                 GestureDetector(
@@ -95,7 +97,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     height: 32.v,
                     width: 52.h,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 1.h,
+                      horizontal: 14.h,
                       vertical: 10.v,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
@@ -105,7 +107,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                           () => CustomImageView(
                         imagePath: viewhierarchy1ItemModelObj.Mobile!.value,
                         height: 24.adaptSize,
-                        width: 2.adaptSize,
+                        width: 24.adaptSize,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -125,7 +127,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 1),
+            // SizedBox(width: 1),
             Column(
               children: [
                 GestureDetector(
@@ -167,7 +169,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 10),
+            SizedBox(width: 19),
             Column(
               children: [
                 GestureDetector(
@@ -208,13 +210,18 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 50),
-
-
+            SizedBox(width: 40),
           ],
         ),
+        SizedBox(height: 5.v),
+        // SizedBox(
+          // width: ,
+        // ),
+        // SizedBox(
+        //   width: 200,
+        // ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // mainAxisAlignment: MainAxisAlignment.start,
           children: [
             // Column(
             //   children: [
@@ -263,7 +270,8 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
             //     ),
             //   ],
             // ),
-            SizedBox(width: 1),
+            // SizedBox(width: 1),
+            // SizedBox(width: 10),
             Column(
               children: [
                 GestureDetector(
@@ -274,7 +282,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     height: 32.v,
                     width: 52.h,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 1.h,
+                      horizontal: 14.h,
                       vertical: 10.v,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
@@ -284,7 +292,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                           () => CustomImageView(
                         imagePath: viewhierarchy1ItemModelObj.Gas!.value,
                         height: 24.adaptSize,
-                        width: 2.adaptSize,
+                        width: 24.adaptSize,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -306,7 +314,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 20),
+            SizedBox(width: 29),
             Column(
               children: [
                 GestureDetector(
@@ -340,7 +348,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Obx(
                           () => Text(
-                        viewhierarchy1ItemModelObj.WatterText!.value,
+                        viewhierarchy1ItemModelObj.WaterText!.value,
                         style: CustomTextStyles.bodySmallWhiteA70011,
                       ),
                     ),
@@ -348,7 +356,10 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 180),
+            SizedBox(
+              width: 167,
+            ),
+            // SizedBox(width: 180),
             // Column(
             //   children: [
             //     GestureDetector(

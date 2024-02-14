@@ -1,6 +1,5 @@
 import 'package:country_pickers/country.dart';
 import 'package:country_pickers/country_pickers.dart';
-import 'package:country_pickers/utils/utils.dart';
 import 'package:faz/core/app_export.dart';
 import 'package:faz/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -39,8 +38,8 @@ class CustomPhoneNumber extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  height: 7.v,
-                  width: 21.h,
+                  // height: 7.v,
+                  // width: 21.h,
                   margin: EdgeInsets.only(bottom: 7.v),
                   child: ClipRRect(
                     borderRadius: BorderRadius.vertical(
@@ -51,12 +50,12 @@ class CustomPhoneNumber extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 7.v),
-                  child: CountryPickerUtils.getDefaultFlagImage(
-                    country,
-                  ),
-                ),
+                // Padding(
+                //   padding: EdgeInsets.only(top: 7.v),
+                //   child: CountryPickerUtils.getDefaultFlagImage(
+                //     country,
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -67,7 +66,7 @@ class CustomPhoneNumber extends StatelessWidget {
             child: CustomTextFormField(
               width: 218.h,
               controller: controller,
-              hintText: "lbl_62".tr,
+              // hintText: '+91',
               hintStyle: CustomTextStyles.bodySmallRobotoWhiteA700,
               borderDecoration: TextFormFieldStyleHelper.fillDeepPurpleA,
               fillColor: appTheme.deepPurpleA10002,

@@ -3,7 +3,6 @@ import 'package:faz/core/app_export.dart';
 import 'package:faz/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:faz/presentation/fifty_dialog/fifty_dialog.dart';
-import 'package:faz/presentation/fifty_dialog/controller/fifty_controller.dart';
 
 class FortynineScreen extends GetWidget<FortynineController> {
   const FortynineScreen({Key? key}) : super(key: key);

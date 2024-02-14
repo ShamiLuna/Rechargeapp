@@ -1,6 +1,5 @@
 import 'controller/one_controller.dart';
 import 'package:faz/core/app_export.dart';
-import 'package:faz/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
 class OneScreen extends GetWidget<OneController> {
@@ -11,6 +10,7 @@ class OneScreen extends GetWidget<OneController> {
     return SafeArea(
         child: Scaffold(
             body: SizedBox(
+                height: 1000,
                 width: 395.h,
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
                   SizedBox(height: 10.v),
@@ -19,15 +19,15 @@ class OneScreen extends GetWidget<OneController> {
                           child: Container(
                               margin: EdgeInsets.only(bottom: 10.v),
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 24.h, vertical: 60.v),
+                                  horizontal: 12.h, vertical: 6.v),
                               child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
                                         alignment: Alignment.center,
                                         child: Container(
-                                            height: 259.v,
-                                            width: 236.h,
+                                            height: 229.v,
+                                            width: 210.h,
                                             padding: EdgeInsets.symmetric(
                                                 horizontal: 8.h,
                                                 vertical: 23.v),
@@ -43,10 +43,11 @@ class OneScreen extends GetWidget<OneController> {
                                                 height: 202.adaptSize,
                                                 width: 202.adaptSize,
                                                 alignment: Alignment.topLeft))),
-                                    SizedBox(height: 52.v),
+                                    SizedBox(height: 57.v),
                                     Align(
                                         alignment: Alignment.center,
                                         child: Container(
+                                            height: 180,
                                             width: 299.h,
                                             margin: EdgeInsets.only(right: 5.h),
                                             child: RichText(
@@ -72,29 +73,57 @@ class OneScreen extends GetWidget<OneController> {
                                                           .displayMediumRobotoffffffff)
                                                 ]),
                                                 textAlign: TextAlign.left))),
-                                    SizedBox(height: 54.v),
+                                    SizedBox(height: 4.v),
                                     Container(
-                                        width: 249.h,
+                                        width: 270.h,
                                         margin: EdgeInsets.only(
-                                            left: 24.h, right: 72.h),
-                                        child: Text("msg_connect_your_money".tr,
-                                            maxLines: 2,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: CustomTextStyles
-                                                .titleLargeRoboto)),
-                                    SizedBox(height: 63.v),
-                                    CustomElevatedButton(
-                                        text:
-                                            "lbl_get_started".tr.toUpperCase(),
-                                        margin: EdgeInsets.symmetric(
-                                            horizontal: 30.h),
-                                        buttonTextStyle:
-                                            CustomTextStyles.titleSmallRoboto_1,
+                                            left: 21.h,
+                                            right: 7.h,
+                                            bottom: 10,
+                                            top: 20),
+                                        child: Expanded(
+                                          child: Text(
+                                              "Connect your money to your friends & brands.                           ",
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: CustomTextStyles
+                                                  .titleLargeRoboto),
+                                        )),
+                                    SizedBox(height: 80.v),
+                                    Center(
+                                      child: ElevatedButton(
+                                        // decoration: BoxDecoration(
+                                        //   color: Colors.purple,
+                                        // // ),
+                                        // key:
+                                        //     "lbl_get_started".tr.toUpperCase(),
+
+                                        // buttonTextStyle:
+                                        //     CustomTextStyles.titleSmallRoboto_1,
                                         onPressed: () {
                                           navitoregis();
                                         },
-                                        alignment: Alignment.center),
-                                    SizedBox(height: 11.v)
+                                        // alignment: Alignment.center,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 71,
+                                              top: 15,
+                                              bottom: 15,
+                                              right: 71),
+                                          child: Text(
+                                            "GET STARTED",
+                                            style: TextStyle(fontSize: 21),
+                                          ),
+                                        ),
+                                        style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.purple,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                            )),
+                                      ),
+                                    ),
+                                    SizedBox(height: 70.v)
                                   ]))))
                 ]))));
   }

@@ -17,7 +17,7 @@ class NineModel {
       Gas: ImageConstant.imgIconoirGas.obs,
       GasText: "Gas".obs,
       Watter: ImageConstant.imgGroup33703.obs,
-      WatterText: "Watter".obs,
+      WaterText: "Water".obs,
     )
   ]);
 }

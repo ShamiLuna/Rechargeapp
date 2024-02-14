@@ -35,11 +35,11 @@ class ImageConstant {
   static String imgFrame33707 = '$imagePath/img_frame_33707.svg';
 
   // Nine images
-  static String imgBxCableCar = '$imagePath/img_bx_cable_car.svg';
+  static String imgBxCableCar = '$imagePath/bx_cable-car.png';
 
-  static String imgIconoirGas = '$imagePath/img_iconoir_gas.svg';
+  static String imgIconoirGas = '$imagePath/img_iconoir_gas.png';
 
-  static String imgGroup33703 = '$imagePath/img_group_33703.svg';
+  static String imgGroup33703 = '$imagePath/img_group_33703.png';
 
   // Eight images
   static String imgTelevision = '$imagePath/img_television.svg';
@@ -139,7 +139,7 @@ class ImageConstant {
 
   static String imgCheckmark = '$imagePath/img_checkmark.svg';
 
-  static String imgBack = '$imagePath/img_back.svg';
+  static String imgBack = '$imagePath/img_back.png';
 
   static String imgRectangle1064 = '$imagePath/img_rectangle_1064.png';
 
@@ -192,10 +192,10 @@ class ImageConstant {
 
   static String imgEllipse772 = '$imagePath/img_ellipse_77_2.png';
 
-  static String imgThumbsUpPrimary = '$imagePath/img_thumbs_up_primary.svg';
+  static String imgThumbsUpPrimary = '$imagePath/img_thumbs_up_primary.png';
 
   static String imgThumbsUpPrimary24x22 =
-      '$imagePath/img_thumbs_up_primary_24x22.svg';
+      '$imagePath/img_thumbs_up_primary_24x22.png';
 
   static String imgMaskGroup = '$imagePath/img_mask_group.png';
 

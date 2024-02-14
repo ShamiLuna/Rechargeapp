@@ -1,7 +1,3 @@
-import 'package:faz/presentation/electric_one_screen/electric_one_screen.dart';
-import 'package:faz/presentation/ten_screen/ten_screen.dart';
-import 'package:faz/presentation/thirty_screen/thirty_screen.dart';
-
 import '../controller/eight_controller.dart';
 import '../models/userprofilelist_item_model.dart';
 import 'package:faz/core/app_export.dart';
@@ -13,7 +9,12 @@ class UserprofilelistItemWidget extends StatelessWidget {
     this.userprofilelistItemModelObj,
       {
     Key? key,
-    this.naca,
+        this.onTapViewHierarchy,
+        this.onTapViewHierarchye,
+        this.onTapViewGas,
+        this.onTapViewWatter,
+        this.onTapWidget,
+        this.onTapWidgete,
   }) : super(
           key: key,
         );
@@ -23,92 +24,208 @@ class UserprofilelistItemWidget extends StatelessWidget {
   // UserprofilelistItemModel3 userprofilelistItemModel3Obj;
   // UserprofilelistItemModel4 userprofilelistItemModel4Obj;
   //
-
   var controller = Get.find<EightController>();
-
   VoidCallback? naca;
+  VoidCallback? onTapViewHierarchy;
+  VoidCallback? onTapViewHierarchye;
+  VoidCallback? onTapWidgete;
+  VoidCallback? onTapViewGas;
+  VoidCallback? onTapWidget;
+  VoidCallback? onTapViewWatter;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 52.h,
-      child: Padding(
-        padding: EdgeInsets.only(bottom: 1.v),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 12.h,
-                vertical: 12.v,
-              ),
-
-              decoration: AppDecoration.fillPrimaryContainer.copyWith(
-                borderRadius: BorderRadiusStyle.roundedBorder6,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                // crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Obx(
-                    () => CustomImageView(
-                      imagePath: userprofilelistItemModelObj.cableImage!.value,
-                      height: 2.v,
-                      width: 3.h,
-                      margin: EdgeInsets.only(),
-                      onTap: () {
-                        naca!.call();
-                      },
-                    ),
-                  ),
-                  Obx(
-                        () => CustomImageView(
-                      imagePath: userprofilelistItemModelObj.cableImage!.value,
-                      height: 2.v,
-                      width: 3.h,
-                      margin: EdgeInsets.only(),
-                      onTap: () {
-                        TenScreen()!;
-                      },
-                    ),
-                  ), Obx(
-                        () => CustomImageView(
-                      imagePath: userprofilelistItemModelObj.cableImage!.value,
-                      height: 2.v,
-                      width: 3.h,
-                      margin: EdgeInsets.only(),
-                      onTap: () {
-                        ElectricOneScreen();
-                      },
-                    ),
-                  ), Obx(
-                        () => CustomImageView(
-                      imagePath: userprofilelistItemModelObj.cableImage!.value,
-                      height: 2.v,
-                      width: 3.h,
-                      margin: EdgeInsets.only(),
-                      onTap: () {
-                        ThirtyScreen();
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 5.v),
-            Padding(
-              padding: const EdgeInsets.all(1.0),
-              child: Obx(
-                () => Text(
-                  userprofilelistItemModelObj.dynamicTextProp!.value,
-                  style: CustomTextStyles.bodySmallWhiteA70011,
+            Column(
+              children: [
+                SizedBox(
+                  width: 10,
                 ),
-              ),
+                GestureDetector(
+                  onTap: () {
+                    onTapWidget!.call();
+                  },
+                  child: Container(
+                    height: 32.v,
+                    width: 52.h,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.h,
+                      vertical: 10.v,
+                    ),
+                    decoration: AppDecoration.fillPrimaryContainer.copyWith(
+                      borderRadius: BorderRadiusStyle.roundedBorder6,
+                    ),
+                    child: Obx(
+                          () => CustomImageView(
+                        imagePath: userprofilelistItemModelObj.cable!.value,
+                        height: 24.adaptSize,
+                        width: 24.adaptSize,
+                        alignment: Alignment.center,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 1,),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: EdgeInsets.only(),
+                      child: Obx(
+                            () => Text(
+                              userprofilelistItemModelObj.cableText!.value,
+                          style: CustomTextStyles.bodySmallWhiteA70011,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
+            SizedBox(width: 8),
+            Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    onTapViewHierarchy!.call();
+                  },
+                  child: Container(
+                    height: 32.v,
+                    width: 52.h,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.h,
+                      vertical: 10.v,
+                    ),
+                    decoration: AppDecoration.fillPrimaryContainer.copyWith(
+                      borderRadius: BorderRadiusStyle.roundedBorder6,
+                    ),
+                    child: Obx(
+                          () => CustomImageView(
+                        imagePath: userprofilelistItemModelObj.Mobile!.value,
+                        height: 24.adaptSize,
+                        width: 24.adaptSize,
+                        alignment: Alignment.center,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Obx(
+                          () => Text(
+                            userprofilelistItemModelObj.MobileText!.value,
+                        style: CustomTextStyles.bodySmallWhiteA70011,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            // SizedBox(width: 1),
+            Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    onTapViewHierarchye!.call();
+                  },
+                  child: Container(
+                    height: 32.v,
+                    width: 52.h,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.h,
+                      vertical: 10.v,
+                    ),
+                    decoration: AppDecoration.fillPrimaryContainer.copyWith(
+                      borderRadius: BorderRadiusStyle.roundedBorder6,
+                    ),
+                    child: Obx(
+                          () => CustomImageView(
+                        imagePath:userprofilelistItemModelObj.Electricity!.value,
+                        height: 24.adaptSize,
+                        width: 24.adaptSize,
+                        alignment: Alignment.center,
+                      ),
+                    ),
+                  ),
+                ),
+                // SizedBox(width: 8,),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Obx(
+                          () => Text(
+                            userprofilelistItemModelObj.ElectricityText!.value,
+                        style: CustomTextStyles.bodySmallWhiteA70011,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(width: 19),
+            Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    onTapWidgete!.call();
+                  },
+                  child: Container(
+                    height: 32.v,
+                    width: 52.h,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.h,
+                      vertical: 10.v,
+                    ),
+                    decoration: AppDecoration.fillPrimaryContainer.copyWith(
+                      borderRadius: BorderRadiusStyle.roundedBorder6,
+                    ),
+                    child: Obx(
+                          () => CustomImageView(
+                        imagePath: userprofilelistItemModelObj.DTH!.value,
+                        height: 24.adaptSize,
+                        width: 24.adaptSize,
+                        alignment: Alignment.center,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Obx(
+                          () => Text(
+                            userprofilelistItemModelObj.DTHText!.value,
+                        style: CustomTextStyles.bodySmallWhiteA70011,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(width: 40),
           ],
         ),
-      ),
+        SizedBox(height: 5.v),
+        // Padding(
+        //   padding: const EdgeInsets.all(1.0),
+        //   child: Obx(
+        //     () => Text(
+        //       userprofilelistItemModelObj.cableText!.value,
+        //       style: CustomTextStyles.bodySmallWhiteA70011,
+        //     ),
+        //   ),
+        // ),
+      ],
     );
   }
 }

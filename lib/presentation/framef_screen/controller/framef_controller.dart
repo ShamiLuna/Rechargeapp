@@ -7,5 +7,5 @@ class FramefController extends GetxController {TextEditingController emailContro
 Rx<FramefModel> framefModelObj = FramefModel().obs;
 
 @override void onClose() { super.onClose(); emailController.dispose(); } 
-@override void onReady() { Get.offNamed(AppRoutes.sixScreen,); } 
+// @override void onReady() { Get.offNamed(AppRoutes.sixScreen,); }
  }

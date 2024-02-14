@@ -147,8 +147,9 @@ class FiveScreen extends GetWidget<FiveController> {
                                                                         child: Opacity(
                                                                             opacity:
                                                                                 0.5,
-                                                                            child:
-                                                                                Text("lbl_roday_basreng".tr, style: CustomTextStyles.bodySmallRobotoWhiteA700_1)))),
+                                                                            child: TextFormField(),
+                                                                                // Text("lbl_roday_basreng".tr, style: CustomTextStyles.bodySmallRobotoWhiteA700_1)
+                                                                        ))),
                                                                 Align(
                                                                     alignment:
                                                                         Alignment
@@ -172,9 +173,9 @@ class FiveScreen extends GetWidget<FiveController> {
                                                               labelStyle:
                                                                   CustomTextStyles
                                                                       .bodySmallRobotoWhiteA700_1,
-                                                              hintText:
-                                                                  "lbl_password"
-                                                                      .tr,
+                                                              // hintText:
+                                                              //     "lbl_password"
+                                                              //         .tr,
                                                               textInputAction:
                                                                   TextInputAction
                                                                       .done,
@@ -186,7 +187,7 @@ class FiveScreen extends GetWidget<FiveController> {
                                                                       .isShowPassword
                                                                       .value,
                                                               prefix: Container(
-                                                                  width: 5
+                                                                  width: 9
                                                                       .adaptSize),
                                                               prefixConstraints:
                                                                   BoxConstraints(

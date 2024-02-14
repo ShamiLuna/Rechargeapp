@@ -1,8 +1,6 @@
-import '../eight_screen/widgets/dynamictextlist_item_widget.dart';
 import '../eight_screen/widgets/framelist_item_widget.dart';
 import '../eight_screen/widgets/userprofilelist_item_widget.dart';
 import 'controller/eight_controller.dart';
-import 'models/dynamictextlist_item_model.dart';
 import 'models/framelist_item_model.dart';
 import 'models/userprofilelist_item_model.dart';
 import 'package:faz/core/app_export.dart';
@@ -17,113 +15,108 @@ class EightScreen extends GetWidget<EightController> {
         child: Scaffold(
             body: SizedBox(
                 width: 415.h,
+                height: 800,
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
                   SizedBox(height: 20.v),
                   Expanded(
-                      child: SingleChildScrollView(
-                          child: Container(
-                              height: 822.v,
-                              width: double.maxFinite,
-                              margin: EdgeInsets.symmetric(horizontal: 20.h),
-                              child: Stack(
-                                  alignment: Alignment.topCenter,
-                                  children: [
-                                    Align(
-                                        alignment: Alignment.bottomCenter,
-                                        child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 12.h),
-                                            child: Column(
-                                                mainAxisSize: MainAxisSize.min,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                      child: Container(
+                          height: 822.v,
+                          width: double.maxFinite,
+                          margin: EdgeInsets.symmetric(horizontal: 20.h),
+                          child:
+                              Stack(alignment: Alignment.topCenter, children: [
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 12.h),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          SizedBox(
+                                            height: 370,
+                                          ),
+                                          _buildOperationsRow(),
+                                          SizedBox(height: 5.v),
+                                          _buildUserProfileList(),
+                                          SizedBox(height: 10.v),
+                                          Opacity(
+                                              opacity: 0.8,
+                                              child: Text(
+                                                  "lbl_subscriptions".tr,
+                                                  style: CustomTextStyles
+                                                      .bodyLargePoppinsWhiteA700)),
+                                          SizedBox(height: 11.v),
+                                          _buildFrameList(),
+                                          SizedBox(height: 21.v),
+                                          _buildWidgetStack(),
+                                          SizedBox(height: 20.v),
+                                          Container(
+                                            height: 80,
+                                            child: ListView(
+                                                scrollDirection:
+                                                    Axis.horizontal,
+                                                // alignment: Alignment
+                                                //     .bottomRight,
                                                 children: [
-                                                  _buildOperationsRow(),
-                                                  SizedBox(height: 5.v),
-                                                  _buildUserProfileList(),
-                                                  SizedBox(height: 15.v),
-                                                  Opacity(
-                                                      opacity: 0.8,
+                                                  Align(
+                                                      alignment:
+                                                          Alignment.bottomRight,
+                                                      child: Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  right: 2.h),
+                                                          child: Text(
+                                                              "lbl_25_mar_2022"
+                                                                  .tr,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .right,
+                                                              style: theme
+                                                                  .textTheme
+                                                                  .labelLarge))),
+                                                  Align(
+                                                      alignment:
+                                                          Alignment.bottomRight,
                                                       child: Text(
-                                                          "lbl_subscriptions"
-                                                              .tr,
-                                                          style: CustomTextStyles
-                                                              .bodyLargePoppinsWhiteA700)),
-                                                  SizedBox(height: 11.v),
-                                                  _buildFrameList(),
-                                                  SizedBox(height: 21.v),
-                                                  _buildWidgetStack(),
-                                                  SizedBox(height: 20.v),
-                                                  SizedBox(
-                                                      height: 124.v,
-                                                      width: 319.h,
-                                                      child: Stack(
-                                                          alignment: Alignment
-                                                              .bottomRight,
-                                                          children: [
-                                                            Align(
-                                                                alignment: Alignment
-                                                                    .bottomRight,
-                                                                child: Padding(
-                                                                    padding: EdgeInsets.only(
-                                                                        right: 2
-                                                                            .h),
-                                                                    child: Text(
-                                                                        "lbl_25_mar_2022"
-                                                                            .tr,
-                                                                        textAlign:
-                                                                            TextAlign
-                                                                                .right,
-                                                                        style: theme
-                                                                            .textTheme
-                                                                            .labelLarge))),
-                                                            Align(
-                                                                alignment: Alignment
-                                                                    .bottomRight,
-                                                                child: Text(
-                                                                    "lbl_26_mar_2022"
-                                                                        .tr,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .right,
-                                                                    style: theme
-                                                                        .textTheme
-                                                                        .labelLarge)),
-                                                            Align(
-                                                                alignment: Alignment
-                                                                    .bottomRight,
-                                                                child: Text(
-                                                                    "lbl_28_mar_2022"
-                                                                        .tr,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .right,
-                                                                    style: theme
-                                                                        .textTheme
-                                                                        .labelLarge)),
-                                                            _buildDynamicTextList()
-                                                          ]))
-                                                ]))),
-                                    Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Container(
-                                            height: 280.v,
-                                            width: double.maxFinite,
-                                            decoration: BoxDecoration(
-                                                color:
-                                                    theme.colorScheme.primary,
-                                                borderRadius: BorderRadius.only(
-                                                    topLeft:
-                                                        Radius.circular(20.h),
-                                                    topRight:
-                                                        Radius.circular(20.h),
-                                                    bottomLeft:
-                                                        Radius.circular(15.h),
-                                                    bottomRight:
-                                                        Radius.circular(
-                                                            15.h))))),
-                                    _buildHomeStack()
-                                  ]))))
+                                                          "lbl_26_mar_2022".tr,
+                                                          textAlign:
+                                                              TextAlign.right,
+                                                          style: theme.textTheme
+                                                              .labelLarge)),
+                                                  Align(
+                                                      alignment:
+                                                          Alignment.bottomRight,
+                                                      child: Text(
+                                                          "lbl_28_mar_2022".tr,
+                                                          textAlign:
+                                                              TextAlign.right,
+                                                          style: theme.textTheme
+                                                              .labelLarge)),
+                                                  // _buildDynamicTextList()
+                                                ]),
+                                          )
+                                        ]),
+                                  )),
+                            ),
+                            Align(
+                                alignment: Alignment.topCenter,
+                                child: Container(
+                                    height: 280.v,
+                                    width: 400,
+                                    decoration: BoxDecoration(
+                                        color: theme.colorScheme.primary,
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(20.h),
+                                            topRight: Radius.circular(20.h),
+                                            bottomLeft: Radius.circular(15.h),
+                                            bottomRight:
+                                                Radius.circular(15.h))))),
+                            _buildHomeStack()
+                          ])))
                 ]))));
   }
 
@@ -154,29 +147,40 @@ class EightScreen extends GetWidget<EightController> {
   /// Section Widget
   Widget _buildUserProfileList() {
     return SizedBox(
-        height: 80.v,
+        height: 100.v,
         child: Obx(() => ListView.separated(
             padding: EdgeInsets.only(right: 18.h),
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) {
               return SizedBox(width: 41.h);
             },
-            itemCount: controller
-                .eightModelObj.value.userprofilelistItemList.value.length,
-            itemBuilder: (context, index) {
+            itemCount:
+                controller.eightModelObj.value.userprofilelistItem.value.length,
+            itemBuilder: (BuildContext context, int index) {
               UserprofilelistItemModel model = controller
-                  .eightModelObj.value.userprofilelistItemList.value[index];
-              return UserprofilelistItemWidget(model, naca: () {
-                naca();
-
-              });
+                  .eightModelObj.value.userprofilelistItem.value[index];
+              return UserprofilelistItemWidget(
+                model,
+                onTapViewHierarchy: () {
+                  onTapViewHierarchy();
+                },
+                onTapViewHierarchye: () {
+                  onTapViewHierarchye();
+                },
+                onTapWidget: () {
+                  onTapWidget();
+                },
+                onTapWidgete: () {
+                  onTapWidgete();
+                },
+              );
             })));
   }
 
   /// Section Widget
   Widget _buildFrameList() {
     return SizedBox(
-        height: 53.v,
+        height: 60.v,
         child: Obx(() => ListView.separated(
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) {
@@ -213,25 +217,25 @@ class EightScreen extends GetWidget<EightController> {
   }
 
   /// Section Widget
-  Widget _buildDynamicTextList() {
-    return Align(
-        alignment: Alignment.bottomCenter,
-        child: Obx(() => GridView.builder(
-            shrinkWrap: true,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisExtent: 160.v,
-                crossAxisCount: 2,
-                mainAxisSpacing: 105.h,
-                crossAxisSpacing: 105.h),
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: controller
-                .eightModelObj.value.dynamictextlistItemList.value.length,
-            itemBuilder: (context, index) {
-              DynamictextlistItemModel model = controller
-                  .eightModelObj.value.dynamictextlistItemList.value[index];
-              return DynamictextlistItemWidget(model);
-            })));
-  }
+  // Widget _buildDynamicTextList() {
+  //   return Align(
+  //       alignment: Alignment.bottomCenter,
+  //       child: Obx(() => GridView.builder(
+  //           shrinkWrap: true,
+  //           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+  //               mainAxisExtent: 160.v,
+  //               crossAxisCount: 2,
+  //               mainAxisSpacing: 105.h,
+  //               crossAxisSpacing: 105.h),
+  //           physics: NeverScrollableScrollPhysics(),
+  //           itemCount: controller
+  //               .eightModelObj.value.dynamictextlistItemList.value.length,
+  //           itemBuilder: (context, index) {
+  //             DynamictextlistItemModel model = controller
+  //                 .eightModelObj.value.dynamictextlistItemList.value[index];
+  //             return DynamictextlistItemWidget(model);
+  //           })));
+  // }
 
   /// Section Widget
   Widget _buildHomeStack() {
@@ -349,6 +353,38 @@ class EightScreen extends GetWidget<EightController> {
   frame729() {
     Get.offNamed(
       AppRoutes.frame33729Screen,
+    );
+  }
+
+  onTapViewHierarchy() {
+    Get.toNamed(AppRoutes.tenScreen);
+  }
+
+  /// Navigates to the electricOneScreen when the action is triggered.
+  onTapWidget() {
+    Get.toNamed(AppRoutes.fortyScreen);
+  }
+
+  onTapViewHierarchye() {
+    Get.toNamed(AppRoutes.electricOneScreen);
+  }
+
+  onTapWidgete() {
+    Get.toNamed(AppRoutes.thirtyScreen);
+  }
+
+  onTapViewGas() {
+    Get.toNamed(AppRoutes.gasHomefiftyoneScreen);
+  }
+
+  onTapViewWatter() {
+    Get.toNamed(AppRoutes.waterHomefiftysevenScreen);
+  }
+
+  /// Navigates to the eightScreen when the action is triggered.
+  onTapBack() {
+    Get.toNamed(
+      AppRoutes.eightScreen,
     );
   }
 }

@@ -73,7 +73,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                               onTapScreenTitle(AppRoutes.amountwsixtyScreen),
                         ),
                         _buildScreenTitle(
-                          screenTitle: "Transaction  Succes".tr,
+                          screenTitle: "Transaction Success".tr,
                           onTapScreenTitle: () => onTapScreenTitle(
                               AppRoutes.transactionSuccesScreen),
                         ),
