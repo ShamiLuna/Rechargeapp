@@ -19,52 +19,52 @@ class Water359Screen extends GetWidget<Water359Controller> {
             appBar: _buildAppBar(),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 19.h, vertical: 14.v),
+                padding: EdgeInsets.symmetric(horizontal: 19, vertical: 14),
                 child: Column(children: [
                   _buildFrame(),
-                  SizedBox(height: 39.v),
+                  SizedBox(height: 39),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                          padding: EdgeInsets.only(left: 59.h),
+                          padding: EdgeInsets.only(left: 59),
                           child: Row(children: [
                             CustomImageView(
                                 imagePath: ImageConstant.imgEllipse77,
-                                height: 35.adaptSize,
-                                width: 35.adaptSize,
-                                radius: BorderRadius.circular(17.h)),
+                                height: 35,
+                                width: 35,
+                                radius: BorderRadius.circular(17)),
                             Padding(
                                 padding: EdgeInsets.only(
-                                    left: 18.h, top: 8.v, bottom: 8.v),
+                                    left: 18, top: 8, bottom: 8),
                                 child: Text("msg_tamilnadu_water".tr,
                                     style: theme.textTheme.labelLarge))
                           ]))),
-                  SizedBox(height: 48.v),
+                  SizedBox(height: 48),
                   _buildRow(),
-                  SizedBox(height: 32.v),
+                  SizedBox(height: 32),
                   _buildRow1(),
-                  SizedBox(height: 32.v),
+                  SizedBox(height: 32),
                   _buildRow2(),
-                  SizedBox(height: 32.v),
+                  SizedBox(height: 32),
                   _buildTotalAmount(),
-                  SizedBox(height: 26.v),
+                  SizedBox(height: 26),
                   _buildDone(),
-                  SizedBox(height: 5.v)
+                  SizedBox(height: 5)
                 ]))));
   }
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-        leadingWidth: 57.h,
+        leadingWidth: 57,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 25.h, top: 22.v, bottom: 22.v),
+            margin: EdgeInsets.only(left: 25, top: 22, bottom: 22),
             onTap: () {
               onTapBack();
             }),
         title: AppbarTitle(
-            text: "lbl_indane_gas".tr, margin: EdgeInsets.only(left: 14.h)),
+            text: "lbl_indane_gas".tr, margin: EdgeInsets.only(left: 14)),
         styleType: Style.bgFill);
   }
 
@@ -77,16 +77,16 @@ class Water359Screen extends GetWidget<Water359Controller> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusStyle.roundedBorder6),
         child: Container(
-            height: 173.v,
-            width: 334.h,
+            height: 173,
+            width: 334,
             decoration:
                 BoxDecoration(borderRadius: BorderRadiusStyle.roundedBorder6),
             child: Stack(alignment: Alignment.center, children: [
               CustomImageView(
                   imagePath: ImageConstant.imgRectangle1064173x334,
-                  height: 173.v,
-                  width: 334.h,
-                  radius: BorderRadius.circular(8.h),
+                  height: 173,
+                  width: 334,
+                  radius: BorderRadius.circular(8),
                   alignment: Alignment.center),
               Align(
                   alignment: Alignment.center,
@@ -97,17 +97,17 @@ class Water359Screen extends GetWidget<Water359Controller> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadiusStyle.roundedBorder6),
                       child: Container(
-                          height: 173.v,
-                          width: 330.h,
+                          height: 173,
+                          width: 330,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadiusStyle.roundedBorder6),
                           child: Stack(alignment: Alignment.center, children: [
                             CustomImageView(
                                 imagePath:
                                     ImageConstant.imgRectangle1064173x334,
-                                height: 173.v,
-                                width: 330.h,
-                                radius: BorderRadius.circular(8.h),
+                                height: 173,
+                                width: 330,
+                                radius: BorderRadius.circular(8),
                                 alignment: Alignment.center),
                             Align(
                                 alignment: Alignment.center,
@@ -119,8 +119,8 @@ class Water359Screen extends GetWidget<Water359Controller> {
                                         borderRadius:
                                             BorderRadiusStyle.roundedBorder6),
                                     child: Container(
-                                        height: 173.v,
-                                        width: 330.h,
+                                        height: 173,
+                                        width: 330,
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadiusStyle
                                                 .roundedBorder6),
@@ -130,18 +130,18 @@ class Water359Screen extends GetWidget<Water359Controller> {
                                               CustomImageView(
                                                   imagePath:
                                                       ImageConstant.imgImage7,
-                                                  height: 173.v,
-                                                  width: 330.h,
+                                                  height: 173,
+                                                  width: 330,
                                                   radius: BorderRadius.circular(
-                                                      8.h),
+                                                      8),
                                                   alignment: Alignment.center),
                                               CustomImageView(
                                                   imagePath:
                                                       ImageConstant.imgImage10,
-                                                  height: 173.v,
-                                                  width: 330.h,
+                                                  height: 173,
+                                                  width: 330,
                                                   radius: BorderRadius.circular(
-                                                      8.h),
+                                                      8),
                                                   alignment: Alignment.center)
                                             ]))))
                           ]))))
@@ -151,7 +151,7 @@ class Water359Screen extends GetWidget<Water359Controller> {
   /// Section Widget
   Widget _buildEditText() {
     return CustomTextFormField(
-        width: 172.h,
+        width: 172,
         controller: controller.editTextController,
         hintText: "msg_service_no_09687624667".tr,
         textInputAction: TextInputAction.done);
@@ -159,13 +159,13 @@ class Water359Screen extends GetWidget<Water359Controller> {
 
   /// Section Widget
   Widget _buildNameKevin() {
-    return CustomOutlinedButton(width: 106.h, text: "lbl_name_kevin".tr);
+    return CustomOutlinedButton(width: 106, text: "lbl_name_kevin".tr);
   }
 
   /// Section Widget
   Widget _buildRow() {
     return Padding(
-        padding: EdgeInsets.only(left: 1.h),
+        padding: EdgeInsets.only(left: 1),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [_buildEditText(), _buildNameKevin()]));
@@ -173,18 +173,18 @@ class Water359Screen extends GetWidget<Water359Controller> {
 
   /// Section Widget
   Widget _buildHouseNo() {
-    return CustomOutlinedButton(width: 171.h, text: "lbl_house_no_763".tr);
+    return CustomOutlinedButton(width: 171, text: "lbl_house_no_763".tr);
   }
 
   /// Section Widget
   Widget _buildTotalUnit() {
-    return CustomOutlinedButton(width: 106.h, text: "msg_total_unit_163".tr);
+    return CustomOutlinedButton(width: 106, text: "msg_total_unit_163".tr);
   }
 
   /// Section Widget
   Widget _buildRow1() {
     return Padding(
-        padding: EdgeInsets.only(left: 1.h),
+        padding: EdgeInsets.only(left: 1),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [_buildHouseNo(), _buildTotalUnit()]));
@@ -193,18 +193,18 @@ class Water359Screen extends GetWidget<Water359Controller> {
   /// Section Widget
   Widget _buildMeterReading() {
     return CustomOutlinedButton(
-        width: 171.h, text: "msg_meter_reading_73t3".tr);
+        width: 171, text: "msg_meter_reading_73t3".tr);
   }
 
   /// Section Widget
   Widget _buildReceipt() {
-    return CustomOutlinedButton(width: 106.h, text: "lbl_receipt_6540".tr);
+    return CustomOutlinedButton(width: 106, text: "lbl_receipt_6540".tr);
   }
 
   /// Section Widget
   Widget _buildRow2() {
     return Padding(
-        padding: EdgeInsets.only(left: 1.h),
+        padding: EdgeInsets.only(left: 1),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [_buildMeterReading(), _buildReceipt()]));
@@ -213,16 +213,16 @@ class Water359Screen extends GetWidget<Water359Controller> {
   /// Section Widget
   Widget _buildTotalAmount() {
     return CustomOutlinedButton(
-        width: 171.h,
+        width: 171,
         text: "msg_total_amount_762".tr,
-        margin: EdgeInsets.only(left: 1.h),
+        margin: EdgeInsets.only(left: 1),
         alignment: Alignment.centerLeft);
   }
 
   /// Section Widget
   Widget _buildDone() {
     return CustomElevatedButton(
-        width: 189.h,
+        width: 189,
         text: "lbl_done".tr.toUpperCase(),
         onPressed: () {
           onTapDone();

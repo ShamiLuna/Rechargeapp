@@ -19,30 +19,30 @@ class SixScreen extends GetWidget<SixController> {
             body: Form(
                 key: _formKey,
                 child: SizedBox(
-                    width: 407.h,
+                    width: 407,
                     child: Column(mainAxisSize: MainAxisSize.min, children: [
-                      SizedBox(height: 20.v),
+                      SizedBox(height: 20),
                       Expanded(
                           child: SingleChildScrollView(
                               child: Container(
-                                  margin: EdgeInsets.only(bottom: 20.v),
+                                  margin: EdgeInsets.only(bottom: 20),
                                   padding: EdgeInsets.only(
-                                      left: 66.h, top: 61.v, right: 66.h),
+                                      left: 66, top: 61, right: 66),
                                   child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
                                         SizedBox(
-                                            height: 120.v,
-                                            width: 164.h,
+                                            height: 120,
+                                            width: 164,
                                             child: Stack(
                                                 alignment: Alignment.topLeft,
                                                 children: [
                                                   CustomImageView(
                                                       imagePath: ImageConstant
                                                           .imgBackWhiteA700,
-                                                      height: 2.v,
-                                                      width: 32.h,
+                                                      height: 2,
+                                                      width: 32,
                                                       alignment:
                                                           Alignment.topLeft,
                                                       onTap: () {
@@ -52,11 +52,11 @@ class SixScreen extends GetWidget<SixController> {
                                                       alignment:
                                                           Alignment.topLeft,
                                                       child: Container(
-                                                          height: 18.adaptSize,
-                                                          width: 18.adaptSize,
+                                                          height: 18,
+                                                          width: 18,
                                                           margin:
                                                               EdgeInsets.only(
-                                                                  left: 24.h),
+                                                                  left: 24),
                                                           decoration: BoxDecoration(
                                                               color: theme
                                                                   .colorScheme
@@ -64,13 +64,13 @@ class SixScreen extends GetWidget<SixController> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          9.h)))),
+                                                                          9)))),
                                                   Align(
                                                       alignment:
                                                           Alignment.topRight,
                                                       child: SizedBox(
-                                                          height: 108.v,
-                                                          width: 130.h,
+                                                          height: 108,
+                                                          width: 130,
                                                           child: Stack(
                                                               alignment: Alignment
                                                                   .bottomRight,
@@ -81,49 +81,49 @@ class SixScreen extends GetWidget<SixController> {
                                                                             .centerLeft,
                                                                     child: Container(
                                                                         height: 108
-                                                                            .adaptSize,
+                                                                            ,
                                                                         width: 108
-                                                                            .adaptSize,
+                                                                            ,
                                                                         decoration: BoxDecoration(
                                                                             color:
                                                                                 appTheme.blue5001,
-                                                                            borderRadius: BorderRadius.circular(54.h)))),
+                                                                            borderRadius: BorderRadius.circular(54)))),
                                                                 CustomImageView(
                                                                     imagePath:
                                                                         ImageConstant
                                                                             .imgGroup86,
                                                                     height:
-                                                                        75.v,
+                                                                        75,
                                                                     width:
-                                                                        117.h,
+                                                                        117,
                                                                     alignment:
                                                                         Alignment
                                                                             .bottomRight,
                                                                     margin: EdgeInsets.only(
                                                                         bottom:
-                                                                            8.v)),
+                                                                            8)),
                                                                 Align(
                                                                     alignment:
                                                                         Alignment
                                                                             .centerLeft,
                                                                     child: Container(
-                                                                        height: 68.v,
-                                                                        width: 51.h,
-                                                                        margin: EdgeInsets.only(left: 32.h),
+                                                                        height: 68,
+                                                                        width: 51,
+                                                                        margin: EdgeInsets.only(left: 32),
                                                                         child: Stack(alignment: Alignment.bottomRight, children: [
                                                                           CustomImageView(
                                                                               imagePath: ImageConstant.imgUser,
-                                                                              height: 68.v,
-                                                                              width: 45.h,
+                                                                              height: 68,
+                                                                              width: 45,
                                                                               alignment: Alignment.centerLeft),
                                                                           Align(
                                                                               alignment: Alignment.bottomRight,
                                                                               child: Container(
-                                                                                  margin: EdgeInsets.only(left: 31.h),
-                                                                                  padding: EdgeInsets.symmetric(horizontal: 6.h, vertical: 1.v),
+                                                                                  margin: EdgeInsets.only(left: 31),
+                                                                                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 1),
                                                                                   decoration: AppDecoration.gradientBlueToBlue.copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
                                                                                   child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.end, mainAxisAlignment: MainAxisAlignment.center, children: [
-                                                                                    SizedBox(height: 2.v),
+                                                                                    SizedBox(height: 2),
                                                                                     Text("lbl".tr, style: CustomTextStyles.labelLargeRobotoOnError)
                                                                                   ])))
                                                                         ])))
@@ -132,11 +132,11 @@ class SixScreen extends GetWidget<SixController> {
                                                       alignment:
                                                           Alignment.bottomRight,
                                                       child: Container(
-                                                          height: 20.v,
-                                                          width: 39.h,
+                                                          height: 20,
+                                                          width: 39,
                                                           margin:
                                                               EdgeInsets.only(
-                                                                  right: 29.h),
+                                                                  right: 29),
                                                           child: Stack(
                                                               alignment:
                                                                   Alignment
@@ -151,9 +151,9 @@ class SixScreen extends GetWidget<SixController> {
                                                                                 .bottomRight,
                                                                         child: Container(
                                                                             height:
-                                                                                17.v,
-                                                                            width: 28.h,
-                                                                            decoration: BoxDecoration(color: appTheme.blue20087, borderRadius: BorderRadius.circular(3.h))))),
+                                                                                17,
+                                                                            width: 28,
+                                                                            decoration: BoxDecoration(color: appTheme.blue20087, borderRadius: BorderRadius.circular(3))))),
                                                                 Align(
                                                                     alignment:
                                                                         Alignment
@@ -171,70 +171,70 @@ class SixScreen extends GetWidget<SixController> {
                                                                             .gray5001,
                                                                         shape: RoundedRectangleBorder(
                                                                             side:
-                                                                                BorderSide(color: appTheme.whiteA700, width: 1.h),
+                                                                                BorderSide(color: appTheme.whiteA700, width: 1),
                                                                             borderRadius: BorderRadiusStyle.roundedBorder3),
                                                                         child: Container(
-                                                                            height: 16.v,
-                                                                            width: 37.h,
-                                                                            padding: EdgeInsets.symmetric(horizontal: 2.h, vertical: 4.v),
+                                                                            height: 16,
+                                                                            width: 37,
+                                                                            padding: EdgeInsets.symmetric(horizontal: 2, vertical: 4),
                                                                             decoration: AppDecoration.outlineWhiteA.copyWith(borderRadius: BorderRadiusStyle.roundedBorder3),
                                                                             child: Stack(alignment: Alignment.topCenter, children: [
-                                                                              Align(alignment: Alignment.bottomLeft, child: Padding(padding: EdgeInsets.only(left: 12.h), child: Text("lbl2".tr, style: CustomTextStyles.robotoOnPrimary))),
+                                                                              Align(alignment: Alignment.bottomLeft, child: Padding(padding: EdgeInsets.only(left: 12), child: Text("lbl2".tr, style: CustomTextStyles.robotoOnPrimary))),
                                                                               Align(
                                                                                   alignment: Alignment.topCenter,
                                                                                   child: SizedBox(
-                                                                                      height: 4.v,
-                                                                                      width: 28.h,
+                                                                                      height: 4,
+                                                                                      width: 28,
                                                                                       child: Stack(alignment: Alignment.center, children: [
-                                                                                        Align(alignment: Alignment.centerRight, child: Container(height: 3.adaptSize, width: 3.adaptSize, margin: EdgeInsets.only(right: 5.h), decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1.h)))),
+                                                                                        Align(alignment: Alignment.centerRight, child: Container(height: 3, width: 3, margin: EdgeInsets.only(right: 5), decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1)))),
                                                                                         Align(
                                                                                             alignment: Alignment.center,
                                                                                             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                                                                                               SizedBox(
-                                                                                                  height: 4.v,
-                                                                                                  width: 3.h,
+                                                                                                  height: 4,
+                                                                                                  width: 3,
                                                                                                   child: Stack(alignment: Alignment.topRight, children: [
-                                                                                                    Align(alignment: Alignment.bottomCenter, child: Container(height: 3.adaptSize, width: 3.adaptSize, decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1.h)))),
-                                                                                                    Align(alignment: Alignment.topRight, child: Padding(padding: EdgeInsets.only(right: 1.h), child: Text("lbl3".tr, style: CustomTextStyles.robotoBlack900)))
+                                                                                                    Align(alignment: Alignment.bottomCenter, child: Container(height: 3, width: 3, decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1)))),
+                                                                                                    Align(alignment: Alignment.topRight, child: Padding(padding: EdgeInsets.only(right: 1), child: Text("lbl3".tr, style: CustomTextStyles.robotoBlack900)))
                                                                                                   ])),
                                                                                               SizedBox(
-                                                                                                  height: 4.v,
-                                                                                                  width: 3.h,
+                                                                                                  height: 4,
+                                                                                                  width: 3,
                                                                                                   child: Stack(alignment: Alignment.topRight, children: [
-                                                                                                    Align(alignment: Alignment.bottomCenter, child: Container(height: 3.adaptSize, width: 3.adaptSize, decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1.h)))),
-                                                                                                    Align(alignment: Alignment.topRight, child: Padding(padding: EdgeInsets.only(right: 1.h), child: Text("lbl3".tr, style: CustomTextStyles.robotoBlack900)))
+                                                                                                    Align(alignment: Alignment.bottomCenter, child: Container(height: 3, width: 3, decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1)))),
+                                                                                                    Align(alignment: Alignment.topRight, child: Padding(padding: EdgeInsets.only(right: 1), child: Text("lbl3".tr, style: CustomTextStyles.robotoBlack900)))
                                                                                                   ])),
-                                                                                              Container(height: 3.adaptSize, width: 3.adaptSize, decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1.h))),
+                                                                                              Container(height: 3, width: 3, decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1))),
                                                                                               SizedBox(
-                                                                                                  height: 4.v,
-                                                                                                  width: 3.h,
+                                                                                                  height: 4,
+                                                                                                  width: 3,
                                                                                                   child: Stack(alignment: Alignment.centerLeft, children: [
-                                                                                                    Align(alignment: Alignment.topCenter, child: Container(height: 3.adaptSize, width: 3.adaptSize, decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1.h)))),
-                                                                                                    Align(alignment: Alignment.centerLeft, child: Padding(padding: EdgeInsets.only(left: 1.h), child: Text("lbl2".tr, style: CustomTextStyles.robotoOnPrimary)))
+                                                                                                    Align(alignment: Alignment.topCenter, child: Container(height: 3, width: 3, decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1)))),
+                                                                                                    Align(alignment: Alignment.centerLeft, child: Padding(padding: EdgeInsets.only(left: 1), child: Text("lbl2".tr, style: CustomTextStyles.robotoOnPrimary)))
                                                                                                   ])),
                                                                                               Text("lbl2".tr, style: CustomTextStyles.robotoOnPrimary),
                                                                                               SizedBox(
-                                                                                                  height: 4.v,
-                                                                                                  width: 3.h,
+                                                                                                  height: 4,
+                                                                                                  width: 3,
                                                                                                   child: Stack(alignment: Alignment.centerLeft, children: [
-                                                                                                    Align(alignment: Alignment.topCenter, child: Container(height: 3.adaptSize, width: 3.adaptSize, decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1.h)))),
-                                                                                                    Align(alignment: Alignment.centerLeft, child: Padding(padding: EdgeInsets.only(left: 1.h), child: Text("lbl2".tr, style: CustomTextStyles.robotoOnPrimary)))
+                                                                                                    Align(alignment: Alignment.topCenter, child: Container(height: 3, width: 3, decoration: BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1)))),
+                                                                                                    Align(alignment: Alignment.centerLeft, child: Padding(padding: EdgeInsets.only(left: 1), child: Text("lbl2".tr, style: CustomTextStyles.robotoOnPrimary)))
                                                                                                   ]))
                                                                                             ]))
                                                                                       ])))
                                                                             ]))))
                                                               ])))
                                                 ])),
-                                        SizedBox(height: 54.v),
+                                        SizedBox(height: 54),
                                         Opacity(
                                             opacity: 0.8,
                                             child: Text("lbl_reset_password".tr,
                                                 style: CustomTextStyles
                                                     .titleLargeRobotoPrimarySemiBold)),
-                                        SizedBox(height: 66.v),
+                                        SizedBox(height: 66),
                                         Obx(() => CustomFloatingTextField(
-                                            controller: controller
-                                                .newpasswordController,
+                                            // controller: controller
+                                            //     .newpasswordController,
                                             labelText: "lbl_new_password".tr,
                                             labelStyle: CustomTextStyles
                                                 .bodySmallRobotoWhiteA700_1,
@@ -244,9 +244,9 @@ class SixScreen extends GetWidget<SixController> {
                                             obscureText:
                                                 controller.isShowPassword.value,
                                             prefix:
-                                                Container(width: 5.adaptSize),
+                                                Container(width: 5),
                                             prefixConstraints:
-                                                BoxConstraints(maxHeight: 65.v),
+                                                BoxConstraints(maxHeight: 65),
                                             suffix: InkWell(
                                                 onTap: () {
                                                   controller.isShowPassword
@@ -257,14 +257,14 @@ class SixScreen extends GetWidget<SixController> {
                                                 child: Container(
                                                     margin:
                                                         EdgeInsets.symmetric(
-                                                            horizontal: 18.h),
+                                                            horizontal: 18),
                                                     child: CustomImageView(
                                                         imagePath: ImageConstant
                                                             .imgEye,
-                                                        height: 14.v,
-                                                        width: 20.h))),
+                                                        height: 14,
+                                                        width: 20))),
                                             suffixConstraints:
-                                                BoxConstraints(maxHeight: 65.v),
+                                                BoxConstraints(maxHeight: 65),
                                             validator: (value) {
                                               if (value == null ||
                                                   (!isValidPassword(value,
@@ -274,10 +274,10 @@ class SixScreen extends GetWidget<SixController> {
                                               }
                                               return null;
                                             })),
-                                        SizedBox(height: 66.v),
+                                        SizedBox(height: 66),
                                         CustomFloatingTextField(
-                                            controller:
-                                                controller.passwordController,
+                                            // controller:
+                                            //     controller.passwordController,
                                             labelText: "lbl_reset_password".tr,
                                             labelStyle: CustomTextStyles
                                                 .bodySmallRobotoWhiteA700_1,
@@ -288,9 +288,9 @@ class SixScreen extends GetWidget<SixController> {
                                                 TextInputType.visiblePassword,
                                             obscureText: true,
                                             prefix:
-                                                Container(width: 5.adaptSize),
+                                                Container(width: 5),
                                             prefixConstraints:
-                                                BoxConstraints(maxHeight: 66.v),
+                                                BoxConstraints(maxHeight: 66),
                                             validator: (value) {
                                               if (value == null ||
                                                   (!isValidPassword(value,
@@ -300,7 +300,7 @@ class SixScreen extends GetWidget<SixController> {
                                               }
                                               return null;
                                             }),
-                                        SizedBox(height: 67.v),
+                                        SizedBox(height: 67),
                                         CustomElevatedButton(
                                             text: "lbl_submiting"
                                                 .tr
@@ -310,7 +310,7 @@ class SixScreen extends GetWidget<SixController> {
                                             onPressed: () {
                                               navito8();
                                             }),
-                                        SizedBox(height: 67.v)
+                                        SizedBox(height: 67)
                                       ]))))
                     ])))));
   }

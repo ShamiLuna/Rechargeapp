@@ -10,25 +10,25 @@ class Frame33752Screen extends GetWidget<Frame33752Controller> {
     return SafeArea(
         child: Scaffold(
             body: SizedBox(
-                width: 395.h,
+                width: 395,
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  SizedBox(height: 10.v),
+                  SizedBox(height: 10),
                   Expanded(
                       child: SingleChildScrollView(
                           child: Container(
-                              margin: EdgeInsets.only(bottom: 10.v),
+                              margin: EdgeInsets.only(bottom: 10),
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 35.h, vertical: 34.v),
+                                  horizontal: 35, vertical: 34),
                               child: Column(children: [
                                 CustomImageView(
                                     imagePath: ImageConstant.imgClose,
-                                    height: 15.v,
-                                    width: 13.h,
+                                    height: 15,
+                                    width: 13,
                                     alignment: Alignment.centerRight),
-                                SizedBox(height: 65.v),
+                                SizedBox(height: 65),
                                 Container(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 28.h, vertical: 37.v),
+                                        horizontal: 28, vertical: 37),
                                     decoration: AppDecoration.fillGray.copyWith(
                                         borderRadius:
                                             BorderRadiusStyle.roundedBorder20),
@@ -38,14 +38,14 @@ class Frame33752Screen extends GetWidget<Frame33752Controller> {
                                           Text("msg_transaction_loading".tr,
                                               style: CustomTextStyles
                                                   .titleLargeTitilliumWeb),
-                                          SizedBox(height: 144.v),
+                                          SizedBox(height: 144),
                                           GestureDetector(
                                               onTap: () {
                                                 onTapTwo();
                                               },
                                               child: SizedBox(
-                                                  height: 151.v,
-                                                  width: 269.h,
+                                                  height: 151,
+                                                  width: 269,
                                                   child: Stack(
                                                       alignment:
                                                           Alignment.bottomLeft,
@@ -54,13 +54,13 @@ class Frame33752Screen extends GetWidget<Frame33752Controller> {
                                                             imagePath:
                                                                 ImageConstant
                                                                     .imgGroup2,
-                                                            height: 46.v,
-                                                            width: 254.h,
+                                                            height: 46,
+                                                            width: 254,
                                                             alignment: Alignment
                                                                 .topLeft,
                                                             margin:
                                                                 EdgeInsets.only(
-                                                                    left: 1.h)),
+                                                                    left: 1)),
                                                         Align(
                                                             alignment: Alignment
                                                                 .bottomLeft,
@@ -68,16 +68,16 @@ class Frame33752Screen extends GetWidget<Frame33752Controller> {
                                                                 margin: EdgeInsets
                                                                     .only(
                                                                         left: 55
-                                                                            .h,
+                                                                            ,
                                                                         right: 124
-                                                                            .h,
+                                                                            ,
                                                                         bottom: 17
-                                                                            .v),
+                                                                            ),
                                                                 padding: EdgeInsets.symmetric(
                                                                     horizontal:
-                                                                        16.h,
+                                                                        16,
                                                                     vertical:
-                                                                        13.v),
+                                                                        13),
                                                                 decoration: AppDecoration
                                                                     .fillGray10002
                                                                     .copyWith(
@@ -91,45 +91,45 @@ class Frame33752Screen extends GetWidget<Frame33752Controller> {
                                                                     children: [
                                                                       Container(
                                                                           height: 8
-                                                                              .v,
+                                                                              ,
                                                                           width: 58
-                                                                              .h,
+                                                                              ,
                                                                           decoration: BoxDecoration(
                                                                               color: appTheme.deepPurple100,
-                                                                              borderRadius: BorderRadius.circular(4.h))),
+                                                                              borderRadius: BorderRadius.circular(4))),
                                                                       SizedBox(
                                                                           height:
-                                                                              14.v),
+                                                                              14),
                                                                       Container(
                                                                           height: 8
-                                                                              .v,
+                                                                              ,
                                                                           width: 58
-                                                                              .h,
+                                                                              ,
                                                                           decoration: BoxDecoration(
                                                                               color: appTheme.deepPurple100,
-                                                                              borderRadius: BorderRadius.circular(4.h))),
+                                                                              borderRadius: BorderRadius.circular(4))),
                                                                       SizedBox(
                                                                           height:
-                                                                              14.v),
+                                                                              14),
                                                                       Container(
                                                                           height: 8
-                                                                              .v,
+                                                                              ,
                                                                           width: 58
-                                                                              .h,
+                                                                              ,
                                                                           decoration: BoxDecoration(
                                                                               color: appTheme.deepPurple100,
-                                                                              borderRadius: BorderRadius.circular(4.h))),
+                                                                              borderRadius: BorderRadius.circular(4))),
                                                                       SizedBox(
                                                                           height:
-                                                                              14.v),
+                                                                              14),
                                                                       Container(
                                                                           height: 8
-                                                                              .v,
+                                                                              ,
                                                                           width: 58
-                                                                              .h,
+                                                                              ,
                                                                           decoration: BoxDecoration(
                                                                               color: appTheme.deepPurple100,
-                                                                              borderRadius: BorderRadius.circular(4.h)))
+                                                                              borderRadius: BorderRadius.circular(4)))
                                                                     ]))),
                                                         Align(
                                                             alignment: Alignment
@@ -138,9 +138,9 @@ class Frame33752Screen extends GetWidget<Frame33752Controller> {
                                                                 padding: EdgeInsets
                                                                     .symmetric(
                                                                         horizontal: 15
-                                                                            .h,
+                                                                            ,
                                                                         vertical: 24
-                                                                            .v),
+                                                                            ),
                                                                 decoration: BoxDecoration(
                                                                     borderRadius:
                                                                         BorderRadiusStyle
@@ -160,42 +160,42 @@ class Frame33752Screen extends GetWidget<Frame33752Controller> {
                                                                     children: [
                                                                       SizedBox(
                                                                           height:
-                                                                              14.v),
+                                                                              14),
                                                                       Padding(
                                                                           padding: EdgeInsets.only(
                                                                               right: 9
-                                                                                  .h),
+                                                                                  ),
                                                                           child: Row(
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
-                                                                                Container(height: 10.v, width: 24.h, margin: EdgeInsets.only(bottom: 6.v), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5.h))),
-                                                                                CustomImageView(imagePath: ImageConstant.imgFrame4, height: 16.v, width: 32.h, margin: EdgeInsets.only(left: 9.h)),
-                                                                                Container(height: 10.v, width: 24.h, margin: EdgeInsets.only(left: 7.h, bottom: 6.v), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5.h))),
-                                                                                Container(height: 10.v, width: 24.h, margin: EdgeInsets.only(left: 12.h, bottom: 6.v), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5.h))),
-                                                                                CustomImageView(imagePath: ImageConstant.imgFrame4, height: 16.v, width: 32.h, margin: EdgeInsets.only(left: 10.h)),
-                                                                                Container(height: 10.v, width: 24.h, margin: EdgeInsets.only(left: 6.h, bottom: 6.v), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5.h)))
+                                                                                Container(height: 10, width: 2, margin: EdgeInsets.only(bottom: 6), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5))),
+                                                                                CustomImageView(imagePath: ImageConstant.imgFrame4, height: 16, width: 32, margin: EdgeInsets.only(left: 9)),
+                                                                                Container(height: 10, width: 24, margin: EdgeInsets.only(left: 7, bottom: 6), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5))),
+                                                                                Container(height: 10, width: 24, margin: EdgeInsets.only(left: 12, bottom: 6), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5))),
+                                                                                CustomImageView(imagePath: ImageConstant.imgFrame4, height: 16, width: 32, margin: EdgeInsets.only(left: 10)),
+                                                                                Container(height: 10, width: 24, margin: EdgeInsets.only(left: 6, bottom: 6), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5)))
                                                                               ])),
                                                                       SizedBox(
                                                                           height:
-                                                                              11.v),
+                                                                              11),
                                                                       Padding(
                                                                           padding: EdgeInsets.symmetric(
                                                                               horizontal: 4
-                                                                                  .h),
+                                                                                  ),
                                                                           child: Row(
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
-                                                                                Container(height: 10.v, width: 28.h, margin: EdgeInsets.only(bottom: 6.v), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5.h))),
-                                                                                Container(height: 10.v, width: 28.h, margin: EdgeInsets.only(left: 6.h, bottom: 6.v), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5.h))),
-                                                                                Container(height: 10.v, width: 49.h, margin: EdgeInsets.only(left: 13.h, bottom: 6.v), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5.h))),
-                                                                                Container(height: 10.v, width: 28.h, margin: EdgeInsets.only(left: 16.h, bottom: 6.v), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5.h))),
-                                                                                CustomImageView(imagePath: ImageConstant.imgFrame4, height: 16.v, width: 32.h, margin: EdgeInsets.only(left: 5.h))
+                                                                                Container(height: 10, width: 28, margin: EdgeInsets.only(bottom: 6), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5))),
+                                                                                Container(height: 10, width: 28, margin: EdgeInsets.only(left: 6, bottom: 6), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5))),
+                                                                                Container(height: 10, width: 49, margin: EdgeInsets.only(left: 13, bottom: 6), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5))),
+                                                                                Container(height: 10, width: 28, margin: EdgeInsets.only(left: 16, bottom: 6), decoration: BoxDecoration(color: appTheme.whiteA700, borderRadius: BorderRadius.circular(5))),
+                                                                                CustomImageView(imagePath: ImageConstant.imgFrame4, height: 16, width: 32, margin: EdgeInsets.only(left: 5))
                                                                               ]))
                                                                     ])))
                                                       ]))),
-                                          SizedBox(height: 144.v)
+                                          SizedBox(height: 144)
                                         ])),
-                                SizedBox(height: 65.v)
+                                SizedBox(height: 65)
                               ]))))
                 ]))));
   }

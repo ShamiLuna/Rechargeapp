@@ -21,20 +21,20 @@ class CartItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      padding: EdgeInsets.symmetric(horizontal: 25.h),
+      padding: EdgeInsets.symmetric(horizontal: 25),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.only(
-              top: 2.v,
-              bottom: 4.v,
+              top: 2,
+              bottom: 4,
             ),
             child: Obx(
               () => CustomIconButton(
-                height: 35.adaptSize,
-                width: 35.adaptSize,
-                padding: EdgeInsets.all(6.h),
+                height: 35,
+                width: 35,
+                padding: EdgeInsets.all(6),
                 decoration: IconButtonStyleHelper.fillRed,
                 child: CustomImageView(
                   imagePath: cartItemModelObj.cartIcon!.value,
@@ -43,8 +43,8 @@ class CartItemWidget extends StatelessWidget {
             ),
           ),
           Container(
-            width: 203.h,
-            margin: EdgeInsets.only(left: 14.h),
+            width: 203,
+            margin: EdgeInsets.only(left: 14),
             child: RichText(
               text: TextSpan(
                 children: [

@@ -19,14 +19,14 @@ class FramelistItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 58.h,
+      width: 58,
       child: Obx(
         () => CustomImageView(
           imagePath: framelistItemModelObj.rectangle!.value,
-          height: 53.v,
-          width: 58.h,
+          height: 53,
+          width: 58,
           radius: BorderRadius.circular(
-            5.h,
+            5,
           ),
         ),
       ),

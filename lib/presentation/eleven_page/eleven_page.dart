@@ -25,9 +25,10 @@ class ElevenPage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 38.v),
+          SizedBox(height: 38),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 14.h),
+            width: 389,
+            margin: EdgeInsets.symmetric(horizontal: 1),
             decoration: AppDecoration.fillGray.copyWith(
               borderRadius: BorderRadiusStyle.circleBorder10,
             ),
@@ -35,29 +36,29 @@ class ElevenPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  height: 154.v,
-                  width: 11.h,
+                  height: 154,
+                  width: 11,
                   decoration: BoxDecoration(
                     color: theme.colorScheme.primary,
                     borderRadius: BorderRadius.horizontal(
-                      left: Radius.circular(11.h),
+                      left: Radius.circular(11),
                     ),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    left: 17.h,
-                    top: 9.v,
-                    bottom: 22.v,
+                    left: 17,
+                    top: 9,
+                    bottom: 22,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        width: 135.h,
+                        width: 135,
                         padding: EdgeInsets.symmetric(
-                          horizontal: 10.h,
-                          vertical: 1.v,
+                          horizontal: 10,
+                          vertical: 1,
                         ),
                         decoration: AppDecoration.fillPrimary.copyWith(
                           borderRadius: BorderRadiusStyle.circleBorder10,
@@ -67,9 +68,9 @@ class ElevenPage extends StatelessWidget {
                           style: CustomTextStyles.bodySmallDMSansWhiteA700_1,
                         ),
                       ),
-                      SizedBox(height: 8.v),
+                      SizedBox(height: 8),
                       SizedBox(
-                        width: 295.h,
+                        width: 285,
                         child: Row(
                           children: [
                             Text(
@@ -82,7 +83,7 @@ class ElevenPage extends StatelessWidget {
                               style: CustomTextStyles.titleSmallDMSansWhiteA700,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 23.h),
+                              padding: EdgeInsets.only(left: 23),
                               child: Text(
                                 "msg_validity_28_days".tr,
                                 style:
@@ -92,25 +93,25 @@ class ElevenPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 5.v),
+                      SizedBox(height: 5),
                       Padding(
-                        padding: EdgeInsets.only(left: 1.h),
+                        padding: EdgeInsets.only(left: 1),
                         child: Text(
                           "msg_voice_unlimited".tr,
                           style: CustomTextStyles.bodyMediumDMSansWhiteA700,
                         ),
                       ),
-                      SizedBox(height: 8.v),
+                      SizedBox(height: 8),
                       Padding(
-                        padding: EdgeInsets.only(left: 1.h),
+                        padding: EdgeInsets.only(left: 1,right: 1),
                         child: Text(
                           "msg_special_offer".tr,
                           style: CustomTextStyles.bodyMediumDMSansWhiteA700,
                         ),
                       ),
-                      SizedBox(height: 3.v),
+                      SizedBox(height: 3),
                       Padding(
-                        padding: EdgeInsets.only(left: 1.h),
+                        padding: EdgeInsets.only(left: 1,right: 1),
                         child: RichText(
                           text: TextSpan(
                             children: [

@@ -11,24 +11,24 @@ class Frame33712Screen extends GetWidget<Frame33712Controller> {
     return SafeArea(
         child: Scaffold(
             body: SizedBox(
-                width: 385.h,
+                width: 385,
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  SizedBox(height: 10.v),
+                  SizedBox(height: 10),
                   Expanded(
                       child: SingleChildScrollView(
                           child: Container(
                             height: 100,
                               width: 100,
-                              padding: EdgeInsets.symmetric(vertical: 60.v),
+                              padding: EdgeInsets.symmetric(vertical: 60),
                               child: Column(children: [
                                 CustomImageView(
                                     imagePath: ImageConstant.imgSitter,
-                                    height: 259.v,
-                                    width: 236.h),
-                                SizedBox(height: 56.v),
+                                    height: 259,
+                                    width: 236),
+                                SizedBox(height: 56),
                                 Text("lbl_charge_karo".tr,
                                     style: theme.textTheme.displayMedium),
-                                SizedBox(height: 56.v)
+                                SizedBox(height: 56)
                               ]))))
                 ]))));
   }

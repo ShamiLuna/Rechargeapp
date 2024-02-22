@@ -49,24 +49,26 @@ class CustomOutlinedButton extends BaseButton {
   }
 
   Widget get buildOutlinedButtonWidget => Container(
-        height: this.height ?? 38.v,
+        height: this.height ?? 38,
         width: this.width ?? double.maxFinite,
         margin: margin,
         decoration: decoration,
         child: OutlinedButton(
           style: buttonStyle,
           onPressed: isDisabled ?? false ? null : onPressed ?? () {},
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              leftIcon ?? const SizedBox.shrink(),
-              Text(
-                text,
-                style: buttonTextStyle ?? theme.textTheme.labelLarge,
-              ),
-              rightIcon ?? const SizedBox.shrink(),
-            ],
+          child: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                leftIcon ?? const SizedBox.shrink(),
+                Text(
+                  text,
+                  style: buttonTextStyle ?? theme.textTheme.labelLarge,
+                ),
+                rightIcon ?? const SizedBox.shrink(),
+              ],
+            ),
           ),
         ),
       );

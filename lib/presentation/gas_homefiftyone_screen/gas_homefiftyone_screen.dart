@@ -24,20 +24,20 @@ class GasHomefiftyoneScreen extends GetWidget<GasHomefiftyoneController> {
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(
-            horizontal: 19.h,
-            vertical: 14.v,
+            horizontal: 19,
+            vertical: 14,
           ),
           child: Column(
             children: [
               _buildFrame(),
-              SizedBox(height: 17.v),
+              SizedBox(height: 17),
               CustomSearchView(
                 controller: controller.searchController,
                 hintText: "lbl_search".tr,
               ),
-              SizedBox(height: 13.v),
+              SizedBox(height: 13),
               _buildSearch(),
-              SizedBox(height: 5.v),
+              SizedBox(height: 5),
             ],
           ),
         ),
@@ -48,13 +48,13 @@ class GasHomefiftyoneScreen extends GetWidget<GasHomefiftyoneController> {
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-      leadingWidth: 57.h,
+      leadingWidth: 57,
       leading: AppbarLeadingImage(
         imagePath: ImageConstant.imgBack,
         margin: EdgeInsets.only(
-          left: 25.h,
-          top: 22.v,
-          bottom: 22.v,
+          left: 25,
+          top: 22,
+          bottom: 22,
         ),
       ),
       centerTitle: true,
@@ -75,8 +75,8 @@ class GasHomefiftyoneScreen extends GetWidget<GasHomefiftyoneController> {
         borderRadius: BorderRadiusStyle.roundedBorder6,
       ),
       child: Container(
-        height: 173.v,
-        width: 334.h,
+        height: 173,
+        width: 334,
         decoration: BoxDecoration(
           borderRadius: BorderRadiusStyle.roundedBorder6,
         ),
@@ -85,19 +85,19 @@ class GasHomefiftyoneScreen extends GetWidget<GasHomefiftyoneController> {
           children: [
             CustomImageView(
               imagePath: ImageConstant.imgRectangle1064173x334,
-              height: 173.v,
-              width: 334.h,
+              height: 173,
+              width: 334,
               radius: BorderRadius.circular(
-                8.h,
+                8,
               ),
               alignment: Alignment.center,
             ),
             CustomImageView(
               imagePath: ImageConstant.imgImage7,
-              height: 173.v,
-              width: 334.h,
+              height: 173,
+              width: 334,
               radius: BorderRadius.circular(
-                8.h,
+                8,
               ),
               alignment: Alignment.center,
             ),
@@ -110,7 +110,7 @@ class GasHomefiftyoneScreen extends GetWidget<GasHomefiftyoneController> {
   /// Section Widget
   Widget _buildSearch() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 36.h),
+      padding: EdgeInsets.symmetric(horizontal: 36),
       decoration: AppDecoration.fillGray.copyWith(
         borderRadius: BorderRadiusStyle.roundedBorder6,
       ),
@@ -118,14 +118,14 @@ class GasHomefiftyoneScreen extends GetWidget<GasHomefiftyoneController> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 25.v),
+          SizedBox(height: 25),
           Text(
             "lbl_all_billers".tr,
             style: CustomTextStyles.titleMediumGray60004,
           ),
-          SizedBox(height: 30.v),
+          SizedBox(height: 30),
           Padding(
-            padding: EdgeInsets.only(right: 55.h),
+            padding: EdgeInsets.only(right: 55),
             child: Obx(
               () => ListView.separated(
                 physics: NeverScrollableScrollPhysics(),
@@ -135,7 +135,7 @@ class GasHomefiftyoneScreen extends GetWidget<GasHomefiftyoneController> {
                   index,
                 ) {
                   return SizedBox(
-                    height: 37.v,
+                    height: 37,
                   );
                 },
                 itemCount: controller.gasHomefiftyoneModelObj.value

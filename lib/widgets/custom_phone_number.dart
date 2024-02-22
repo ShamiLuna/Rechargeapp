@@ -31,19 +31,19 @@ class CustomPhoneNumber extends StatelessWidget {
           },
           child: Padding(
             padding: EdgeInsets.only(
-              left: 2.h,
-              top: 19.v,
-              bottom: 25.v,
+              left: 2,
+              top: 19,
+              bottom: 25,
             ),
             child: Row(
               children: [
                 Container(
-                  // height: 7.v,
-                  // width: 21.h,
-                  margin: EdgeInsets.only(bottom: 7.v),
+                  height: 7,
+                  width: 21,
+                  margin: EdgeInsets.only(bottom: 7),
                   child: ClipRRect(
                     borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(1.h),
+                      top: Radius.circular(1),
                     ),
                     child: CountryPickerUtils.getDefaultFlagImage(
                       country,
@@ -62,9 +62,9 @@ class CustomPhoneNumber extends StatelessWidget {
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(5.h, 14.v, 5.h, 25.v),
+            padding: EdgeInsets.fromLTRB(5, 14, 5, 25),
             child: CustomTextFormField(
-              width: 218.h,
+              width: 218,
               controller: controller,
               // hintText: '+91',
               hintStyle: CustomTextStyles.bodySmallRobotoWhiteA700,
@@ -82,19 +82,19 @@ class CustomPhoneNumber extends StatelessWidget {
           CountryPickerUtils.getDefaultFlagImage(country),
           Container(
             margin: EdgeInsets.only(
-              left: 10.h,
+              left: 10,
             ),
-            width: 60.h,
+            width: 60,
             child: Text(
               "+${country.phoneCode}",
-              style: TextStyle(fontSize: 14.fSize),
+              style: TextStyle(fontSize: 14),
             ),
           ),
           const SizedBox(width: 8.0),
           Flexible(
             child: Text(
               country.name,
-              style: TextStyle(fontSize: 14.fSize),
+              style: TextStyle(fontSize: 14),
             ),
           ),
         ],
@@ -104,11 +104,11 @@ class CustomPhoneNumber extends StatelessWidget {
         builder: (context) => CountryPickerDialog(
           searchInputDecoration: InputDecoration(
             hintText: 'Search...',
-            hintStyle: TextStyle(fontSize: 14.fSize),
+            hintStyle: TextStyle(fontSize: 14),
           ),
           isSearchable: true,
           title: Text('Select your phone code',
-              style: TextStyle(fontSize: 14.fSize)),
+              style: TextStyle(fontSize: 14)),
           onValuePicked: (Country country) => onTap(country),
           itemBuilder: _buildDialogItem,
         ),

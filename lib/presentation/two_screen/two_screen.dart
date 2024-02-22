@@ -1,12 +1,11 @@
+import 'dart:ui';
+
 import 'package:country_pickers/country.dart';
-import 'package:country_pickers/country_picker_dropdown.dart';
 import 'package:country_pickers/utils/utils.dart';
-import 'package:faz/presentation/eight_screen/binding/eight_binding.dart';
-import 'package:faz/presentation/eight_screen/eight_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:faz/core/app_export.dart';
-import 'package:faz/widgets/custom_elevated_button.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../three_screen/three_screen.dart';
@@ -21,15 +20,38 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   Country selectedCountry =
-      CountryPickerUtils.getCountryByPhoneCode('91');
+  CountryPickerUtils.getCountryByPhoneCode('91');
   TextEditingController _codecontroller = new TextEditingController();
   String phoneNumber = "", data = "";
   final FirebaseAuth _auth = FirebaseAuth.instance;
   String smscode = "";
+  bool _validate = false;
+  String? get _errorText {
+    // at any time, we can get the text from _controller.value.text
+    final text = _codecontroller.value.text;
+    // Note: you can do your own custom validation here
+    // Move this logic this outside the widget for more testable code
+    if (text.isEmpty) {
+      return 'Can\'t be empty';
+    }
+    if (text.length < 4) {
+      return 'Too short';
+    }
+    // return null if the text is valid
+    return null;
+  }
+  // bool _submitted = false;
+  // void _submit() {
+  //   setState(() => _submitted = true);
+  //   if (_errorText == null) {
+  //     widget.onSubmit(_codecontroller.value.text);
+  //   }
+  // }
 
   _signInWithMobileNumber() async {
     UserCredential _credential;
     User user;
+    // Fail phoneverify;
     try {
       await _auth.verifyPhoneNumber(
           phoneNumber: '+91' + data.trim(),
@@ -41,6 +63,61 @@ class _LoginState extends State<Login> {
           },
           verificationFailed: ((error) {
             print(error);
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+
+              // set up the button
+              Widget okButton = TextButton(
+                child: Text("OK"),
+                onPressed: () async {
+                    await Future .delayed(const Duration(seconds: 1));
+                    if (context.mounted) {
+                      Navigator.of(context).pop();
+                    }
+                                  },
+              );
+
+              // set up the AlertDialog
+              AlertDialog alert = AlertDialog(
+                title: Text("Invalid number"),
+                content: Text("Please enter a valid number."),
+                actions: [
+                  okButton,
+                ],
+              );
+
+              // show the dialog
+              return alert;
+                },
+              );
+
+            // Text("Please Enter a valid phone number");
+
+            // showDialog(context: context,
+            //     // barrierLabel: (""),
+            //     builder: (BuildContext context) {return Container(
+            //       height: 200,
+            //       child: OutlinedButton(
+            //                     onPressed: () async {
+            //       await Future .delayed(const Duration(seconds: 1));
+            //       if (context.mounted) {
+            //         Navigator.of(context).pop();
+            //       }
+            //                     },
+            //                     child: const Text('Please enter a valid phone number'),
+            //                   ),
+            //     );}
+            // );
+
+
+             // _errorText;
+
+
+            // AlertDialog(
+            //   title: Text(_errorText!),
+            //   // Text(_errorText!)
+            // );
           }),
           codeSent: (String verificationId, [int? forceResendingToken]) {
             showDialog(
@@ -53,7 +130,15 @@ class _LoginState extends State<Login> {
                     children: [
                       TextField(
                         controller: _codecontroller,
-                      )
+                        // errorText: _errorText,
+                        // validator:(str){}
+                        onChanged: (text) => setState(() => phoneNumber+_errorText!),
+
+                      ),
+                      // AlertDialog(
+                      //   title: Text(_errorText!),
+                      //     // Text(_errorText!)
+                      // ),
                     ],
                   ),
                   actions: [
@@ -92,45 +177,45 @@ class _LoginState extends State<Login> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SizedBox(
-        width: 395.h,
+        width: 395,
           child: Column(mainAxisSize: MainAxisSize.min, children: [
-            SizedBox(height: 10.v),
+            SizedBox(height: 10),
             Expanded(
                 child: SingleChildScrollView(
                     child: Container(
-                        height: SizeUtils.height,
+                        height: 810,
                         width: double.maxFinite,
                         margin: EdgeInsets.only(
-                            left: 10.h, right: 10.h, bottom: 10.v),
+                            left: 10, right: 10, bottom: 10),
                         padding: EdgeInsets.symmetric(
-                            horizontal: 21.h, vertical: 19.v),
+                            horizontal: 21, vertical: 19),
                         child:
                         Stack(alignment: Alignment.center, children: [
                           Align(
                               alignment: Alignment.center,
                               child: Container(
-                                  height: 1000.v,
-                                  width: 395.h,
+                                  height: 810,
+                                  width: 395,
                                   decoration: BoxDecoration(
                                       color: appTheme.gray90001,
                                       borderRadius:
-                                      BorderRadius.circular(32.h)))),
+                                      BorderRadius.circular(32)))),
                           Align(
                               alignment: Alignment.center,
                               child: Padding(
                                   padding: EdgeInsets.only(
-                                      left: 29.h, right: 24.h),
+                                      left: 29, right: 24),
                                   child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Text("lbl_registration".tr,
                                             style: CustomTextStyles
                                                 .titleLargeRobotoPrimary),
-                                        SizedBox(height: 13.v),
+                                        SizedBox(height: 13),
                                         Container(
-                                            width: 245.h,
+                                            width: 245,
                                             margin: EdgeInsets.only(
-                                                left: 16.h, right: 19.h),
+                                                left: 16, right: 19),
                                             child: Text(
                                                 "msg_enter_your_mobile"
                                                     .tr,
@@ -141,14 +226,14 @@ class _LoginState extends State<Login> {
                                                 TextAlign.center,
                                                 style: CustomTextStyles
                                                     .bodySmallRobotoWhiteA700Light_1)),
-                                        SizedBox(height: 29.v),
+                                        SizedBox(height: 29),
                                         Container(
-                                            width: 118.h,
+                                            width: 118,
                                             margin: EdgeInsets.symmetric(
-                                                horizontal: 80.h),
+                                                horizontal: 80),
                                             padding: EdgeInsets.symmetric(
-                                                horizontal: 6.h,
-                                                vertical: 53.v),
+                                                horizontal: 6,
+                                                vertical: 53),
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     image: AssetImage(
@@ -163,11 +248,11 @@ class _LoginState extends State<Login> {
                                                 MainAxisAlignment
                                                     .center,
                                                 children: [
-                                                  SizedBox(height: 2.v),
+                                                  SizedBox(height: 2),
                                                   Container(
                                                       height:
-                                                      18.adaptSize,
-                                                      width: 18.adaptSize,
+                                                      18,
+                                                      width: 18,
                                                       decoration: BoxDecoration(
                                                           color: theme
                                                               .colorScheme
@@ -175,9 +260,9 @@ class _LoginState extends State<Login> {
                                                           borderRadius:
                                                           BorderRadius
                                                               .circular(
-                                                              9.h)))
+                                                              9)))
                                                 ])),
-                                        SizedBox(height: 30.v),
+                                        SizedBox(height: 30),
                                         Align(
                                             alignment:
                                             Alignment.center,
@@ -305,8 +390,8 @@ class _LoginState extends State<Login> {
                                                   //bottomsheet
 
                                                   Get.bottomSheet(Container(
-                                                    height: 329.v,
-                                                    width: 400.h,
+                                                    height: 430,
+                                                    width: 400,
                                                     child: Wrap(
                                                       children: <Widget>[
                                                         NumericPad(
@@ -351,9 +436,7 @@ class _LoginState extends State<Login> {
                                                 //     });
                                                 //   },
                                                 // );
-
                                               child: Container(
-
                                                 decoration: BoxDecoration(
                                                   // border: Border.all(),
                                                   borderRadius: BorderRadius.circular(10),
@@ -409,7 +492,7 @@ class _LoginState extends State<Login> {
                                         //   // }
                                         // ),
                                         // ),
-                                        SizedBox(height: 30.v),
+                                        SizedBox(height: 30),
                                         // CustomElevatedButton(
                                         //
                                         //     text: "lbl_send_via_sms"
@@ -463,10 +546,13 @@ class _LoginState extends State<Login> {
                                             setState(() {});
 
                                             _signInWithMobileNumber();
+                                            setState(() {
+                                              _validate = _codecontroller.text.isEmpty;
+                                            });
                                           },
                                           ),
                                         ),
-                                        SizedBox(height: 16.v),
+                                        SizedBox(height: 16),
                                         Center(
                                           child: ElevatedButton(
                                             // decoration: BoxDecoration(
@@ -497,14 +583,20 @@ class _LoginState extends State<Login> {
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                   BorderRadius.circular(8),
-                                                )), onPressed: () {  },
+                                                )), onPressed: () {
+
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) =>  navito()),
+                                            );
+                                          },
                                           ),
                                         ),
-                                        SizedBox(height: 71.v),
+                                        SizedBox(height: 71),
                                         Container(
-                                            width: 227.h,
+                                            width: 227,
                                             margin: EdgeInsets.only(
-                                                left: 22.h, right: 30.h),
+                                                left: 22, right: 30),
                                             child: RichText(
                                                 text: TextSpan(children: [
                                                   TextSpan(
@@ -538,6 +630,14 @@ class _LoginState extends State<Login> {
 
   eight() {
     Get.offNamed(AppRoutes.eightScreen);
+  }
+  navito() {
+    Get.offNamed(AppRoutes.eightScreen);
+  }
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<bool>('_validate', _validate));
   }
 }
 

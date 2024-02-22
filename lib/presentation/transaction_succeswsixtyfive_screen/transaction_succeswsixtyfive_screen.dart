@@ -15,46 +15,46 @@ class TransactionSucceswsixtyfiveScreen
         child: Scaffold(
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 34.v),
+                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 34),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomImageView(
                           imagePath: ImageConstant.imgClose,
-                          height: 15.v,
-                          width: 13.h,
+                          height: 15,
+                          width: 13,
                           onTap: () {
                             onTapImgClose();
                           }),
-                      SizedBox(height: 69.v),
+                      SizedBox(height: 69),
                       Container(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 25.h, vertical: 24.v),
+                              horizontal: 25, vertical: 24),
                           decoration: AppDecoration.fillGray.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder20),
                           child:
                               Column(mainAxisSize: MainAxisSize.min, children: [
                             Container(
-                                height: 126.adaptSize,
-                                width: 126.adaptSize,
+                                height: 126,
+                                width: 126,
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 26.h, vertical: 32.v),
+                                    horizontal: 26, vertical: 32),
                                 decoration: AppDecoration.fillPrimary.copyWith(
                                     borderRadius:
                                         BorderRadiusStyle.circleBorder63),
                                 child: CustomImageView(
                                     imagePath: ImageConstant.imgCheckmark,
-                                    height: 62.v,
-                                    width: 73.h,
+                                    height: 62,
+                                    width: 73,
                                     alignment: Alignment.center)),
-                            SizedBox(height: 25.v),
+                            SizedBox(height: 25),
                             Text("msg_transffered_succesfully".tr,
                                 style: CustomTextStyles.titleLargeTitilliumWeb),
-                            SizedBox(height: 11.v),
-                            Divider(indent: 3.h, endIndent: 6.h),
-                            SizedBox(height: 41.v),
+                            SizedBox(height: 11),
+                            Divider(indent: 3, endIndent: 6),
+                            SizedBox(height: 41),
                             Padding(
-                                padding: EdgeInsets.only(right: 5.h),
+                                padding: EdgeInsets.only(right: 5),
                                 child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -67,28 +67,28 @@ class TransactionSucceswsixtyfiveScreen
                                       Text("lbl_rene_wells".tr,
                                           style: theme.textTheme.labelLarge)
                                     ])),
-                            SizedBox(height: 24.v),
+                            SizedBox(height: 24),
                             Align(
                                 alignment: Alignment.centerLeft,
                                 child: Opacity(
                                     opacity: 0.4,
                                     child: Text("lbl_transaction_id".tr,
                                         style: theme.textTheme.bodySmall))),
-                            SizedBox(height: 25.v),
+                            SizedBox(height: 25),
                             Padding(
-                                padding: EdgeInsets.only(right: 3.h),
+                                padding: EdgeInsets.only(right: 3),
                                 child: _buildTransferCostRow(
                                     transferCostText: "lbl_amount".tr,
                                     priceText: "lbl_456_00".tr)),
-                            SizedBox(height: 24.v),
+                            SizedBox(height: 24),
                             Padding(
-                                padding: EdgeInsets.only(right: 2.h),
+                                padding: EdgeInsets.only(right: 2),
                                 child: _buildTransferCostRow(
                                     transferCostText: "lbl_transfer_cost".tr,
                                     priceText: "lbl_00_00".tr)),
-                            SizedBox(height: 24.v),
+                            SizedBox(height: 24),
                             Padding(
-                                padding: EdgeInsets.only(right: 4.h),
+                                padding: EdgeInsets.only(right: 4),
                                 child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -102,9 +102,9 @@ class TransactionSucceswsixtyfiveScreen
                                           style: CustomTextStyles
                                               .bodySmallWhiteA700_1)
                                     ])),
-                            SizedBox(height: 42.v)
+                            SizedBox(height: 42)
                           ])),
-                      SizedBox(height: 5.v)
+                      SizedBox(height: 5)
                     ])),
             bottomNavigationBar: _buildDone()));
   }
@@ -112,9 +112,9 @@ class TransactionSucceswsixtyfiveScreen
   /// Section Widget
   Widget _buildDone() {
     return CustomElevatedButton(
-        height: 49.v,
+        height: 49,
         text: "lbl_done".tr.toUpperCase(),
-        margin: EdgeInsets.only(left: 25.h, right: 25.h, bottom: 57.v),
+        margin: EdgeInsets.only(left: 25, right: 25, bottom: 57),
         onPressed: () {
           onTapDone();
         });

@@ -118,12 +118,12 @@ class CustomFloatingTextField extends StatelessWidget {
         suffixIconConstraints: suffixConstraints,
         isDense: true,
         contentPadding:
-            contentPadding ?? EdgeInsets.fromLTRB(-7.h, -7.v, -7.h, 50.v),
+            contentPadding ?? EdgeInsets.fromLTRB(-7, -7, -7, 50),
         fillColor: fillColor ?? appTheme.whiteA700.withOpacity(0.42),
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(6.h),
+              borderRadius: BorderRadius.circular(6),
               borderSide: BorderSide(
                 color: appTheme.whiteA700.withOpacity(0.42),
                 width: 1,
@@ -131,7 +131,7 @@ class CustomFloatingTextField extends StatelessWidget {
             ),
         enabledBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(6.h),
+              borderRadius: BorderRadius.circular(6),
               borderSide: BorderSide(
                 color: appTheme.whiteA700.withOpacity(0.42),
                 width: 1,
@@ -139,7 +139,7 @@ class CustomFloatingTextField extends StatelessWidget {
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(6.h),
+              borderRadius: BorderRadius.circular(6),
               borderSide: BorderSide(
                 color: appTheme.whiteA700.withOpacity(0.42),
                 width: 1,
@@ -151,7 +151,7 @@ class CustomFloatingTextField extends StatelessWidget {
 /// Extension on [CustomFloatingTextField] to facilitate inclusion of all types of border style etc
 extension FloatingTextFormFieldStyleHelper on CustomFloatingTextField {
   static OutlineInputBorder get outlineWhiteATL14 => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(14.h),
+        borderRadius: BorderRadius.circular(14),
         borderSide: BorderSide(
           color: appTheme.whiteA700,
           width: 1,

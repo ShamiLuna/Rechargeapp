@@ -51,11 +51,11 @@ class UserprofilelistItemWidget extends StatelessWidget {
                     onTapWidget!.call();
                   },
                   child: Container(
-                    height: 32.v,
-                    width: 52.h,
+                    height: 32,
+                    width: 52,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 12.h,
-                      vertical: 10.v,
+                      horizontal: 12,
+                      vertical: 10,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -63,8 +63,8 @@ class UserprofilelistItemWidget extends StatelessWidget {
                     child: Obx(
                           () => CustomImageView(
                         imagePath: userprofilelistItemModelObj.cable!.value,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                        height: 24,
+                        width: 24,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -96,11 +96,11 @@ class UserprofilelistItemWidget extends StatelessWidget {
                     onTapViewHierarchy!.call();
                   },
                   child: Container(
-                    height: 32.v,
-                    width: 52.h,
+                    height: 32,
+                    width: 52,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 14.h,
-                      vertical: 10.v,
+                      horizontal: 14,
+                      vertical: 10,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -108,8 +108,8 @@ class UserprofilelistItemWidget extends StatelessWidget {
                     child: Obx(
                           () => CustomImageView(
                         imagePath: userprofilelistItemModelObj.Mobile!.value,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                        height: 24,
+                        width: 24,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -137,11 +137,11 @@ class UserprofilelistItemWidget extends StatelessWidget {
                     onTapViewHierarchye!.call();
                   },
                   child: Container(
-                    height: 32.v,
-                    width: 52.h,
+                    height: 32,
+                    width: 52,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 14.h,
-                      vertical: 10.v,
+                      horizontal: 14,
+                      vertical: 10,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -149,8 +149,8 @@ class UserprofilelistItemWidget extends StatelessWidget {
                     child: Obx(
                           () => CustomImageView(
                         imagePath:userprofilelistItemModelObj.Electricity!.value,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                        height: 24,
+                        width: 24,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -179,11 +179,11 @@ class UserprofilelistItemWidget extends StatelessWidget {
                     onTapWidgete!.call();
                   },
                   child: Container(
-                    height: 32.v,
-                    width: 52.h,
+                    height: 32,
+                    width: 52,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 14.h,
-                      vertical: 10.v,
+                      horizontal: 14,
+                      vertical: 10,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -191,8 +191,8 @@ class UserprofilelistItemWidget extends StatelessWidget {
                     child: Obx(
                           () => CustomImageView(
                         imagePath: userprofilelistItemModelObj.DTH!.value,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                        height: 24,
+                        width: 24,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -215,7 +215,7 @@ class UserprofilelistItemWidget extends StatelessWidget {
             SizedBox(width: 40),
           ],
         ),
-        SizedBox(height: 5.v),
+        SizedBox(height: 5),
         // Padding(
         //   padding: const EdgeInsets.all(1.0),
         //   child: Obx(

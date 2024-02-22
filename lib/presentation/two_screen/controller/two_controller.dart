@@ -1,5 +1,3 @@
-import 'package:country_pickers/country.dart';
-import 'package:country_pickers/utils/utils.dart';
 import 'package:faz/core/app_export.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -27,8 +25,29 @@ class TwoController extends GetxController {
 
   @override
   void onReady() {
+    Get.lazyPut(
+      AppRoutes.eightScreen as InstanceBuilderCallback,
+
+    );
     Get.offNamed(
       AppRoutes.eightScreen,
+
+    );
+    Get.offNamed(
+      AppRoutes.fourScreen,
+
+    );
+    Get.offNamed(
+      AppRoutes.fourScreen,
     );
   }
+  // @override
+  // void onReady() {
+  //   super.onInit();
+  //   Get.offNamed(
+  //     AppRoutes.threeScreen,
+  //   );
+  // }
 }
+  // @override
+  // void

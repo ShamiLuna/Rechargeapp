@@ -37,7 +37,6 @@ import 'package:faz/presentation/twentysix_screen/binding/twentysix_binding.dart
 import 'package:faz/presentation/gas_registerfiftytwo_screen/gas_registerfiftytwo_screen.dart';
 import 'package:faz/presentation/gas_registerfiftytwo_screen/binding/gas_registerfiftytwo_binding.dart';
 import 'package:faz/presentation/two_screen/two_screen.dart';
-import 'package:faz/presentation/two_screen/binding/two_binding.dart';
 import 'package:faz/presentation/nine_screen/nine_screen.dart';
 import 'package:faz/presentation/nine_screen/binding/nine_binding.dart';
 import 'package:faz/presentation/eight_screen/eight_screen.dart';
@@ -131,6 +130,8 @@ import 'package:faz/presentation/fortyseven_screen/binding/fortyseven_binding.da
 import 'package:faz/presentation/app_navigation_screen/app_navigation_screen.dart';
 import 'package:faz/presentation/app_navigation_screen/binding/app_navigation_binding.dart';
 import 'package:get/get.dart';
+
+import '../presentation/two_screen/binding/two_binding.dart';
 
 class AppRoutes {
   static const String transactionSucces159Screen =
@@ -418,9 +419,9 @@ class AppRoutes {
     GetPage(
       name: twoScreen,
       page: () => Login(),
-      // bindings: [
-      //   TwoBinding(),
-      // ],
+      bindings: [
+        TwoBinding(),
+      ],
     ),
     GetPage(
       name: nineScreen,

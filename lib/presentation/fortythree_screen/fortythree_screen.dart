@@ -19,45 +19,45 @@ class FortythreeScreen extends GetWidget<FortythreeController> {
             resizeToAvoidBottomInset: false,
             appBar: _buildAppBar(),
             body: SizedBox(
-                width: SizeUtils.width,
+                width: 480,
                 child: SingleChildScrollView(
                     child: Container(
-                        margin: EdgeInsets.only(bottom: 5.v),
-                        padding: EdgeInsets.symmetric(horizontal: 10.h),
+                        margin: EdgeInsets.only(bottom: 5),
+                        padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Column(children: [
-                          SizedBox(height: 60.v),
+                          SizedBox(height: 60),
                           CustomImageView(
                               imagePath: ImageConstant.imgRectangle1064,
-                              height: 173.v,
-                              width: 334.h,
-                              radius: BorderRadius.circular(6.h)),
-                          SizedBox(height: 39.v),
+                              height: 173,
+                              width: 334,
+                              radius: BorderRadius.circular(6)),
+                          SizedBox(height: 39),
                           Align(
                               alignment: Alignment.centerLeft,
                               child: Padding(
-                                  padding: EdgeInsets.only(left: 78.h),
+                                  padding: EdgeInsets.only(left: 78),
                                   child: Row(children: [
                                     CustomIconButton(
-                                        height: 35.adaptSize,
-                                        width: 35.adaptSize,
+                                        height: 35,
+                                        width: 35,
                                         child: CustomImageView(
                                             imagePath:
                                                 ImageConstant.imgEllipse77)),
                                     Padding(
                                         padding: EdgeInsets.only(
-                                            left: 18.h, top: 8.v, bottom: 8.v),
+                                            left: 18, top: 8, bottom: 8),
                                         child: Text("msg_tamilnadu_cable".tr,
                                             style: theme.textTheme.labelLarge))
                                   ]))),
-                          SizedBox(height: 48.v),
+                          SizedBox(height: 48),
                           _buildFrame(),
-                          SizedBox(height: 32.v),
+                          SizedBox(height: 32),
                           _buildHouseNo763(),
-                          SizedBox(height: 32.v),
+                          SizedBox(height: 32),
                           _buildMeterReading73t3(),
-                          SizedBox(height: 32.v),
+                          SizedBox(height: 32),
                           _buildTotalAmount(),
-                          SizedBox(height: 26.v),
+                          SizedBox(height: 26),
                           _buildDone()
                         ]))))));
   }
@@ -65,22 +65,22 @@ class FortythreeScreen extends GetWidget<FortythreeController> {
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-        leadingWidth: 67.h,
+        leadingWidth: 67,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 35.h, top: 22.v, bottom: 22.v),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),
         title: AppbarTitle(
-            text: "lbl_indane_gas".tr, margin: EdgeInsets.only(left: 14.h)),
+            text: "lbl_indane_gas".tr, margin: EdgeInsets.only(left: 14)),
         styleType: Style.bgFill);
   }
 
   /// Section Widget
   Widget _buildFrameEditText() {
     return CustomTextFormField(
-        width: 172.h,
+        width: 172,
         controller: controller.frameEditTextController,
         hintText: "msg_service_no_09687624667".tr,
         textInputAction: TextInputAction.done,
@@ -90,13 +90,13 @@ class FortythreeScreen extends GetWidget<FortythreeController> {
 
   /// Section Widget
   Widget _buildNameKevin() {
-    return CustomOutlinedButton(width: 106.h, text: "lbl_name_kevin".tr);
+    return CustomOutlinedButton(width: 147, text: "lbl_name_kevin".tr);
   }
 
   /// Section Widget
   Widget _buildFrame() {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 19.h),
+        padding: EdgeInsets.symmetric(horizontal: 19),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [_buildFrameEditText(), _buildNameKevin()]));
@@ -104,56 +104,63 @@ class FortythreeScreen extends GetWidget<FortythreeController> {
 
   /// Section Widget
   Widget _buildHouseNo() {
-    return CustomOutlinedButton(width: 171.h, text: "lbl_house_no_763".tr);
+    return CustomOutlinedButton(width: 171, text: "lbl_house_no_763".tr);
   }
 
   /// Section Widget
   Widget _buildTotalUnit() {
-    return CustomOutlinedButton(width: 106.h, text: "msg_total_unit_163".tr);
+    return CustomOutlinedButton(width: 147, text: "msg_total_unit_163".tr);
   }
 
   /// Section Widget
   Widget _buildHouseNo763() {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 19.h),
+        padding: EdgeInsets.symmetric(horizontal: 19),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [_buildHouseNo(), _buildTotalUnit()]));
+            children: [_buildHouseNo(),
+              _buildTotalUnit()]));
   }
 
   /// Section Widget
   Widget _buildMeterReading() {
     return CustomOutlinedButton(
-        width: 171.h, text: "msg_meter_reading_73t3".tr);
+        width: 187, text: "msg_meter_reading_73t3".tr);
   }
 
   /// Section Widget
   Widget _buildReceipt() {
-    return CustomOutlinedButton(width: 106.h, text: "lbl_receipt_6540".tr);
+    return CustomOutlinedButton(width: 147, text: "lbl_receipt_6540".tr);
   }
 
   /// Section Widget
   Widget _buildMeterReading73t3() {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 19.h),
+        padding: EdgeInsets.symmetric(horizontal: 19),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [_buildMeterReading(), _buildReceipt()]));
+            children: [_buildMeterReading(),
+              SizedBox(
+                width: 8,
+              ),
+              _buildReceipt()]));
   }
 
   /// Section Widget
   Widget _buildTotalAmount() {
     return CustomOutlinedButton(
-        width: 171.h,
+        width: 190,
         text: "msg_total_amount_762".tr,
-        margin: EdgeInsets.only(left: 20.h),
+        margin: EdgeInsets.only(left: 20),
         alignment: Alignment.centerLeft);
   }
 
   /// Section Widget
   Widget _buildDone() {
     return CustomElevatedButton(
-        width: 189.h,
+        // style: CustomElevatedButtonstyleFrom(
+        // ),
+        width: 189,
         text: "lbl_done".tr.toUpperCase(),
         onPressed: () {
           onTapDone();

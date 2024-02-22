@@ -12,6 +12,12 @@ class Amount154Controller extends GetxController {
   Rx<Amount154Model> amount154ModelObj = Amount154Model().obs;
 
   @override
+  void onReady() {
+    Get.offNamed(
+      AppRoutes.manualVerification155Screen,
+    );
+  }
+  @override
   void onClose() {
     super.onClose();
     amountController.dispose();

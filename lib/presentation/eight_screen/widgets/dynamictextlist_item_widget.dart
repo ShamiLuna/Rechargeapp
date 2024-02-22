@@ -36,7 +36,7 @@ class DynamictextlistItemWidget extends StatelessWidget {
               style: CustomTextStyles.bodySmallBluegray30001,
             ),
           ),
-          SizedBox(height: 26.v),
+          SizedBox(height: 26),
           Obx(
             () => Text(
               dynamictextlistItemModelObj.text3!.value,
@@ -49,7 +49,7 @@ class DynamictextlistItemWidget extends StatelessWidget {
               style: CustomTextStyles.bodySmallBluegray30001,
             ),
           ),
-          SizedBox(height: 27.v),
+          SizedBox(height: 27),
           Obx(
             () => Text(
               dynamictextlistItemModelObj.text5!.value,

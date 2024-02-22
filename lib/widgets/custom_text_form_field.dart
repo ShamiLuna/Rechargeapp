@@ -109,22 +109,22 @@ class CustomTextFormField extends StatelessWidget {
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
         isDense: true,
-        contentPadding: contentPadding ?? EdgeInsets.all(9.h),
+        contentPadding: contentPadding ?? EdgeInsets.all(9),
         fillColor: fillColor ?? appTheme.gray900,
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.h),
+              borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide.none,
             ),
         enabledBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.h),
+              borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide.none,
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4.h),
+              borderRadius: BorderRadius.circular(4),
               borderSide: BorderSide(
                 color: appTheme.blueGray100C1,
                 width: 1,
@@ -141,7 +141,7 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
         ),
       );
   static OutlineInputBorder get fillDeepPurpleA => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(9.h),
+        borderRadius: BorderRadius.circular(9),
         borderSide: BorderSide.none,
       );
 }

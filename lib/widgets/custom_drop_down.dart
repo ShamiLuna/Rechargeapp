@@ -76,7 +76,7 @@ class CustomDropDown extends StatelessWidget {
   }
 
   Widget get dropDownWidget => SizedBox(
-        width:100,
+        width:150,
         child: DropdownButtonFormField<SelectionPopupModel>(
           focusNode: focusNode ?? FocusNode(),
           icon: icon,
@@ -108,12 +108,12 @@ class CustomDropDown extends StatelessWidget {
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
         isDense: true,
-        contentPadding: contentPadding ?? EdgeInsets.all(9.h),
+        contentPadding: contentPadding ?? EdgeInsets.all(9),
         fillColor: fillColor,
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.h),
+              borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(
                 color: theme.colorScheme.secondaryContainer,
                 width: 1,
@@ -121,15 +121,16 @@ class CustomDropDown extends StatelessWidget {
             ),
         enabledBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.h),
+              borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(
                 color: theme.colorScheme.secondaryContainer,
                 width: 1,
               ),
             ),
         focusedBorder: borderDecoration ??
+
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.h),
+              borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(
                 color: appTheme.gray50001,
                 width: 1,
@@ -141,7 +142,7 @@ class CustomDropDown extends StatelessWidget {
 /// Extension on [CustomDropDown] to facilitate inclusion of all types of border style etc
 extension DropDownStyleHelper on CustomDropDown {
   static OutlineInputBorder get outlineBlack => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8.h),
+        borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide.none,
       );
 }

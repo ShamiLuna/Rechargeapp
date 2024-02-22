@@ -6,5 +6,11 @@ class AmountwsixtyController extends GetxController {TextEditingController amoun
 
 Rx<AmountwsixtyModel> amountwsixtyModelObj = AmountwsixtyModel().obs;
 
-@override void onClose() { super.onClose(); amountController.dispose(); } 
+@override void onClose() { super.onClose(); amountController.dispose(); }
+@override
+void onReady() {
+ Get.offNamed(
+  AppRoutes.manualVerificationWsixtyoneScreen,
+ );
+}
  }

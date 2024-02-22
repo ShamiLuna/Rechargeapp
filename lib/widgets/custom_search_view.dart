@@ -104,21 +104,21 @@ class CustomSearchView extends StatelessWidget {
         hintStyle: hintStyle ?? CustomTextStyles.titleMediumDMSansGray60003,
         prefixIcon: prefix ??
             Container(
-              margin: EdgeInsets.fromLTRB(14.h, 14.v, 16.h, 15.v),
+              margin: EdgeInsets.fromLTRB(14, 14, 16, 15),
               child: CustomImageView(
                 imagePath: ImageConstant.imgSearch,
-                height: 24.adaptSize,
-                width: 24.adaptSize,
+                height: 24,
+                width: 24,
               ),
             ),
         prefixIconConstraints: prefixConstraints ??
             BoxConstraints(
-              maxHeight: 53.v,
+              maxHeight: 53,
             ),
         suffixIcon: suffix ??
             Padding(
               padding: EdgeInsets.only(
-                right: 15.h,
+                right: 15,
               ),
               child: IconButton(
                 onPressed: () => controller!.clear(),
@@ -130,30 +130,30 @@ class CustomSearchView extends StatelessWidget {
             ),
         suffixIconConstraints: suffixConstraints ??
             BoxConstraints(
-              maxHeight: 53.v,
+              maxHeight: 53,
             ),
         isDense: true,
         contentPadding: contentPadding ??
             EdgeInsets.only(
-              top: 16.v,
-              right: 16.h,
-              bottom: 16.v,
+              top: 16,
+              right: 16,
+              bottom: 16,
             ),
         fillColor: fillColor ?? appTheme.gray900,
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(14.h),
+              borderRadius: BorderRadius.circular(14),
               borderSide: BorderSide.none,
             ),
         enabledBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(14.h),
+              borderRadius: BorderRadius.circular(14),
               borderSide: BorderSide.none,
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(14.h),
+              borderRadius: BorderRadius.circular(14),
               borderSide: BorderSide(
                 color: appTheme.whiteA700,
                 width: 1,

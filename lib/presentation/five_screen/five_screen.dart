@@ -20,54 +20,56 @@ class FiveScreen extends GetWidget<FiveController> {
             body: Form(
                 key: _formKey,
                 child: SizedBox(
-                    width: 395.h,
+                    height: 810,
+                    width: 395,
                     child: Column(mainAxisSize: MainAxisSize.min, children: [
-                      SizedBox(height: 10.v),
+                      SizedBox(height: 10),
                       Expanded(
                           child: SingleChildScrollView(
                               child: Container(
-                                  height: SizeUtils.height,
+                                  height: 810,
                                   width: double.maxFinite,
                                   margin: EdgeInsets.only(
-                                      left: 10.h, right: 10.h, bottom: 10.v),
+                                      left: 10, right: 10, bottom: 10),
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: 21.h, vertical: 20.v),
+                                      horizontal: 21, vertical: 20),
                                   child: Stack(
                                       alignment: Alignment.bottomCenter,
                                       children: [
                                         Align(
                                             alignment: Alignment.center,
                                             child: Container(
-                                                height: 771.v,
-                                                width: 333.h,
+                                                height: 771,
+                                                width: 333,
                                                 decoration: BoxDecoration(
                                                     color: appTheme.gray90001,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            32.h)))),
+                                                            32)))),
                                         Align(
                                             alignment: Alignment.bottomCenter,
                                             child: Padding(
                                                 padding: EdgeInsets.only(
-                                                    left: 28.h,
-                                                    right: 28.h,
-                                                    bottom: 27.v),
+                                                    left: 28,
+                                                    right: 28,
+                                                    bottom: 27),
                                                 child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.min,
                                                     children: [
                                                       Container(
-                                                          width: 108.h,
+                                                          height: 108,
+                                                          width: 108,
                                                           margin: EdgeInsets
                                                               .symmetric(
                                                                   horizontal:
-                                                                      84.h),
+                                                                      84),
                                                           padding:
                                                               EdgeInsets.symmetric(
                                                                   horizontal:
-                                                                      8.h,
+                                                                      8,
                                                                   vertical:
-                                                                      28.v),
+                                                                      28),
                                                           decoration: BoxDecoration(
                                                               image: DecorationImage(
                                                                   image: fs.Svg(
@@ -82,29 +84,29 @@ class FiveScreen extends GetWidget<FiveController> {
                                                               children: [
                                                                 SizedBox(
                                                                     height:
-                                                                        34.v),
+                                                                        34),
                                                                 Container(
                                                                     height: 18
-                                                                        .adaptSize,
+                                                                        ,
                                                                     width: 18
-                                                                        .adaptSize,
+                                                                        ,
                                                                     decoration: BoxDecoration(
                                                                         color: theme
                                                                             .colorScheme
                                                                             .onError,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(9.h)))
+                                                                            BorderRadius.circular(9)))
                                                               ])),
-                                                      SizedBox(height: 32.v),
+                                                      SizedBox(height: 32),
                                                       Opacity(
                                                           opacity: 0.8,
                                                           child: Text(
                                                               "lbl_login".tr,
                                                               style: CustomTextStyles
                                                                   .titleLargeRobotoPrimarySemiBold)),
-                                                      SizedBox(height: 10.v),
+                                                      SizedBox(height: 10),
                                                       SizedBox(
-                                                          width: 178.h,
+                                                          width: 178,
                                                           child: Text(
                                                               "msg_set_a_name_for_your"
                                                                   .tr,
@@ -117,10 +119,10 @@ class FiveScreen extends GetWidget<FiveController> {
                                                                       .center,
                                                               style: CustomTextStyles
                                                                   .bodySmallRobotoWhiteA700Light_1)),
-                                                      SizedBox(height: 45.v),
+                                                      SizedBox(height: 45),
                                                       SizedBox(
-                                                          height: 66.v,
-                                                          width: 275.h,
+                                                          height: 66,
+                                                          width: 275,
                                                           child: Stack(
                                                               alignment:
                                                                   Alignment
@@ -131,24 +133,14 @@ class FiveScreen extends GetWidget<FiveController> {
                                                                         Alignment
                                                                             .bottomCenter,
                                                                     child: Container(
-                                                                        padding: EdgeInsets.symmetric(
-                                                                            horizontal: 26
-                                                                                .h,
-                                                                            vertical: 20
-                                                                                .v),
-                                                                        decoration: BoxDecoration(
-                                                                            borderRadius: BorderRadiusStyle
-                                                                                .roundedBorder6,
-                                                                            image: DecorationImage(
-                                                                                image: fs.Svg(ImageConstant
-                                                                                    .imgGroup812),
-                                                                                fit: BoxFit
-                                                                                    .cover)),
+                                                                        padding: EdgeInsets.symmetric(horizontal: 26, vertical: 20),
+                                                                        decoration: BoxDecoration(borderRadius: BorderRadiusStyle.roundedBorder6, image: DecorationImage(image: fs.Svg(ImageConstant.imgGroup812), fit: BoxFit.cover)),
                                                                         child: Opacity(
-                                                                            opacity:
-                                                                                0.5,
-                                                                            child: TextFormField(),
-                                                                                // Text("lbl_roday_basreng".tr, style: CustomTextStyles.bodySmallRobotoWhiteA700_1)
+                                                                          opacity:
+                                                                              0.5,
+                                                                          child:
+                                                                              TextFormField(),
+                                                                          // Text("lbl_roday_basreng".tr, style: CustomTextStyles.bodySmallRobotoWhiteA700_1)
                                                                         ))),
                                                                 Align(
                                                                     alignment:
@@ -159,20 +151,19 @@ class FiveScreen extends GetWidget<FiveController> {
                                                                             0.5,
                                                                         child: Padding(
                                                                             padding:
-                                                                                EdgeInsets.only(left: 28.h),
+                                                                                EdgeInsets.only(left: 28),
                                                                             child: Text("lbl_name".tr, style: CustomTextStyles.bodySmallRobotoWhiteA700_1))))
                                                               ])),
-                                                      SizedBox(height: 26.v),
+                                                      SizedBox(height: 26),
                                                       Obx(() =>
                                                           CustomFloatingTextField(
-                                                              controller: controller
-                                                                  .passwordController,
+                                                              // controller: controller
+                                                              //     .passwordController,
                                                               labelText:
                                                                   "lbl_password"
                                                                       .tr,
-                                                              labelStyle:
-                                                                  CustomTextStyles
-                                                                      .bodySmallRobotoWhiteA700_1,
+                                                              labelStyle: CustomTextStyles
+                                                                  .bodySmallRobotoWhiteA700_1,
                                                               // hintText:
                                                               //     "lbl_password"
                                                               //         .tr,
@@ -182,17 +173,16 @@ class FiveScreen extends GetWidget<FiveController> {
                                                               textInputType:
                                                                   TextInputType
                                                                       .visiblePassword,
-                                                              obscureText:
-                                                                  controller
-                                                                      .isShowPassword
-                                                                      .value,
+                                                              obscureText: controller
+                                                                  .isShowPassword
+                                                                  .value,
                                                               prefix: Container(
                                                                   width: 9
-                                                                      .adaptSize),
+                                                                      ),
                                                               prefixConstraints:
                                                                   BoxConstraints(
                                                                       maxHeight:
-                                                                          66.v),
+                                                                          66),
                                                               suffix: InkWell(
                                                                   onTap: () {
                                                                     controller
@@ -202,8 +192,10 @@ class FiveScreen extends GetWidget<FiveController> {
                                                                             .isShowPassword
                                                                             .value;
                                                                   },
-                                                                  child: Container(margin: EdgeInsets.symmetric(horizontal: 18.h), child: CustomImageView(imagePath: ImageConstant.imgLinkedin, height: 13.v, width: 20.h))),
-                                                              suffixConstraints: BoxConstraints(maxHeight: 66.v),
+                                                                  child: Container(
+                                                                      margin: EdgeInsets.symmetric(horizontal: 18),
+                                                                      child: CustomImageView(imagePath: ImageConstant.imgLinkedin, height: 13, width: 20))),
+                                                              suffixConstraints: BoxConstraints(maxHeight: 66),
                                                               validator: (value) {
                                                                 if (value ==
                                                                         null ||
@@ -216,7 +208,7 @@ class FiveScreen extends GetWidget<FiveController> {
                                                                 }
                                                                 return null;
                                                               })),
-                                                      SizedBox(height: 7.v),
+                                                      SizedBox(height: 7),
                                                       Align(
                                                           alignment: Alignment
                                                               .centerRight,
@@ -230,7 +222,7 @@ class FiveScreen extends GetWidget<FiveController> {
                                                                           .tr,
                                                                       style: CustomTextStyles
                                                                           .bodySmallRobotoPrimary))),
-                                                      SizedBox(height: 147.v),
+                                                      SizedBox(height: 130),
                                                       CustomElevatedButton(
                                                           text: "lbl_continue"
                                                               .tr
@@ -241,7 +233,7 @@ class FiveScreen extends GetWidget<FiveController> {
                                                           onPressed: () {
                                                             navito8();
                                                           }),
-                                                      SizedBox(height: 7.v),
+                                                      SizedBox(height: 7),
                                                       Row(
                                                           mainAxisAlignment:
                                                               MainAxisAlignment
@@ -251,7 +243,7 @@ class FiveScreen extends GetWidget<FiveController> {
                                                                 padding: EdgeInsets
                                                                     .only(
                                                                         bottom: 1
-                                                                            .v),
+                                                                            ),
                                                                 child: Text(
                                                                     "msg_don_t_have_an_account"
                                                                         .tr,
@@ -261,7 +253,7 @@ class FiveScreen extends GetWidget<FiveController> {
                                                                 padding: EdgeInsets
                                                                     .only(
                                                                         left: 7
-                                                                            .h),
+                                                                            ),
                                                                 child: Text(
                                                                     "lbl_signup"
                                                                         .tr,

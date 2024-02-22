@@ -11,33 +11,33 @@ class SeventeenScreen extends GetWidget<SeventeenController> {
     return SafeArea(
         child: Scaffold(
             body: SizedBox(
-                width: 395.h,
+                width: 395,
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  SizedBox(height: 10.v),
+                  SizedBox(height: 10),
                   Expanded(
                       child: SingleChildScrollView(
                           child: Container(
-                              margin: EdgeInsets.only(bottom: 10.v),
+                              margin: EdgeInsets.only(bottom: 10),
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 30.h, vertical: 34.v),
+                                  horizontal: 30, vertical: 34),
                               child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomImageView(
                                         imagePath: ImageConstant
-                                            .imgCloseWhiteA70015x13,
-                                        height: 15.v,
-                                        width: 13.h,
-                                        margin: EdgeInsets.only(left: 5.h),
+                                            .imgClose,
+                                        height: 15,
+                                        width: 13,
+                                        margin: EdgeInsets.only(left: 5),
                                         onTap: () {
                                           onTapImgClose();
                                         }),
-                                    SizedBox(height: 48.v),
+                                    SizedBox(height: 48),
                                     Container(
                                         margin: EdgeInsets.symmetric(
-                                            horizontal: 5.h),
+                                            horizontal: 5),
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 25.h, vertical: 42.v),
+                                            horizontal: 25, vertical: 42),
                                         decoration: AppDecoration.fillGray
                                             .copyWith(
                                                 borderRadius: BorderRadiusStyle
@@ -48,10 +48,10 @@ class SeventeenScreen extends GetWidget<SeventeenController> {
                                               Text("lbl_payment_details".tr,
                                                   style: CustomTextStyles
                                                       .titleLargeTitilliumWebPrimary),
-                                              SizedBox(height: 55.v),
+                                              SizedBox(height: 55),
                                               Padding(
                                                   padding: EdgeInsets.only(
-                                                      right: 4.h),
+                                                      right: 4),
                                                   child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -68,7 +68,7 @@ class SeventeenScreen extends GetWidget<SeventeenController> {
                                                             style: CustomTextStyles
                                                                 .labelLargeSemiBold)
                                                       ])),
-                                              SizedBox(height: 26.v),
+                                              SizedBox(height: 26),
                                               Row(
                                                   mainAxisAlignment:
                                                       MainAxisAlignment
@@ -86,7 +86,7 @@ class SeventeenScreen extends GetWidget<SeventeenController> {
                                                         style: CustomTextStyles
                                                             .bodySmallWhiteA700_1)
                                                   ]),
-                                              SizedBox(height: 26.v),
+                                              SizedBox(height: 26),
                                               Row(
                                                   mainAxisAlignment:
                                                       MainAxisAlignment
@@ -106,10 +106,10 @@ class SeventeenScreen extends GetWidget<SeventeenController> {
                                                         style: CustomTextStyles
                                                             .bodySmallWhiteA700_1)
                                                   ]),
-                                              SizedBox(height: 26.v),
+                                              SizedBox(height: 26),
                                               Padding(
                                                   padding: EdgeInsets.only(
-                                                      right: 7.h),
+                                                      right: 7),
                                                   child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -129,9 +129,9 @@ class SeventeenScreen extends GetWidget<SeventeenController> {
                                                             style: CustomTextStyles
                                                                 .bodySmallWhiteA700_1)
                                                       ])),
-                                              SizedBox(height: 59.v),
+                                              SizedBox(height: 59),
                                               CustomElevatedButton(
-                                                  height: 60.v,
+                                                  height: 60,
                                                   text:
                                                       "msg_choose_payment_methode"
                                                           .tr,
@@ -144,10 +144,10 @@ class SeventeenScreen extends GetWidget<SeventeenController> {
                                                   onPressed: () {
                                                     onTapChoosePaymentMethode();
                                                   }),
-                                              SizedBox(height: 39.v),
+                                              SizedBox(height: 39),
                                               Padding(
                                                   padding: EdgeInsets.only(
-                                                      right: 8.h),
+                                                      right: 8),
                                                   child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -159,20 +159,20 @@ class SeventeenScreen extends GetWidget<SeventeenController> {
                                                         CustomImageView(
                                                             imagePath: ImageConstant
                                                                 .imgCheckmarkWhiteA70022x17,
-                                                            height: 22.v,
-                                                            width: 17.h,
+                                                            height: 22,
+                                                            width: 17,
                                                             margin:
                                                                 EdgeInsets.only(
-                                                                    top: 11.v,
+                                                                    top: 11,
                                                                     bottom:
-                                                                        21.v)),
+                                                                        21)),
                                                         Expanded(
                                                             child: Container(
-                                                                width: 230.h,
+                                                                width: 230,
                                                                 margin: EdgeInsets
                                                                     .only(
                                                                         left: 17
-                                                                            .h),
+                                                                            ),
                                                                 child: RichText(
                                                                     text: TextSpan(
                                                                         children: [
@@ -187,19 +187,19 @@ class SeventeenScreen extends GetWidget<SeventeenController> {
                                                                         TextAlign
                                                                             .left)))
                                                       ])),
-                                              SizedBox(height: 14.v)
+                                              SizedBox(height: 14)
                                             ])),
-                                    SizedBox(height: 48.v),
+                                    SizedBox(height: 48),
                                     CustomElevatedButton(
                                         text: "lbl_send_money".tr.toUpperCase(),
-                                        margin: EdgeInsets.only(left: 5.h),
+                                        margin: EdgeInsets.only(left: 5),
                                       onPressed: () {
                                         onTapChoosePaymentMethods();
                                       },
 
                                     ),
 
-                                    SizedBox(height: 24.v)
+                                    SizedBox(height: 24)
                                   ]))))
                 ]))));
   }

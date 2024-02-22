@@ -372,45 +372,45 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
       ),
       child: Column(
         children: [
-          SizedBox(height: 10.v),
+          SizedBox(height: 10),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.h),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 "App Navigation".tr,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color(0XFF000000),
-                  fontSize: 20.fSize,
+                  fontSize: 20,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w400,
                 ),
               ),
             ),
           ),
-          SizedBox(height: 10.v),
+          SizedBox(height: 10),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: EdgeInsets.only(left: 20.h),
+              padding: EdgeInsets.only(left: 20),
               child: Text(
                 "Check your app's UI from the below demo screens of your app."
                     .tr,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color(0XFF888888),
-                  fontSize: 16.fSize,
+                  fontSize: 16,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w400,
                 ),
               ),
             ),
           ),
-          SizedBox(height: 5.v),
+          SizedBox(height: 5),
           Divider(
-            height: 1.v,
-            thickness: 1.v,
+            height: 1,
+            thickness: 1,
             color: Color(0XFF000000),
           ),
         ],
@@ -433,28 +433,28 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
         ),
         child: Column(
           children: [
-            SizedBox(height: 10.v),
+            SizedBox(height: 10),
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.h),
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   screenTitle,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0XFF000000),
-                    fontSize: 20.fSize,
+                    fontSize: 20,
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 10.v),
-            SizedBox(height: 5.v),
+            SizedBox(height: 10),
+            SizedBox(height: 5),
             Divider(
-              height: 1.v,
-              thickness: 1.v,
+              height: 1,
+              thickness: 1,
               color: Color(0XFF888888),
             ),
           ],

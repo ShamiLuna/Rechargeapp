@@ -59,7 +59,7 @@ class AppDecoration {
   static BoxDecoration get gradientBlueToBlue => BoxDecoration(
         border: Border.all(
           color: appTheme.gray30001,
-          width: 1.h,
+          width: 1,
         ),
         gradient: LinearGradient(
           begin: Alignment(1.03, 0.54),
@@ -96,20 +96,20 @@ class AppDecoration {
   static BoxDecoration get outlinePrimary => BoxDecoration(
         border: Border.all(
           color: theme.colorScheme.primary,
-          width: 1.h,
+          width: 1,
         ),
       );
   static BoxDecoration get outlineWhiteA => BoxDecoration(
         color: appTheme.gray5001,
         border: Border.all(
           color: appTheme.whiteA700,
-          width: 1.h,
+          width: 1,
         ),
       );
   static BoxDecoration get outlineWhiteA700 => BoxDecoration(
         border: Border.all(
           color: appTheme.whiteA700,
-          width: 1.h,
+          width: 1,
         ),
       );
 }
@@ -117,35 +117,35 @@ class AppDecoration {
 class BorderRadiusStyle {
   // Circle borders
   static BorderRadius get circleBorder10 => BorderRadius.circular(
-        10.h,
+        10,
       );
   static BorderRadius get circleBorder54 => BorderRadius.circular(
-        54.h,
+        54,
       );
   static BorderRadius get circleBorder63 => BorderRadius.circular(
-        63.h,
+        63,
       );
 
   // Custom borders
   static BorderRadius get customBorderTL32 => BorderRadius.vertical(
-        top: Radius.circular(32.h),
+        top: Radius.circular(32),
       );
 
   // Rounded borders
   static BorderRadius get roundedBorder14 => BorderRadius.circular(
-        14.h,
+        14,
       );
   static BorderRadius get roundedBorder17 => BorderRadius.circular(
-        17.h,
+        17,
       );
   static BorderRadius get roundedBorder20 => BorderRadius.circular(
-        20.h,
+        20,
       );
   static BorderRadius get roundedBorder3 => BorderRadius.circular(
-        3.h,
+        3,
       );
   static BorderRadius get roundedBorder6 => BorderRadius.circular(
-        6.h,
+        6,
       );
 }
 

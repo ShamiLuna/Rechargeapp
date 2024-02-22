@@ -15,24 +15,24 @@ class TwelveScreen extends GetWidget<TwelveController> {
         child: Scaffold(
             appBar: _buildAppBar(),
             body: SizedBox(
-                width: SizeUtils.width,
+                width: 480,
                 child: SingleChildScrollView(
                     child: Container(
-                        margin: EdgeInsets.only(bottom: 5.v),
-                        padding: EdgeInsets.symmetric(horizontal: 20.h),
+                        margin: EdgeInsets.only(bottom: 5),
+                        padding: EdgeInsets.symmetric(horizontal: 20),
                         child: Column(children: [
-                          SizedBox(height: 59.v),
+                          SizedBox(height: 59),
                           CustomImageView(
                               imagePath: ImageConstant.imgRectangle1064,
-                              height: 173.v,
-                              width: 334.h,
-                              radius: BorderRadius.circular(6.h)),
-                          SizedBox(height: 46.v),
+                              height: 173,
+                              width: 334,
+                              radius: BorderRadius.circular(6)),
+                          SizedBox(height: 46),
                           Container(
-                              width: 325.h,
-                              margin: EdgeInsets.symmetric(horizontal: 25.h),
+                              width: 325,
+                              margin: EdgeInsets.symmetric(horizontal: 25),
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 19.h, vertical: 13.v),
+                                  horizontal: 19, vertical: 13),
                               decoration: AppDecoration.outlineWhiteA700
                                   .copyWith(
                                       borderRadius:
@@ -47,28 +47,28 @@ class TwelveScreen extends GetWidget<TwelveController> {
                                         child: Text("lbl_enter_amount".tr,
                                             style: CustomTextStyles
                                                 .bodySmallWhiteA700)),
-                                    SizedBox(height: 6.v),
+                                    SizedBox(height: 6),
                                     Row(children: [
                                       Text("lbl_150".tr,
                                           style: CustomTextStyles
                                               .titleLargeSemiBold),
                                       Padding(
-                                          padding: EdgeInsets.only(left: 1.h),
+                                          padding: EdgeInsets.only(left: 1),
                                           child: SizedBox(
-                                              height: 29.v,
+                                              height: 29,
                                               child: VerticalDivider(
-                                                  width: 1.h,
-                                                  thickness: 1.v,
+                                                  width: 1,
+                                                  thickness: 1,
                                                   color:
                                                       theme.colorScheme.primary,
-                                                  indent: 2.h,
-                                                  endIndent: 2.h)))
+                                                  indent: 2,
+                                                  endIndent: 2)))
                                     ]),
-                                    SizedBox(height: 2.v)
+                                    SizedBox(height: 2)
                                   ])),
-                          SizedBox(height: 66.v),
+                          SizedBox(height: 66),
                           Padding(
-                              padding: EdgeInsets.only(left: 55.h, right: 50.h),
+                              padding: EdgeInsets.only(left: 55, right: 50),
                               child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -80,9 +80,9 @@ class TwelveScreen extends GetWidget<TwelveController> {
                                     Text("lbl_32".tr,
                                         style: theme.textTheme.titleLarge)
                                   ])),
-                          SizedBox(height: 27.v),
+                          SizedBox(height: 27),
                           Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 51.h),
+                              padding: EdgeInsets.symmetric(horizontal: 51),
                               child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -94,9 +94,9 @@ class TwelveScreen extends GetWidget<TwelveController> {
                                     Text("lbl_6".tr,
                                         style: theme.textTheme.titleLarge)
                                   ])),
-                          SizedBox(height: 27.v),
+                          SizedBox(height: 27),
                           Padding(
-                              padding: EdgeInsets.only(left: 53.h, right: 50.h),
+                              padding: EdgeInsets.only(left: 53, right: 50),
                               child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -108,54 +108,59 @@ class TwelveScreen extends GetWidget<TwelveController> {
                                     Text("lbl_9".tr,
                                         style: theme.textTheme.titleLarge)
                                   ])),
-                          SizedBox(height: 27.v),
+                          SizedBox(height: 27),
                           Padding(
-                              padding: EdgeInsets.only(left: 55.h, right: 44.h),
+                              padding: EdgeInsets.only(left: 55, right: 44),
                               child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                        padding: EdgeInsets.only(top: 6.v),
+                                        padding: EdgeInsets.only(top: 6),
                                         child: Text("lbl4".tr,
                                             style: theme.textTheme.titleLarge)),
                                     Spacer(flex: 52),
                                     Padding(
-                                        padding: EdgeInsets.only(bottom: 6.v),
+                                        padding: EdgeInsets.only(top: 6),
                                         child: Text("lbl_0".tr,
                                             style: theme.textTheme.titleLarge)),
                                     Spacer(flex: 47),
                                     Padding(
-                                        padding: EdgeInsets.only(bottom: 6.v),
+                                        padding: EdgeInsets.only(top: 6),
                                         child: Text("lbl5".tr,
                                             style: theme.textTheme.titleLarge))
-                                  ]))
+                                  ])),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                _buildBuyButton(),
                         ])))),
-            bottomNavigationBar: _buildBuyButton()));
+            // bottomNavigationBar: _buildBuyButton()
+    ));
   }
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-        leadingWidth: 77.h,
+        leadingWidth: 77,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 45.h, top: 22.v, bottom: 22.v),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),
         title: AppbarTitle(
             text: "msg_select_recharge".tr,
-            margin: EdgeInsets.only(left: 10.h)),
+            margin: EdgeInsets.only(left: 10)),
         styleType: Style.bgFill);
   }
 
   /// Section Widget
   Widget _buildBuyButton() {
     return CustomElevatedButton(
-        width: 189.h,
+        width: 189,
         text: "lbl_buy".tr.toUpperCase(),
-        margin: EdgeInsets.only(left: 113.h, right: 113.h, bottom: 47.v),
+        margin: EdgeInsets.only(left: 113, right: 113, bottom: 47),
         onPressed: () {
           onTapBuyButton();
         });

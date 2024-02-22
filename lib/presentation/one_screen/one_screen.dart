@@ -10,27 +10,27 @@ class OneScreen extends GetWidget<OneController> {
     return SafeArea(
         child: Scaffold(
             body: SizedBox(
-                height: 1000.v,
-                width: 395.h,
+                height: 1000,
+                width: 395,
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  SizedBox(height: 10.v),
+                  SizedBox(height: 10),
                   Expanded(
                       child: SingleChildScrollView(
                           child: Container(
-                              margin: EdgeInsets.only(bottom: 10.v),
+                              margin: EdgeInsets.only(bottom: 10),
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 12.h, vertical: 6.v),
+                                  horizontal: 12, vertical: 6),
                               child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
                                         alignment: Alignment.center,
                                         child: Container(
-                                            height: 229.v,
-                                            width: 210.h,
+                                            height: 229,
+                                            width: 210,
                                             padding: EdgeInsets.symmetric(
-                                                horizontal: 8.h,
-                                                vertical: 23.v),
+                                                horizontal: 8,
+                                                vertical: 23),
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     image: AssetImage(
@@ -40,16 +40,16 @@ class OneScreen extends GetWidget<OneController> {
                                             child: CustomImageView(
                                                 imagePath:
                                                     ImageConstant.imgGroup303,
-                                                height: 202.adaptSize,
-                                                width: 202.adaptSize,
+                                                height: 202,
+                                                width: 202,
                                                 alignment: Alignment.topLeft))),
-                                    SizedBox(height: 57.v),
+                                    SizedBox(height: 57),
                                     Align(
                                         alignment: Alignment.center,
                                         child: Container(
                                             height: 180,
-                                            width: 299.h,
-                                            margin: EdgeInsets.only(right: 15.h),
+                                            width: 299,
+                                            margin: EdgeInsets.only(right: 15),
                                             child: RichText(
                                                 text: TextSpan(children: [
                                                   TextSpan(
@@ -73,12 +73,12 @@ class OneScreen extends GetWidget<OneController> {
                                                           .displayMediumRobotoffffffff)
                                                 ]),
                                                 textAlign: TextAlign.left))),
-                                    SizedBox(height: 4.v),
-                                    Align(alignment: Alignment.center,
+                                    SizedBox(height: 4),
+                                    Align(alignment: Alignment.centerLeft,
                                       child: Container(
-                                          width: 270.h,
+                                          width: 270,
                                           margin: EdgeInsets.only(
-                                              left: 25.h,
+                                              left: 25,
                                               // right: 15.h,
                                               bottom: 10,
                                               top: 20),
@@ -89,7 +89,7 @@ class OneScreen extends GetWidget<OneController> {
                                               style: CustomTextStyles
                                                   .titleLargeRoboto)),
                                     ),
-                                    SizedBox(height: 80.v),
+                                    SizedBox(height: 80),
                                     Center(
                                       child: ElevatedButton(
                                         // decoration: BoxDecoration(
@@ -123,7 +123,7 @@ class OneScreen extends GetWidget<OneController> {
                                             )),
                                       ),
                                     ),
-                                    SizedBox(height: 70.v)
+                                    SizedBox(height: 70)
                                   ]))))
                 ]))));
   }

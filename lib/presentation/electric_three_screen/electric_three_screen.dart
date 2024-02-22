@@ -19,16 +19,16 @@ class ElectricThreeScreen extends GetWidget<ElectricThreeController> {
             appBar: _buildAppBar(),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(vertical: 34.v),
+                padding: EdgeInsets.symmetric(vertical: 34),
                 child: Column(children: [
                   CustomImageView(
                       imagePath: ImageConstant.imgGroup33697,
-                      height: 195.v,
-                      width: 191.h),
-                  SizedBox(height: 5.v),
+                      height: 195,
+                      width: 191),
+                  SizedBox(height: 5),
                   Container(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 19.h, vertical: 17.v),
+                          horizontal: 19, vertical: 17),
                       decoration: AppDecoration.fillBlack,
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -39,25 +39,25 @@ class ElectricThreeScreen extends GetWidget<ElectricThreeController> {
                                   CustomImageView(
                                       imagePath:
                                           ImageConstant.imgEllipse7735x35,
-                                      height: 35.adaptSize,
-                                      width: 35.adaptSize,
-                                      radius: BorderRadius.circular(17.h)),
+                                      height: 35,
+                                      width: 35,
+                                      radius: BorderRadius.circular(17)),
                                   Padding(
                                       padding: EdgeInsets.only(
-                                          left: 18.h, top: 9.v, bottom: 7.v),
+                                          left: 18, top: 9, bottom: 7),
                                       child: Text(
                                           "msg_tamilnadu_electricity".tr,
                                           style: theme.textTheme.labelLarge))
                                 ]),
-                            SizedBox(height: 28.v),
+                            SizedBox(height: 28),
                             _buildFrame1(),
-                            SizedBox(height: 32.v),
+                            SizedBox(height: 32),
                             _buildHouseNo1(),
-                            SizedBox(height: 32.v),
+                            SizedBox(height: 32),
                             _buildMeterReading73t3(),
-                            SizedBox(height: 32.v),
+                            SizedBox(height: 32),
                             _buildTotalAmount(),
-                            SizedBox(height: 26.v),
+                            SizedBox(height: 26),
                             _buildDone()
                           ]))
                 ]))));
@@ -66,22 +66,22 @@ class ElectricThreeScreen extends GetWidget<ElectricThreeController> {
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-        leadingWidth: 57.h,
+        leadingWidth: 57,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 25.h, top: 19.v, bottom: 25.v),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),
         title: AppbarTitle(
-            text: "lbl_billing_detail".tr, margin: EdgeInsets.only(left: 27.h)),
+            text: "lbl_billing_detail".tr, margin: EdgeInsets.only(left: 27)),
         styleType: Style.bgFill_1);
   }
 
   /// Section Widget
   Widget _buildFrame() {
     return CustomTextFormField(
-        width: 172.h,
+        width: 172,
         controller: controller.frameController,
         hintText: "msg_service_no_09687624667".tr,
         // borderDecoration: TextFormFieldStyleHelper.outlineBlueGrayC,
@@ -90,22 +90,26 @@ class ElectricThreeScreen extends GetWidget<ElectricThreeController> {
 
   /// Section Widget
   Widget _buildNameKevin() {
-    return CustomOutlinedButton(width: 106.h, text: "lbl_name_kevin".tr);
+    return CustomOutlinedButton(width: 160, text: "lbl_name_kevin".tr);
   }
 
   /// Section Widget
   Widget _buildFrame1() {
     return Padding(
-        padding: EdgeInsets.only(left: 1.h),
+        padding: EdgeInsets.only(left: 1),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [_buildFrame(), _buildNameKevin()]));
+            children: [_buildFrame(),
+              SizedBox(
+                width: 1,
+              ),
+              _buildNameKevin()]));
   }
 
   /// Section Widget
   Widget _buildHouseNo() {
     return CustomTextFormField(
-        width: 171.h,
+        width: 171,
         controller: controller.houseNoController,
         hintText: "lbl_house_no_763".tr,
         textInputAction: TextInputAction.done,
@@ -115,33 +119,37 @@ class ElectricThreeScreen extends GetWidget<ElectricThreeController> {
 
   /// Section Widget
   Widget _buildTotalUnit() {
-    return CustomOutlinedButton(width: 106.h, text: "msg_total_unit_163".tr);
+    return CustomOutlinedButton(width: 160, text: "msg_total_unit_163".tr);
   }
 
   /// Section Widget
   Widget _buildHouseNo1() {
     return Padding(
-        padding: EdgeInsets.only(left: 1.h),
+        padding: EdgeInsets.only(left: 1),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [_buildHouseNo(), _buildTotalUnit()]));
+            children: [_buildHouseNo(),
+              SizedBox(
+                width: 10,
+              ),
+              _buildTotalUnit()]));
   }
 
   /// Section Widget
   Widget _buildMeterReading() {
     return CustomOutlinedButton(
-        width: 171.h, text: "msg_meter_reading_73t3".tr);
+        width: 190, text: "msg_meter_reading_73t3".tr);
   }
 
   /// Section Widget
   Widget _buildReceipt() {
-    return CustomOutlinedButton(width: 106.h, text: "lbl_receipt_6540".tr);
+    return CustomOutlinedButton(width: 160, text: "lbl_receipt_6540".tr);
   }
 
   /// Section Widget
   Widget _buildMeterReading73t3() {
     return Padding(
-        padding: EdgeInsets.only(left: 1.h),
+        padding: EdgeInsets.only(left: 1),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [_buildMeterReading(), _buildReceipt()]));
@@ -150,16 +158,16 @@ class ElectricThreeScreen extends GetWidget<ElectricThreeController> {
   /// Section Widget
   Widget _buildTotalAmount() {
     return CustomOutlinedButton(
-        width: 171.h,
+        width: 190,
         text: "msg_total_amount_762".tr,
-        margin: EdgeInsets.only(left: 1.h),
+        margin: EdgeInsets.only(left: 1),
         alignment: Alignment.centerLeft);
   }
 
   /// Section Widget
   Widget _buildDone() {
     return CustomElevatedButton(
-        width: 189.h,
+        width: 189,
         text: "lbl_done".tr.toUpperCase(),
         onPressed: () {
           

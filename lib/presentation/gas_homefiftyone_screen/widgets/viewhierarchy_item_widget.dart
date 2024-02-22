@@ -24,18 +24,18 @@ class ViewhierarchyItemWidget extends StatelessWidget {
         Obx(
           () => CustomImageView(
             imagePath: viewhierarchyItemModelObj.circleImage!.value,
-            height: 35.adaptSize,
-            width: 35.adaptSize,
+            height: 35,
+            width: 35,
             radius: BorderRadius.circular(
-              17.h,
+              17,
             ),
           ),
         ),
         Padding(
           padding: EdgeInsets.only(
-            left: 18.h,
-            top: 6.v,
-            bottom: 10.v,
+            left: 18,
+            top: 6,
+            bottom: 10,
           ),
           child: Obx(
             () => Text(

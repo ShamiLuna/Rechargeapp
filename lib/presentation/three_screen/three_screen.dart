@@ -14,43 +14,43 @@ class ThreeScreen extends GetWidget<ThreeController> {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             body: SizedBox(
-                width: 395.h,
+                width: 395,
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  SizedBox(height: 10.v),
+                  SizedBox(height: 10),
                   Expanded(
                       child: SingleChildScrollView(
                           child: Container(
-                              height: SizeUtils.height,
+                              height: 1000,
                               width: double.maxFinite,
                               margin: EdgeInsets.only(
-                                  left: 10.h, right: 10.h, bottom: 10.v),
+                                  left: 10, right: 10, bottom: 10),
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 21.h, vertical: 28.v),
+                                  horizontal: 21, vertical: 28),
                               child:
                                   Stack(alignment: Alignment.center, children: [
                                 Align(
                                     alignment: Alignment.center,
                                     child: Container(
-                                        height: 744.v,
-                                        width: 333.h,
+                                        height: 744,
+                                        width: 333,
                                         decoration: BoxDecoration(
                                             color: appTheme.gray90001,
                                             borderRadius:
-                                                BorderRadius.circular(32.h)))),
+                                                BorderRadius.circular(32)))),
                                 Align(
                                     alignment: Alignment.center,
                                     child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 28.h),
+                                            horizontal: 28),
                                         child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text("lbl_enter_code".tr,
                                                   style: CustomTextStyles
                                                       .titleLargeRobotoPrimary),
-                                              SizedBox(height: 16.v),
+                                              SizedBox(height: 16),
                                               SizedBox(
-                                                  width: 187.h,
+                                                  width: 187,
                                                   child: Text(
                                                       "msg_enter_the_6_digit"
                                                           .tr,
@@ -61,14 +61,14 @@ class ThreeScreen extends GetWidget<ThreeController> {
                                                           TextAlign.center,
                                                       style: CustomTextStyles
                                                           .bodySmallRobotoWhiteA700Light_1)),
-                                              SizedBox(height: 37.v),
+                                              SizedBox(height: 37),
                                               Container(
-                                                  width: 108.h,
+                                                  width: 108,
                                                   margin: EdgeInsets.only(
-                                                      left: 80.h, right: 86.h),
+                                                      left: 80, right: 86),
                                                   padding: EdgeInsets.symmetric(
-                                                      horizontal: 10.h,
-                                                      vertical: 36.v),
+                                                      horizontal: 10,
+                                                      vertical: 36),
                                                   decoration: BoxDecoration(
                                                       image: DecorationImage(
                                                           image: fs.Svg(
@@ -80,11 +80,11 @@ class ThreeScreen extends GetWidget<ThreeController> {
                                                           CrossAxisAlignment
                                                               .end,
                                                       children: [
-                                                        SizedBox(height: 23.v),
+                                                        SizedBox(height: 23),
                                                         Container(
                                                             height:
-                                                                18.adaptSize,
-                                                            width: 18.adaptSize,
+                                                                18,
+                                                            width: 18,
                                                             decoration: BoxDecoration(
                                                                 color: theme
                                                                     .colorScheme
@@ -92,21 +92,21 @@ class ThreeScreen extends GetWidget<ThreeController> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            9.h)))
+                                                                            9)))
                                                       ])),
-                                              SizedBox(height: 106.v),
+                                              SizedBox(height: 106),
                                               Padding(
                                                   padding: EdgeInsets.only(
-                                                      left: 6.h),
+                                                      left: 6),
                                                   child: Obx(() =>
                                                       CustomPinCodeTextField(
                                                           context: Get.context!,
-                                                          controller: controller
-                                                              .otpController
-                                                              .value,
+                                                          // controller: controller
+                                                          //     .otpController
+                                                          //     .value,
                                                           onChanged:
                                                               (value) {}))),
-                                              SizedBox(height: 14.v),
+                                              SizedBox(height: 14),
                                               Row(
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.center,
@@ -121,7 +121,7 @@ class ThreeScreen extends GetWidget<ThreeController> {
                                                     Padding(
                                                         padding:
                                                             EdgeInsets.only(
-                                                                left: 3.h),
+                                                                left: 3),
                                                         child: RichText(
                                                             text: TextSpan(
                                                                 children: [
@@ -139,7 +139,7 @@ class ThreeScreen extends GetWidget<ThreeController> {
                                                             textAlign:
                                                                 TextAlign.left))
                                                   ]),
-                                              SizedBox(height: 197.v),
+                                              SizedBox(height: 197),
                                               CustomElevatedButton(
                                                   text: "lbl_continue"
                                                       .tr

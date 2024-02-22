@@ -19,15 +19,15 @@ class FramefScreen extends GetWidget<FramefController> {
             body: Form(
                 key: _formKey,
                 child: SizedBox(
-                    width: 395.h,
+                    width: 395,
                     child: Column(mainAxisSize: MainAxisSize.min, children: [
-                      SizedBox(height: 10.v),
+                      SizedBox(height: 10),
                       Expanded(
                           child: SingleChildScrollView(
                               child: Container(
-                                  margin: EdgeInsets.only(bottom: 10.v),
+                                  margin: EdgeInsets.only(bottom: 10),
                                   padding:
-                                      EdgeInsets.symmetric(horizontal: 56.h),
+                                      EdgeInsets.symmetric(horizontal: 56),
                                   child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -35,20 +35,20 @@ class FramefScreen extends GetWidget<FramefController> {
                                         CustomImageView(
                                             imagePath:
                                                 ImageConstant.imgBackBlack900,
-                                            height: 2.v,
-                                            width: 32.h,
+                                            height: 2,
+                                            width: 32,
                                             alignment: Alignment.centerLeft,
                                             onTap: () {
                                               onTapImgBack();
                                             }),
-                                        SizedBox(height: 18.v),
+                                        SizedBox(height: 18),
                                         Align(
                                             alignment: Alignment.centerRight,
                                             child: Container(
-                                                height: 108.v,
-                                                width: 137.h,
+                                                height: 108,
+                                                width: 137,
                                                 margin: EdgeInsets.only(
-                                                    right: 62.h),
+                                                    right: 62),
                                                 child: Stack(
                                                     alignment:
                                                         Alignment.centerLeft,
@@ -60,9 +60,9 @@ class FramefScreen extends GetWidget<FramefController> {
                                                               padding: EdgeInsets
                                                                   .only(
                                                                       left:
-                                                                          15.h,
+                                                                          15,
                                                                       bottom:
-                                                                          37.v),
+                                                                          37),
                                                               child: Row(
                                                                   children: [
                                                                     Text(
@@ -72,14 +72,14 @@ class FramefScreen extends GetWidget<FramefController> {
                                                                             .robotoOnPrimary),
                                                                     Container(
                                                                         height: 3
-                                                                            .adaptSize,
+                                                                            ,
                                                                         width: 3
-                                                                            .adaptSize,
+                                                                            ,
                                                                         margin: EdgeInsets.only(
                                                                             left: 7
-                                                                                .h),
+                                                                                ),
                                                                         decoration:
-                                                                            BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1.h)))
+                                                                            BoxDecoration(border: Border.all(color: appTheme.blueGray900, width: 1)))
                                                                   ]))),
                                                       Align(
                                                           alignment: Alignment
@@ -88,13 +88,13 @@ class FramefScreen extends GetWidget<FramefController> {
                                                               margin:
                                                                   EdgeInsets.only(
                                                                       right:
-                                                                          29.h),
+                                                                          29),
                                                               padding: EdgeInsets
                                                                   .symmetric(
                                                                       horizontal:
-                                                                          7.h,
+                                                                          7,
                                                                       vertical:
-                                                                          5.v),
+                                                                          5),
                                                               decoration: AppDecoration
                                                                   .fillBlue
                                                                   .copyWith(
@@ -110,69 +110,69 @@ class FramefScreen extends GetWidget<FramefController> {
                                                                   children: [
                                                                     SizedBox(
                                                                         height:
-                                                                            10.v),
+                                                                            10),
                                                                     Container(
                                                                         height: 6
-                                                                            .adaptSize,
+                                                                            ,
                                                                         width: 6
-                                                                            .adaptSize,
+                                                                            ,
                                                                         margin: EdgeInsets.only(
                                                                             left: 15
-                                                                                .h),
+                                                                                ),
                                                                         decoration: BoxDecoration(
                                                                             color:
                                                                                 appTheme.whiteA700,
-                                                                            borderRadius: BorderRadius.circular(3.h))),
+                                                                            borderRadius: BorderRadius.circular(3))),
                                                                     SizedBox(
                                                                         height:
-                                                                            28.v),
+                                                                            28),
                                                                     Container(
                                                                         height: 18
-                                                                            .adaptSize,
+                                                                            ,
                                                                         width: 18
-                                                                            .adaptSize,
+                                                                            ,
                                                                         decoration: BoxDecoration(
                                                                             color:
                                                                                 theme.colorScheme.onError,
-                                                                            borderRadius: BorderRadius.circular(9.h))),
+                                                                            borderRadius: BorderRadius.circular(9))),
                                                                     SizedBox(
                                                                         height:
-                                                                            27.v),
+                                                                            27),
                                                                     Container(
                                                                         height: 6
-                                                                            .adaptSize,
+                                                                            ,
                                                                         width: 6
-                                                                            .adaptSize,
+                                                                            ,
                                                                         margin: EdgeInsets.only(
                                                                             left: 31
-                                                                                .h),
+                                                                                ),
                                                                         decoration: BoxDecoration(
                                                                             color:
                                                                                 appTheme.blueGray900,
-                                                                            borderRadius: BorderRadius.circular(3.h)))
+                                                                            borderRadius: BorderRadius.circular(3)))
                                                                   ]))),
                                                       CustomImageView(
                                                           imagePath: ImageConstant
                                                               .imgUndrawForgotP,
-                                                          height: 70.v,
-                                                          width: 400.h,
+                                                          height: 70,
+                                                          width: 400,
                                                           alignment: Alignment
                                                               .topRight,
                                                           margin:
                                                               EdgeInsets.only(
                                                               ))
                                                     ]))),
-                                        SizedBox(height: 54.v),
+                                        SizedBox(height: 54),
                                         Opacity(
                                             opacity: 0.8,
                                             child: Text(
                                                 "lbl_forgot_password".tr,
                                                 style: CustomTextStyles
                                                     .titleLargeRobotoPrimarySemiBold)),
-                                        SizedBox(height: 128.v),
+                                        SizedBox(height: 128),
                                         Padding(
                                             padding: EdgeInsets.symmetric(
-                                                horizontal: 4.h),
+                                                horizontal: 4),
                                             child: CustomFloatingTextField(
                                                 controller:
                                                     controller.emailController,
@@ -194,19 +194,19 @@ class FramefScreen extends GetWidget<FramefController> {
                                                   return null;
                                                 },
                                                 contentPadding:
-                                                    EdgeInsets.fromLTRB(26.h,
-                                                        22.v, 26.h, 20.v))),
-                                        SizedBox(height: 231.v),
+                                                    EdgeInsets.fromLTRB(26,
+                                                        22, 26, 20))),
+                                        SizedBox(height: 231),
                                         CustomElevatedButton(
                                             text: "lbl_next".tr.toUpperCase(),
                                             margin: EdgeInsets.symmetric(
-                                                horizontal: 4.h),
+                                                horizontal: 4),
                                             buttonTextStyle: CustomTextStyles
                                                 .titleSmallRoboto,
                                             onPressed: () {
                                               navitosix();
                                             }),
-                                        SizedBox(height: 2.v)
+                                        SizedBox(height: 2)
                                       ]))))
                     ])))));
   }

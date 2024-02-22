@@ -49,11 +49,11 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     onTapWidget!.call();
                   },
                   child: Container(
-                    height: 32.v,
-                    width: 52.h,
+                    height: 32,
+                    width: 52,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 12.h,
-                      vertical: 10.v,
+                      horizontal: 12,
+                      vertical: 10,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -61,8 +61,8 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     child: Obx(
                       () => CustomImageView(
                         imagePath: viewhierarchy1ItemModelObj.cable!.value,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                        height: 24,
+                        width: 24,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -94,11 +94,11 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     onTapViewHierarchy!.call();
                   },
                   child: Container(
-                    height: 32.v,
-                    width: 52.h,
+                    height: 32,
+                    width: 52,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 14.h,
-                      vertical: 10.v,
+                      horizontal: 14,
+                      vertical: 10,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -106,8 +106,8 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     child: Obx(
                           () => CustomImageView(
                         imagePath: viewhierarchy1ItemModelObj.Mobile!.value,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                        height: 24,
+                        width: 24,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -135,11 +135,11 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     onTapViewHierarchye!.call();
                   },
                   child: Container(
-                    height: 32.v,
-                    width: 52.h,
+                    height: 32,
+                    width: 52,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 14.h,
-                      vertical: 10.v,
+                      horizontal: 14,
+                      vertical: 10,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -147,8 +147,8 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     child: Obx(
                           () => CustomImageView(
                         imagePath: viewhierarchy1ItemModelObj.Electricity!.value,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                        height: 24,
+                        width: 24,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -177,11 +177,11 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     onTapWidgete!.call();
                   },
                   child: Container(
-                    height: 32.v,
-                    width: 52.h,
+                    height: 32,
+                    width: 52,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 14.h,
-                      vertical: 10.v,
+                      horizontal: 14,
+                      vertical: 10,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -189,8 +189,8 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     child: Obx(
                           () => CustomImageView(
                         imagePath: viewhierarchy1ItemModelObj.DTH!.value,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                        height: 24,
+                        width: 24,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -213,7 +213,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
             SizedBox(width: 40),
           ],
         ),
-        SizedBox(height: 5.v),
+        SizedBox(height: 5),
         // SizedBox(
           // width: ,
         // ),
@@ -279,11 +279,11 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     onTapViewGas!.call();
                   },
                   child: Container(
-                    height: 32.v,
-                    width: 52.h,
+                    height: 32,
+                    width: 52,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 14.h,
-                      vertical: 10.v,
+                      horizontal: 14,
+                      vertical: 10,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -291,8 +291,8 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     child: Obx(
                           () => CustomImageView(
                         imagePath: viewhierarchy1ItemModelObj.Gas!.value,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                        height: 24,
+                        width: 24,
                         alignment: Alignment.center,
                       ),
                     ),
@@ -322,11 +322,11 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     onTapViewWatter!.call();
                   },
                   child: Container(
-                    height: 32.v,
-                    width: 52.h,
+                    height: 32,
+                    width: 52,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 14.h,
-                      vertical: 10.v,
+                      horizontal: 14,
+                      vertical: 10,
                     ),
                     decoration: AppDecoration.fillPrimaryContainer.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder6,
@@ -334,8 +334,8 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                     child: Obx(
                           () => CustomImageView(
                         imagePath: viewhierarchy1ItemModelObj.Watter!.value,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                        height: 24,
+                        width: 24,
                         alignment: Alignment.center,
                       ),
                     ),

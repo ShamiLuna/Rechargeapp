@@ -15,59 +15,59 @@ class PaymentPinwsixtythreeScreen
             appBar: _buildAppBar(),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(vertical: 30.v),
+                padding: EdgeInsets.symmetric(vertical: 30),
                 child: Column(children: [
                   Text("lbl_enter_your_pin".tr,
                       style: CustomTextStyles.titleLargeInter),
-                  SizedBox(height: 63.v),
+                  SizedBox(height: 63),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     CustomImageView(
                         imagePath: ImageConstant.imgClosePrimary,
-                        height: 44.adaptSize,
-                        width: 44.adaptSize),
+                        height: 44,
+                        width: 44),
                     CustomImageView(
                         imagePath: ImageConstant.imgClosePrimary,
-                        height: 44.adaptSize,
-                        width: 44.adaptSize,
-                        margin: EdgeInsets.only(left: 4.h)),
+                        height: 44,
+                        width: 44,
+                        margin: EdgeInsets.only(left: 4)),
                     CustomImageView(
                         imagePath: ImageConstant.imgClosePrimary,
-                        height: 44.adaptSize,
-                        width: 44.adaptSize,
-                        margin: EdgeInsets.only(left: 4.h)),
+                        height: 44,
+                        width: 44,
+                        margin: EdgeInsets.only(left: 4)),
                     CustomImageView(
                         imagePath: ImageConstant.imgClosePrimary,
-                        height: 44.adaptSize,
-                        width: 44.adaptSize,
-                        margin: EdgeInsets.only(left: 4.h))
+                        height: 44,
+                        width: 44,
+                        margin: EdgeInsets.only(left: 4))
                   ]),
                   Spacer(),
                   _buildNumbersRow(
                       numberOne: "lbl_1".tr,
                       numberTwo: "lbl_22".tr,
                       numberThree: "lbl_32".tr),
-                  SizedBox(height: 59.v),
+                  SizedBox(height: 59),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Text("lbl_4".tr, style: theme.textTheme.headlineSmall),
                     Padding(
-                        padding: EdgeInsets.only(left: 86.h),
+                        padding: EdgeInsets.only(left: 86),
                         child: Text("lbl_5".tr,
                             style: theme.textTheme.headlineSmall)),
                     Padding(
-                        padding: EdgeInsets.only(left: 86.h),
+                        padding: EdgeInsets.only(left: 86),
                         child: Text("lbl_6".tr,
                             style: theme.textTheme.headlineSmall))
                   ]),
-                  SizedBox(height: 58.v),
+                  SizedBox(height: 58),
                   _buildNumbersRow(
                       numberOne: "lbl_7".tr,
                       numberTwo: "lbl_8".tr,
                       numberThree: "lbl_9".tr),
-                  SizedBox(height: 59.v),
+                  SizedBox(height: 59),
                   Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
-                          padding: EdgeInsets.only(right: 77.h),
+                          padding: EdgeInsets.only(right: 77),
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,42 +77,42 @@ class PaymentPinwsixtythreeScreen
                                 CustomImageView(
                                     imagePath:
                                         ImageConstant.imgCloseWhiteA70017x24,
-                                    height: 17.v,
-                                    width: 24.h,
+                                    height: 17,
+                                    width: 24,
                                     margin: EdgeInsets.only(
-                                        left: 81.h, top: 4.v, bottom: 6.v))
+                                        left: 81, top: 4, bottom: 6))
                               ]))),
-                  SizedBox(height: 70.v),
+                  SizedBox(height: 70),
                   CustomElevatedButton(
-                      width: 215.h,
+                      width: 215,
                       text: "lbl_confirm".tr.toUpperCase(),
-                      margin: EdgeInsets.only(left: 5.h),
+                      margin: EdgeInsets.only(left: 5),
                       onPressed: () {
                         onTapConfirm();
                       }),
-                  SizedBox(height: 27.v)
+                  SizedBox(height: 27)
                 ]))));
   }
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-        height: 69.v,
+        height: 69,
         leadingWidth: double.maxFinite,
         leading: Container(
-            height: 15.v,
-            width: 13.h,
-            margin: EdgeInsets.fromLTRB(25.h, 20.v, 337.h, 20.v),
+            height: 15,
+            width: 13,
+            margin: EdgeInsets.fromLTRB(25, 20, 337, 20),
             child: Stack(alignment: Alignment.center, children: [
               CustomImageView(
                   imagePath: ImageConstant.imgVector22,
-                  height: 15.v,
-                  width: 13.h,
+                  height: 15,
+                  width: 13,
                   alignment: Alignment.center),
               CustomImageView(
                   imagePath: ImageConstant.imgVector23,
-                  height: 15.v,
-                  width: 13.h,
+                  height: 15,
+                  width: 13,
                   alignment: Alignment.center)
             ])));
   }
@@ -128,12 +128,12 @@ class PaymentPinwsixtythreeScreen
           style: theme.textTheme.headlineSmall!
               .copyWith(color: appTheme.whiteA700)),
       Padding(
-          padding: EdgeInsets.only(left: 87.h),
+          padding: EdgeInsets.only(left: 87),
           child: Text(numberTwo,
               style: theme.textTheme.headlineSmall!
                   .copyWith(color: appTheme.whiteA700))),
       Padding(
-          padding: EdgeInsets.only(left: 86.h),
+          padding: EdgeInsets.only(left: 86),
           child: Text(numberThree,
               style: theme.textTheme.headlineSmall!
                   .copyWith(color: appTheme.whiteA700)))

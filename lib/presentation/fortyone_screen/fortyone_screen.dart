@@ -23,71 +23,75 @@ class FortyoneScreen extends GetWidget<FortyoneController> {
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
-                    child: Container(
-                        margin: EdgeInsets.only(bottom: 5.v),
-                        padding: EdgeInsets.symmetric(horizontal: 10.h),
-                        child: Column(children: [
-                          SizedBox(height: 60.v),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgRectangle1064,
-                              height: 173.v,
-                              width: 334.h,
-                              radius: BorderRadius.circular(6.h)),
-                          SizedBox(height: 17.v),
-                          _buildMobileNumberStack(),
-                          SizedBox(height: 267.v),
-                          CustomElevatedButton(
-                              width: 189.h,
-                              text: "lbl_confirm".tr.toUpperCase(),
-                              onPressed: () {
-                                navi42();
-                              })
-                        ]))))));
+                    child: Center(
+                      child: Container(
+                          margin: EdgeInsets.only(bottom: 5),
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(children: [
+                            SizedBox(height: 60),
+                            CustomImageView(
+                                imagePath: ImageConstant.imgRectangle1064,
+                                height: 173,
+                                width: 334,
+                                radius: BorderRadius.circular(6)),
+                            SizedBox(height: 17),
+                            _buildMobileNumberStack(),
+                            SizedBox(height: 267),
+                            CustomElevatedButton(
+                                width: 189,
+                                text: "lbl_confirm".tr.toUpperCase(),
+                                onPressed: () {
+                                  navi42();
+                                })
+                          ])),
+                    )))));
   }
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-        leadingWidth: 67.h,
+        leadingWidth: 67,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 35.h, top: 22.v, bottom: 22.v),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),
-        title: AppbarTitle(
-            text: "lbl_cable".tr, margin: EdgeInsets.only(left: 16.h)),
+        title: Center(
+          child: AppbarTitle(
+              text: "lbl_cable".tr, margin: EdgeInsets.only(right: 90)),
+        ),
         styleType: Style.bgFill);
   }
 
   /// Section Widget
   Widget _buildMobileNumberStack() {
     return SizedBox(
-        height: 112.v,
-        width: 334.h,
+        height: 112,
+        width: 334,
         child: Stack(alignment: Alignment.center, children: [
           Align(
               alignment: Alignment.topCenter,
               child: Container(
-                  margin: EdgeInsets.only(bottom: 59.v),
-                  padding: EdgeInsets.all(14.h),
-                  decoration: AppDecoration.fillWhiteA.copyWith(
+                  margin: EdgeInsets.only(bottom: 59),
+                  padding: EdgeInsets.all(14),
+                  decoration: AppDecoration.fillGray.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder14),
                   child: Row(children: [
                     CustomImageView(
                         imagePath: ImageConstant.imgSearch,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
-                        margin: EdgeInsets.only(bottom: 1.v)),
+                        height: 24,
+                        width: 24,
+                        margin: EdgeInsets.only(bottom: 1)),
                     Padding(
-                        padding: EdgeInsets.only(left: 16.h, bottom: 3.v),
+                        padding: EdgeInsets.only(left: 16, bottom: 3),
                         child: Text("lbl_search".tr,
                             style: CustomTextStyles.titleMediumDMSansGray60003))
                   ]))),
           Align(
               alignment: Alignment.center,
               child: Container(
-                  padding: EdgeInsets.fromLTRB(17.h, 1.v, 17.h, 15.v),
+                  padding: EdgeInsets.fromLTRB(1, 1, 17, 1),
                   decoration: AppDecoration.fillGray.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder14),
                   child: Column(
@@ -95,7 +99,7 @@ class FortyoneScreen extends GetWidget<FortyoneController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(height: 2.v),
+                        SizedBox(height: 2),
                         CustomTextFormField(
                             controller: controller.mobileNumberController,
                             hintText: "msg_subscribe_id_registered".tr,
@@ -111,12 +115,12 @@ class FortyoneScreen extends GetWidget<FortyoneController> {
                             borderDecoration:
                                 TextFormFieldStyleHelper.underLineGray,
                             filled: false),
-                        SizedBox(height: 12.v),
+                        SizedBox(height: 1),
                         Container(
-                            width: 282.h,
-                            margin: EdgeInsets.only(right: 17.h),
+                            width: 282,
+                            margin: EdgeInsets.only(right: 17),
                             child: Text("msg_press_the_menu_button2".tr,
-                                maxLines: 2,
+                                maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
                                 style:
                                     CustomTextStyles.bodySmallDMSansGray60003))

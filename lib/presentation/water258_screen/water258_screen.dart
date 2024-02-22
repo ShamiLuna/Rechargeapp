@@ -18,10 +18,10 @@ class Water258Screen extends GetWidget<Water258Controller> {
             appBar: _buildAppBar(),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.all(23.h),
+                padding: EdgeInsets.all(23),
                 child: Column(children: [
                   _buildFrame(),
-                  SizedBox(height: 33.v),
+                  SizedBox(height: 33),
                   CustomDropDown(
                       hintText: "lbl_district".tr,
                       items: controller
@@ -32,7 +32,7 @@ class Water258Screen extends GetWidget<Water258Controller> {
                       onChanged: (value) {
                         controller.onSelected(value);
                       }),
-                  SizedBox(height: 24.v),
+                  SizedBox(height: 24),
                   CustomDropDown(
                       hintText: "lbl_village".tr,
                       items: controller
@@ -43,20 +43,20 @@ class Water258Screen extends GetWidget<Water258Controller> {
                       onChanged: (value) {
                         controller.onSelected1(value);
                       }),
-                  SizedBox(height: 27.v),
+                  SizedBox(height: 27),
                   _buildDNO(),
-                  SizedBox(height: 27.v),
+                  SizedBox(height: 27),
                   _buildFlatNO(),
-                  SizedBox(height: 34.v),
+                  SizedBox(height: 34),
                   GestureDetector(
                       onTap: () {
                         onTapFrame();
                       },
                       child: Container(
-                          height: 53.v,
-                          width: 126.h,
+                          height: 53,
+                          width: 126,
                           padding: EdgeInsets.symmetric(
-                              horizontal: 35.h, vertical: 19.v),
+                              horizontal: 35, vertical: 19),
                           decoration: AppDecoration.fillDeepPurpleA.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder6),
                           child: Text("  Submit",style: TextStyle(color: Colors.white),),
@@ -66,23 +66,23 @@ class Water258Screen extends GetWidget<Water258Controller> {
                           //     width: 56.h,
                           //     alignment: Alignment.center)
                       )),
-                  SizedBox(height: 5.v)
+                  SizedBox(height: 5)
                 ]))));
   }
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-        leadingWidth: 57.h,
+        leadingWidth: 57,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 25.h, top: 22.v, bottom: 22.v),
+            margin: EdgeInsets.only(left: 25, top: 22, bottom: 22),
             onTap: () {
               onTapBack();
             }),
         title: AppbarTitle(
             text: "lbl_billing_payment".tr,
-            margin: EdgeInsets.only(left: 19.h)),
+            margin: EdgeInsets.only(left: 19)),
         styleType: Style.bgFill_1);
   }
 
@@ -102,16 +102,16 @@ class Water258Screen extends GetWidget<Water258Controller> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadiusStyle.roundedBorder6),
                   child: Container(
-                      height: 173.v,
-                      width: 329.h,
+                      height: 173,
+                      width: 329,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadiusStyle.roundedBorder6),
                       child: Stack(alignment: Alignment.center, children: [
                         CustomImageView(
                             imagePath: ImageConstant.imgRectangle1064173x334,
-                            height: 173.v,
-                            width: 329.h,
-                            radius: BorderRadius.circular(8.h),
+                            height: 173,
+                            width: 329,
+                            radius: BorderRadius.circular(8),
                             alignment: Alignment.center),
                         Align(
                             alignment: Alignment.center,
@@ -123,8 +123,8 @@ class Water258Screen extends GetWidget<Water258Controller> {
                                     borderRadius:
                                         BorderRadiusStyle.roundedBorder6),
                                 child: Container(
-                                    height: 173.v,
-                                    width: 329.h,
+                                    height: 173,
+                                    width: 329,
                                     decoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadiusStyle.roundedBorder6),
@@ -134,44 +134,44 @@ class Water258Screen extends GetWidget<Water258Controller> {
                                           CustomImageView(
                                               imagePath:
                                                   ImageConstant.imgImage7,
-                                              height: 173.v,
-                                              width: 329.h,
+                                              height: 173,
+                                              width: 329,
                                               radius:
-                                                  BorderRadius.circular(8.h),
+                                                  BorderRadius.circular(8),
                                               alignment: Alignment.center),
                                           CustomImageView(
                                               imagePath:
                                                   ImageConstant.imgImage10,
-                                              height: 173.v,
-                                              width: 329.h,
+                                              height: 173,
+                                              width: 329,
                                               radius:
-                                                  BorderRadius.circular(8.h),
+                                                  BorderRadius.circular(8),
                                               alignment: Alignment.center)
                                         ]))))
                       ]))),
-              SizedBox(height: 27.v),
+              SizedBox(height: 27),
               Padding(
-                  padding: EdgeInsets.only(left: 10.h),
+                  padding: EdgeInsets.only(left: 10),
                   child: Row(children: [
                     CustomImageView(
                         imagePath: ImageConstant.imgEllipse7735x35,
-                        height: 35.adaptSize,
-                        width: 35.adaptSize,
-                        radius: BorderRadius.circular(17.h)),
+                        height: 35,
+                        width: 35,
+                        radius: BorderRadius.circular(17)),
                     Padding(
                         padding:
-                            EdgeInsets.only(left: 18.h, top: 9.v, bottom: 7.v),
+                            EdgeInsets.only(left: 18, top: 9, bottom: 7),
                         child: Text("msg_tamilnadu_electricity".tr,
                             style: theme.textTheme.labelLarge))
                   ])),
-              SizedBox(height: 7.v)
+              SizedBox(height: 7)
             ]));
   }
 
   /// Section Widget
   Widget _buildDno() {
     return CustomTextFormField(
-        width: 161.h,
+        width: 161,
         controller: controller.dnoController,
         hintText: "lbl_d_no".tr,
         hintStyle: theme.textTheme.bodyLarge!);
@@ -180,7 +180,7 @@ class Water258Screen extends GetWidget<Water258Controller> {
   /// Section Widget
   Widget _buildBillNo() {
     return CustomTextFormField(
-        width: 152.h,
+        width: 152,
         controller: controller.billNoController,
         hintText: "lbl_bill_no".tr,
         hintStyle: theme.textTheme.bodyLarge!);
@@ -196,7 +196,7 @@ class Water258Screen extends GetWidget<Water258Controller> {
   /// Section Widget
   Widget _buildFlatNo() {
     return CustomTextFormField(
-        width: 161.h,
+        width: 161,
         controller: controller.flatNoController,
         hintText: "lbl_flat_no".tr,
         hintStyle: theme.textTheme.bodyLarge!);
@@ -205,7 +205,7 @@ class Water258Screen extends GetWidget<Water258Controller> {
   /// Section Widget
   Widget _buildSeNo() {
     return CustomTextFormField(
-        width: 152.h,
+        width: 152,
         controller: controller.seNoController,
         hintText: "lbl_se_no".tr,
         hintStyle: theme.textTheme.bodyLarge!,

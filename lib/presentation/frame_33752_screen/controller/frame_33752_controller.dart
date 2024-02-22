@@ -7,4 +7,12 @@ import 'package:faz/presentation/frame_33752_screen/models/frame_33752_model.dar
 /// current frame33752ModelObj
 class Frame33752Controller extends GetxController {
   Rx<Frame33752Model> frame33752ModelObj = Frame33752Model().obs;
+
+  void onReady() {
+    Future.delayed(const Duration(milliseconds: 2000), () {
+      Get.offNamed(
+        AppRoutes.frame33753Screen,
+      );
+    });
+  }
 }

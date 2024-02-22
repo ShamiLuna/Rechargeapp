@@ -54,7 +54,7 @@ class ThemeHelper {
         style: ElevatedButton.styleFrom(
           backgroundColor: colorScheme.primary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(6.h),
+            borderRadius: BorderRadius.circular(6),
           ),
           visualDensity: const VisualDensity(
             vertical: -4,
@@ -68,10 +68,10 @@ class ThemeHelper {
           backgroundColor: Colors.transparent,
           side: BorderSide(
             color: appTheme.blueGray100C1,
-            width: 1.h,
+            width: 1,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4.h),
+            borderRadius: BorderRadius.circular(4),
           ),
           visualDensity: const VisualDensity(
             vertical: -4,
@@ -100,67 +100,67 @@ class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
         bodyLarge: TextStyle(
           color: appTheme.blueGray400,
-          fontSize: 16.fSize,
+          fontSize: 16,
           fontFamily: 'Titillium Web',
           fontWeight: FontWeight.w400,
         ),
         bodyMedium: TextStyle(
           color: Color(0XFFA5A1A1),
-          fontSize: 14.fSize,
+          fontSize: 14,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w400,
         ),
         bodySmall: TextStyle(
           color: appTheme.whiteA700.withOpacity(0.49),
-          fontSize: 12.fSize,
+          fontSize: 12,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w400,
         ),
         displayMedium: TextStyle(
           color: appTheme.whiteA700,
-          fontSize: 45.fSize,
+          fontSize: 45,
           fontFamily: 'Titillium Web',
           fontWeight: FontWeight.w600,
         ),
         headlineLarge: TextStyle(
           color: appTheme.whiteA700,
-          fontSize: 30.fSize,
+          fontSize: 30,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w700,
         ),
         headlineSmall: TextStyle(
           color: appTheme.whiteA700,
-          fontSize: 24.fSize,
+          fontSize: 24,
           fontFamily: 'SF Pro Display',
           fontWeight: FontWeight.w600,
         ),
         labelLarge: TextStyle(
           color: appTheme.whiteA700,
-          fontSize: 12.fSize,
+          fontSize: 12,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w500,
         ),
         labelMedium: TextStyle(
           color: Color(0XFFA456F6),
-          fontSize: 11.fSize,
+          fontSize: 11,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w500,
         ),
         titleLarge: TextStyle(
           color: appTheme.whiteA700,
-          fontSize: 22.fSize,
+          fontSize: 22,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w500,
         ),
         titleMedium: TextStyle(
           color: appTheme.black900,
-          fontSize: 16.fSize,
+          fontSize: 16,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w600,
         ),
         titleSmall: TextStyle(
           color: appTheme.whiteA700,
-          fontSize: 15.fSize,
+          fontSize: 15,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w500,
         ),

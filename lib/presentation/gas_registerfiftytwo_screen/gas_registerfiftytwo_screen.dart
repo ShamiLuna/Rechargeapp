@@ -23,7 +23,7 @@ class GasRegisterfiftytwoScreen
             resizeToAvoidBottomInset: false,
             appBar: _buildAppBar(),
             body: SizedBox(
-                width: SizeUtils.width,
+                width: 480,
                 child: SingleChildScrollView(
                     padding: EdgeInsets.only(
                         bottom: MediaQuery.of(context).viewInsets.bottom),
@@ -32,38 +32,38 @@ class GasRegisterfiftytwoScreen
                         child: Container(
                             width: double.maxFinite,
                             padding: EdgeInsets.symmetric(
-                                horizontal: 20.h, vertical: 14.v),
+                                horizontal: 20, vertical: 14),
                             child: Column(children: [
                               _buildFrameStack(),
-                              SizedBox(height: 17.v),
+                              SizedBox(height: 17),
                               CustomSearchView(
                                   controller: controller.searchController,
                                   hintText: "lbl_search".tr),
-                              SizedBox(height: 34.v),
+                              SizedBox(height: 34),
                               _buildFrameColumn(),
-                              SizedBox(height: 19.v),
+                              SizedBox(height: 19),
                               CustomElevatedButton(
-                                  width: 189.h,
+                                  width: 189,
                                   text: "lbl_confirm".tr.toUpperCase(),
                                   onPressed: () {
                                     onTapConfirm();
                                   }),
-                              SizedBox(height: 5.v)
+                              SizedBox(height: 5)
                             ])))))));
   }
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-        leadingWidth: 57.h,
+        leadingWidth: 57,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 25.h, top: 22.v, bottom: 22.v),
+            margin: EdgeInsets.only(left: 25, top: 22, bottom: 22),
             onTap: () {
               onTapBack();
             }),
         title: AppbarTitle(
-            text: "lbl_indane_gas".tr, margin: EdgeInsets.only(left: 14.h)),
+            text: "lbl_indane_gas".tr, margin: EdgeInsets.only(left: 14)),
         styleType: Style.bgFill);
   }
 
@@ -76,22 +76,22 @@ class GasRegisterfiftytwoScreen
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusStyle.roundedBorder6),
         child: Container(
-            height: 173.v,
-            width: 334.h,
+            height: 173,
+            width: 334,
             decoration:
                 BoxDecoration(borderRadius: BorderRadiusStyle.roundedBorder6),
             child: Stack(alignment: Alignment.center, children: [
               CustomImageView(
                   imagePath: ImageConstant.imgRectangle1064173x334,
-                  height: 173.v,
-                  width: 334.h,
-                  radius: BorderRadius.circular(8.h),
+                  height: 173,
+                  width: 334,
+                  radius: BorderRadius.circular(8),
                   alignment: Alignment.center),
               CustomImageView(
                   imagePath: ImageConstant.imgImage7,
-                  height: 173.v,
-                  width: 334.h,
-                  radius: BorderRadius.circular(8.h),
+                  height: 173,
+                  width: 334,
+                  radius: BorderRadius.circular(8),
                   alignment: Alignment.center)
             ])));
   }
@@ -99,7 +99,7 @@ class GasRegisterfiftytwoScreen
   /// Section Widget
   Widget _buildFrameColumn() {
     return Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 18.v),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 18),
         decoration: AppDecoration.fillGray
             .copyWith(borderRadius: BorderRadiusStyle.roundedBorder14),
         child: Column(
@@ -108,7 +108,7 @@ class GasRegisterfiftytwoScreen
             children: [
               Text("lbl_book_using".tr,
                   style: CustomTextStyles.labelLargeDMSans),
-              SizedBox(height: 10.v),
+              SizedBox(height: 10),
               CustomTextFormField(
                   controller: controller.registerBookNumberController,
                   hintText: "msg_register_book_number".tr,
@@ -122,10 +122,10 @@ class GasRegisterfiftytwoScreen
                   },
                   borderDecoration: TextFormFieldStyleHelper.underLineGray,
                   filled: false),
-              SizedBox(height: 12.v),
+              SizedBox(height: 12),
               Text("lbl_register_number".tr,
                   style: CustomTextStyles.labelLargeDMSans),
-              SizedBox(height: 10.v),
+              SizedBox(height: 10),
               CustomTextFormField(
                   controller: controller.registerBookNumberController1,
                   hintText: "msg_register_book_number".tr,
@@ -140,14 +140,14 @@ class GasRegisterfiftytwoScreen
                   },
                   borderDecoration: TextFormFieldStyleHelper.underLineGray,
                   filled: false),
-              SizedBox(height: 30.v),
+              SizedBox(height: 30),
               SizedBox(
-                  width: 297.h,
+                  width: 297,
                   child: Text("msg_please_note_the".tr,
                       maxLines: 4,
                       overflow: TextOverflow.ellipsis,
                       style: CustomTextStyles.bodySmallDMSansGray60003)),
-              SizedBox(height: 9.v)
+              SizedBox(height: 9)
             ]));
   }
 

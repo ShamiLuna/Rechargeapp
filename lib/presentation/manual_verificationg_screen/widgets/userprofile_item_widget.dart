@@ -27,8 +27,8 @@ class UserprofileItemWidget extends StatelessWidget {
       },
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: 14.h,
-          vertical: 15.v,
+          horizontal: 14,
+          vertical: 15,
         ),
         decoration: AppDecoration.outlineWhiteA700.copyWith(
           borderRadius: BorderRadiusStyle.roundedBorder14,
@@ -36,10 +36,10 @@ class UserprofileItemWidget extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 3.v),
+              margin: EdgeInsets.only(top: 3),
               padding: EdgeInsets.symmetric(
-                horizontal: 5.h,
-                vertical: 6.v,
+                horizontal: 5,
+                vertical: 6,
               ),
               decoration: AppDecoration.fillOrangeA.copyWith(
                 borderRadius: BorderRadiusStyle.circleBorder10,
@@ -50,8 +50,8 @@ class UserprofileItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 60.h,
-                    margin: EdgeInsets.only(right: 2.h),
+                    width: 60,
+                    margin: EdgeInsets.only(right: 2),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -67,30 +67,30 @@ class UserprofileItemWidget extends StatelessWidget {
                         Obx(
                           () => CustomImageView(
                             imagePath: userprofileItemModelObj.userImage!.value,
-                            height: 5.v,
-                            width: 13.h,
+                            height: 5,
+                            width: 13,
                           ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 1.v),
+                  SizedBox(height: 1),
                   Obx(
                     () => Text(
                       userprofileItemModelObj.amountText!.value,
                       style: CustomTextStyles.poppinsWhiteA700SemiBold,
                     ),
                   ),
-                  SizedBox(height: 8.v),
+                  SizedBox(height: 8),
                   Container(
-                    width: 60.h,
-                    margin: EdgeInsets.only(right: 2.h),
+                    width: 60,
+                    margin: EdgeInsets.only(right: 2),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(bottom: 5.v),
+                          padding: EdgeInsets.only(bottom: 5),
                           child: Obx(
                             () => Text(
                               userprofileItemModelObj.cardNumberText!.value,
@@ -99,7 +99,7 @@ class UserprofileItemWidget extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: 5.v),
+                          padding: EdgeInsets.only(top: 5),
                           child: Obx(
                             () => Text(
                               userprofileItemModelObj.cardTypeText!.value,
@@ -110,15 +110,15 @@ class UserprofileItemWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 3.v),
+                  SizedBox(height: 3),
                 ],
               ),
             ),
             Padding(
               padding: EdgeInsets.only(
-                left: 16.h,
-                top: 7.v,
-                bottom: 7.v,
+                left: 16,
+                top: 7,
+                bottom: 7,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

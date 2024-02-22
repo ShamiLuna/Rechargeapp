@@ -24,17 +24,17 @@ class TransferhistoryItemWidget extends StatelessWidget {
         Card(
           clipBehavior: Clip.antiAlias,
           elevation: 0,
-          margin: EdgeInsets.only(bottom: 9.v),
+          margin: EdgeInsets.only(bottom: 9),
           color: appTheme.deepPurple10001,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusStyle.roundedBorder14,
           ),
           child: Container(
-            height: 35.adaptSize,
-            width: 35.adaptSize,
+            height: 35,
+            width: 35,
             padding: EdgeInsets.symmetric(
-              horizontal: 9.h,
-              vertical: 3.v,
+              horizontal: 9,
+              vertical: 3,
             ),
             decoration: AppDecoration.fillDeepPurple.copyWith(
               borderRadius: BorderRadiusStyle.roundedBorder14,
@@ -46,18 +46,18 @@ class TransferhistoryItemWidget extends StatelessWidget {
                   () => CustomImageView(
                     imagePath:
                         transferhistoryItemModelObj.transferImage1!.value,
-                    height: 15.v,
-                    width: 9.h,
+                    height: 15,
+                    width: 9,
                     alignment: Alignment.topLeft,
-                    margin: EdgeInsets.only(top: 4.v),
+                    margin: EdgeInsets.only(top: 4),
                   ),
                 ),
                 Obx(
                   () => CustomImageView(
                     imagePath:
                         transferhistoryItemModelObj.transferImage2!.value,
-                    height: 15.v,
-                    width: 9.h,
+                    height: 15,
+                    width: 9,
                     alignment: Alignment.bottomRight,
                   ),
                 ),
@@ -67,10 +67,10 @@ class TransferhistoryItemWidget extends StatelessWidget {
         ),
         Expanded(
           child: Container(
-            width: 224.h,
+            width: 224,
             margin: EdgeInsets.only(
-              left: 15.h,
-              top: 2.v,
+              left: 15,
+              top: 2,
             ),
             child: RichText(
               text: TextSpan(
