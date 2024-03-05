@@ -1,3 +1,4 @@
+import 'package:faz/auth_controller.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'controller/four_controller.dart';
@@ -27,14 +28,14 @@ class FourScreen extends GetWidget<FourController> {
                       Expanded(
                           child: SingleChildScrollView(
                               child: Container(
-                                  height: 810,
+                                  height: 900,
                                   width: double.maxFinite,
                                   margin: EdgeInsets.only(
                                       left: 10, right: 10, bottom: 10),
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 21, vertical: 19),
                                   child: Stack(
-                                      alignment: Alignment.bottomCenter,
+                                      alignment: Alignment.topCenter,
                                       children: [
                                         Align(
                                             alignment: Alignment.center,
@@ -62,8 +63,17 @@ class FourScreen extends GetWidget<FourController> {
                                                       _buildNameFloatingTextField(),
                                                       SizedBox(height: 24),
                                                       _buildPasswordFloatingTextField(),
-                                                      SizedBox(height: 74),
-                                                      _buildContinueButton()
+                                                      SizedBox(height: 20),
+                                                      _buildContinueButton(),
+                                                SizedBox(height: 20),
+                                                CustomElevatedButton(
+                                            text: "Continue As Guest".tr.toUpperCase(),
+                                            buttonTextStyle: CustomTextStyles.titleSmallRoboto,
+                                            onPressed: () {
+                                                  eight();
+                                            }),
+                                                      SizedBox(height: 100),
+
                                                     ]))),
                                         Align(
                                             alignment: Alignment.topCenter,
@@ -76,7 +86,7 @@ class FourScreen extends GetWidget<FourController> {
                                                     mainAxisSize:
                                                         MainAxisSize.min,
                                                     children: [
-                                                      Text("lbl_welcome".tr,
+                                                      Text("Login".tr,
                                                           style: CustomTextStyles
                                                               .titleLargeRobotoPrimary),
                                                       SizedBox(height: 14),
@@ -142,72 +152,131 @@ class FourScreen extends GetWidget<FourController> {
 
   /// Section Widget
   Widget _buildEmailFloatingTextField() {
-    return CustomFloatingTextField(
-        // controller: controller.emailFloatingTextFieldController,
-        labelText: "lbl_email".tr,
-        labelStyle: CustomTextStyles.bodyMediumRobotoWhiteA700,
-        hintText: "lbl_email".tr,
-        hintStyle: CustomTextStyles.bodyMediumRobotoWhiteA700,
-        textInputType: TextInputType.emailAddress,
-        validator: (value) {
-          if (value == null || (!isValidEmail(value, isRequired: true))) {
-            return "err_msg_please_enter_valid_email".tr;
-          }
-          return null;
-        },
-        
-        contentPadding: EdgeInsets.fromLTRB(26, 19, 26, 21));
+    return  TextFormField(
+      keyboardType: TextInputType.emailAddress,
+      controller: controller.emailFloatingTextFieldController,
+      decoration: InputDecoration(
+        labelText: "Email",
+        border: OutlineInputBorder(),
+        prefixIcon: Icon(Icons.email),
+      ),
+      validator: (value){
+        bool emailvalid = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_'{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value!);
+        if(value!.isEmpty){
+          return "Enter Email";
+        }
+
+        else if(!emailvalid){
+          return "Enter Valid Email";
+        }
+
+      },
+    );
+
+      // CustomFloatingTextField(
+      //
+      //   controller: controller.emailFloatingTextFieldController,
+      //   labelText: "lbl_email".tr,
+      //   labelStyle: CustomTextStyles.bodyMediumRobotoWhiteA700,
+      //   hintText: "lbl_email".tr,
+      //   hintStyle: CustomTextStyles.bodyMediumRobotoWhiteA700,
+      //   textInputType: TextInputType.emailAddress,
+      //   validator: (value) {
+      //     if (value == null || (!isValidEmail(value, isRequired: true))) {
+      //       return "err_msg_please_enter_valid_email".tr;
+      //     }
+      //     return null;
+      //   },
+      //
+      //   contentPadding: EdgeInsets.fromLTRB(26, 19, 26, 21));
   }
 
   /// Section Widget
   Widget _buildNameFloatingTextField() {
-    return CustomFloatingTextField(
-        // controller: controller.nameFloatingTextFieldController,
-        labelText: "lbl_name".tr,
-        labelStyle: CustomTextStyles.bodyMediumRobotoWhiteA700,
-        hintText: "lbl_name".tr,
-        hintStyle: CustomTextStyles.bodyMediumRobotoWhiteA700,
-        validator: (value) {
-          if (!isText(value)) {
-            return "err_msg_please_enter_valid_text".tr;
-          }
-          return null;
-        },
-        contentPadding: EdgeInsets.symmetric(horizontal: 26, vertical: 20));
+    return
+      TextFormField(
+          keyboardType: TextInputType.emailAddress,
+          controller: controller.nameFloatingTextFieldController,
+          decoration: InputDecoration(
+            labelText: "Name",
+            border: OutlineInputBorder(),
+            prefixIcon: Icon(Icons.person),
+          )
+      );
+      // CustomFloatingTextField(
+      //   controller: controller.nameFloatingTextFieldController,
+      //   labelText: "lbl_name".tr,
+      //   labelStyle: CustomTextStyles.bodyMediumRobotoWhiteA700,
+      //   hintText: "lbl_name".tr,
+      //   hintStyle: CustomTextStyles.bodyMediumRobotoWhiteA700,
+      //   validator: (value) {
+      //     if (!isText(value)) {
+      //       return "err_msg_please_enter_valid_text".tr;
+      //     }
+      //     return null;
+      //   },
+      //   contentPadding: EdgeInsets.symmetric(horizontal: 26, vertical: 20));
   }
 
   /// Section Widget
   Widget _buildPasswordFloatingTextField() {
-    return Obx(() => CustomFloatingTextField(
-        // controller: controller.passwordFloatingTextFieldController,
-        labelText: "lbl_password".tr,
-        labelStyle: CustomTextStyles.bodySmallWhiteA700,
-        hintText: "lbl_password".tr,
-        hintStyle: CustomTextStyles.bodySmallWhiteA700,
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.visiblePassword,
+    return
+      Obx(()=> TextFormField(
         obscureText: controller.isShowPassword.value,
-        prefix: Container(width: 5),
-        prefixConstraints: BoxConstraints(maxHeight: 68),
-        suffix: InkWell(
-            onTap: () {
-              controller.isShowPassword.value =
-                  !controller.isShowPassword.value;
+        keyboardType: TextInputType.emailAddress,
+        controller: controller.passwordFloatingTextFieldController,
+        decoration: InputDecoration(
+          labelText: "Password",
+          border: OutlineInputBorder(),
+          prefixIcon: Icon(Icons.lock),
+          suffix: InkWell(
+            child: Icon(controller.isShowPassword.value?Icons.visibility: Icons.visibility_off),
+            onTap: (){
+              controller.isShowPassword.value=!controller.isShowPassword.value;
             },
-            child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 18),
-                child: CustomImageView(
-                    imagePath: ImageConstant.imgUserWhiteA70013x20,
-                    height: 13,
-                    width: 20))),
-        suffixConstraints: BoxConstraints(maxHeight: 68),
-        validator: (value) {
-          if (value == null || (!isValidPassword(value, isRequired: true))) {
-            return "err_msg_please_enter_valid_password".tr;
+          ),
+        ),
+        validator: (value){
+          if (value!.isEmpty){
+            return "Enter Password";
           }
-          return null;
+          else if(controller.passwordFloatingTextFieldController.text.length<6){
+            return "Password Length Should be more than 6 characters";
+          }
         },
-        contentPadding: EdgeInsets.fromLTRB(26, -10, 26, 50)));
+      ));
+    //   Obx(() => TextFormField(
+    //     controller: controller.passwordFloatingTextFieldController,
+    //
+    //      // labelText: "lbl_password".tr,
+    //     // labelStyle: CustomTextStyles.bodySmallWhiteA700,
+    //     // hintText: "lbl_password".tr,
+    //     // hintStyle: CustomTextStyles.bodySmallWhiteA700,
+    //     textInputAction: TextInputAction.done,
+    //     // textInputType: TextInputType.visiblePassword,
+    //     obscureText: controller.isShowPassword.value,
+    //     // prefix: Container(width: 5),
+    //     // prefixConstraints: BoxConstraints(maxHeight: 68),
+    //     // suffix: InkWell(
+    //     //     onTap: () {
+    //     //       controller.isShowPassword.value =
+    //     //           !controller.isShowPassword.value;
+    //     //     },
+    //     //     child: Container(
+    //     //         margin: EdgeInsets.symmetric(horizontal: 18),
+    //     //         child: CustomImageView(
+    //     //             imagePath: ImageConstant.imgUserWhiteA70013x20,
+    //     //             height: 13,
+    //     //             width: 20))),
+    //     // suffixConstraints: BoxConstraints(maxHeight: 68),
+    //     validator: (value) {
+    //       if (value == null || (!isValidPassword(value, isRequired: true))) {
+    //         return "err_msg_please_enter_valid_password".tr;
+    //       }
+    //       return null;
+    //     },
+    //     // contentPadding: EdgeInsets.fromLTRB(26, -10, 26, 50)
+    // ));
   }
 
   /// Section Widget
@@ -216,15 +285,28 @@ class FourScreen extends GetWidget<FourController> {
         text: "lbl_continue".tr.toUpperCase(),
         buttonTextStyle: CustomTextStyles.titleSmallRoboto,
         onPressed: () {
+
+          AuthController.instance.register(controller.emailFloatingTextFieldController.text.trim(), controller.passwordFloatingTextFieldController.text.trim());
           // print("The Email is ${storage.read("email")}");
-          n5();
+          if (_formKey.currentState!.validate()){
+            print("Success Data added");
+            controller.emailFloatingTextFieldController.clear();
+            controller.nameFloatingTextFieldController.clear();
+            return;
+
+          }
+          _formKey.currentState!.save();
+
         });
   }
 
   /// Navigates to the fiveScreen when the action is triggered.
   n5() {
     Get.offNamed(
-      AppRoutes.fiveScreen,
+      AppRoutes.eightScreen,
     );
+  }
+  eight() {
+    Get.offNamed(AppRoutes.eightScreen);
   }
 }

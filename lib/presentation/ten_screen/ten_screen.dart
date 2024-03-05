@@ -17,28 +17,30 @@ class TenScreen extends GetWidget<TenController> {
             resizeToAvoidBottomInset: false,
             appBar: _buildAppBar(),
             body: SizedBox(
-                height: 810,
+                height: 1400,
                 width: 393,
-                child: Container(
-                    margin: EdgeInsets.only(bottom: 5),
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(children: [
-                      SizedBox(height: 60),
-                      CustomImageView(
-                          imagePath: ImageConstant.imgRectangle1064,
-                          height: 173,
-                          width: 334,
-                          radius: BorderRadius.circular(6)),
-                      SizedBox(height: 17),
-                      Padding(
-                          padding: EdgeInsets.only(left: 20, right: 19),
-                          child: CustomSearchView(
-                              controller: controller.searchController,
-                              hintText: "lbl_search".tr)),
-                      SizedBox(height: 12),
-                      _buildFrame(),
-                      _buildFrame1()
-                    ])))));
+                child: SingleChildScrollView(
+                  child: Container(
+                      margin: EdgeInsets.only(bottom: 5),
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(children: [
+                        SizedBox(height: 60),
+                        CustomImageView(
+                            imagePath: ImageConstant.imgRectangle1064,
+                            height: 173,
+                            width: 334,
+                            radius: BorderRadius.circular(6)),
+                        SizedBox(height: 17),
+                        Padding(
+                            padding: EdgeInsets.only(left: 20, right: 19),
+                            child: CustomSearchView(
+                                controller: controller.searchController,
+                                hintText: "lbl_search".tr)),
+                        SizedBox(height: 12),
+                        _buildFrame(),
+                        _buildFrame1()
+                      ])),
+                ))));
   }
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
@@ -80,23 +82,21 @@ class TenScreen extends GetWidget<TenController> {
               SizedBox(height: 14),
               Divider(color: appTheme.blueGray4003a),
               SizedBox(height: 17),
-              Expanded(
-                child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  SizedBox(
-                      width: 205,
-                      child: Text("msg_allow_the_app_to".tr,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: CustomTextStyles.titleSmallBluegray40001)),
-                  CustomOutlinedButton(
-                      height: 29,
-                      width: 61,
-                      text: "lbl_allow".tr,
-                      margin: EdgeInsets.only(left: 4, top: 6, bottom: 8),
-                      buttonStyle: CustomButtonStyles.outlinePrimary,
-                      buttonTextStyle: CustomTextStyles.titleSmallPrimary)
-                ]),
-              )
+              Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                SizedBox(
+                    width: 205,
+                    child: Text("msg_allow_the_app_to".tr,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: CustomTextStyles.titleSmallBluegray40001)),
+                CustomOutlinedButton(
+                    height: 29,
+                    width: 61,
+                    text: "lbl_allow".tr,
+                    margin: EdgeInsets.only(left: 4, top: 6, bottom: 8),
+                    buttonStyle: CustomButtonStyles.outlinePrimary,
+                    buttonTextStyle: CustomTextStyles.titleSmallPrimary)
+              ])
             ]));
   }
 
@@ -108,129 +108,134 @@ class TenScreen extends GetWidget<TenController> {
         padding: EdgeInsets.symmetric(horizontal: 36),
         decoration: AppDecoration.fillGray
             .copyWith(borderRadius: BorderRadiusStyle.roundedBorder6),
-        child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 28),
-              Text("lbl_all_contact".tr,
-                  style: CustomTextStyles.titleMediumBluegray40001),
-              SizedBox(height: 27),
-              GestureDetector(
-                  onTap: () {
-                    onTapDiani();
-                  },
-                  child: Row(children: [
-                    Container(
-                        width: 35,
-                        margin: EdgeInsets.only(bottom: 1),
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 1),
-                        decoration: AppDecoration.fillIndigoA.copyWith(
-                            borderRadius: BorderRadiusStyle.roundedBorder17),
-                        child: Text("lbl_d".tr,
-                            style: CustomTextStyles.titleLargeIndigoA10001)),
-                    Padding(
-                        padding: EdgeInsets.only(left: 18, top: 3),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("msg_diani_otelanis_teori".tr,
-                                  style:
-                                      CustomTextStyles.labelLargeBluegray40001),
-                              Opacity(
-                                  opacity: 0.5,
-                                  child: Text("lbl_62898023450".tr,
-                                      style: CustomTextStyles
-                                          .bodySmallBluegray40001))
-                            ]))
-                  ])),
-              SizedBox(height: 28),
-              _buildNuniEksitin(
-                  titleText: "lbl_b".tr,
-                  nameText: "lbl_bahrun_st".tr,
-                  mobileNumber: "lbl_62898023450".tr),
-              SizedBox(height: 28),
-              Row(children: [
-                Container(
-                    width: 35,
-                    margin: EdgeInsets.only(bottom: 2),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 11, vertical: 2),
-                    decoration: AppDecoration.fillTealA.copyWith(
-                        borderRadius: BorderRadiusStyle.roundedBorder17),
-                    child: Text("lbl_r".tr,
-                        style: CustomTextStyles.titleLargeTealA100)),
-                Padding(
-                    padding: EdgeInsets.only(left: 18, top: 4),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("msg_ririn_panjaitan".tr,
-                              style: CustomTextStyles.labelLargeBluegray40001),
-                          Opacity(
-                              opacity: 0.5,
-                              child: Text("lbl_62898023450".tr,
-                                  style:
-                                      CustomTextStyles.bodySmallBluegray40001))
-                        ]))
+        child: GestureDetector(
+          onTap: () {
+            onTapDiani();
+          },
+          child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 28),
+                Text("lbl_all_contact".tr,
+                    style: CustomTextStyles.titleMediumBluegray40001),
+                SizedBox(height: 27),
+                GestureDetector(
+                    onTap: () {
+                      onTapDiani();
+                    },
+                    child: Row(children: [
+                      Container(
+                          width: 35,
+                          margin: EdgeInsets.only(bottom: 1),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 1),
+                          decoration: AppDecoration.fillIndigoA.copyWith(
+                              borderRadius: BorderRadiusStyle.roundedBorder17),
+                          child: Text("lbl_d".tr,
+                              style: CustomTextStyles.titleLargeIndigoA10001)),
+                      Padding(
+                          padding: EdgeInsets.only(left: 18, top: 3),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("msg_diani_otelanis_teori".tr,
+                                    style:
+                                        CustomTextStyles.labelLargeBluegray40001),
+                                Opacity(
+                                    opacity: 0.5,
+                                    child: Text("lbl_62898023450".tr,
+                                        style: CustomTextStyles
+                                            .bodySmallBluegray40001))
+                              ]))
+                    ])),
+                SizedBox(height: 28),
+                _buildNuniEksitin(
+                    titleText: "lbl_b".tr,
+                    nameText: "lbl_bahrun_st".tr,
+                    mobileNumber: "lbl_62898023450".tr),
+                SizedBox(height: 28),
+                Row(children: [
+                  Container(
+                      width: 35,
+                      margin: EdgeInsets.only(bottom: 2),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 11, vertical: 2),
+                      decoration: AppDecoration.fillTealA.copyWith(
+                          borderRadius: BorderRadiusStyle.roundedBorder17),
+                      child: Text("lbl_r".tr,
+                          style: CustomTextStyles.titleLargeTealA100)),
+                  Padding(
+                      padding: EdgeInsets.only(left: 18, top: 4),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("msg_ririn_panjaitan".tr,
+                                style: CustomTextStyles.labelLargeBluegray40001),
+                            Opacity(
+                                opacity: 0.5,
+                                child: Text("lbl_62898023450".tr,
+                                    style:
+                                        CustomTextStyles.bodySmallBluegray40001))
+                          ]))
+                ]),
+                SizedBox(height: 28),
+                Row(children: [
+                  Container(
+                      width: 35,
+                      margin: EdgeInsets.only(bottom: 2),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+                      decoration: AppDecoration.fillDeepOrange.copyWith(
+                          borderRadius: BorderRadiusStyle.roundedBorder17),
+                      child: Text("lbl_e".tr,
+                          style: CustomTextStyles.titleLargeDeeporange200)),
+                  Padding(
+                      padding: EdgeInsets.only(left: 18, top: 4),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("msg_eki_sulungpati_mpd".tr,
+                                style: CustomTextStyles.labelLargeBluegray40001),
+                            Opacity(
+                                opacity: 0.5,
+                                child: Text("lbl_62898023450".tr,
+                                    style:
+                                        CustomTextStyles.bodySmallBluegray40001))
+                          ]))
+                ]),
+                SizedBox(height: 28),
+                Row(children: [
+                  Container(
+                      width: 35,
+                      margin: EdgeInsets.only(bottom: 2),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 11, vertical: 2),
+                      decoration: AppDecoration.fillIndigoA.copyWith(
+                          borderRadius: BorderRadiusStyle.roundedBorder17),
+                      child: Text("lbl_s".tr,
+                          style: CustomTextStyles.titleLargeIndigoA10001)),
+                  Padding(
+                      padding: EdgeInsets.only(left: 18, top: 4),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("msg_septiani_destri".tr,
+                                style: CustomTextStyles.labelLargeBluegray40001),
+                            Opacity(
+                                opacity: 0.5,
+                                child: Text("lbl_62898023450".tr,
+                                    style:
+                                        CustomTextStyles.bodySmallBluegray40001))
+                          ]))
+                ]),
+                SizedBox(height: 28),
+                _buildNuniEksitin(
+                    titleText: "lbl_n".tr,
+                    nameText: "lbl_nuni_eksitin".tr,
+                    mobileNumber: "lbl_62898023450".tr)
               ]),
-              SizedBox(height: 28),
-              Row(children: [
-                Container(
-                    width: 35,
-                    margin: EdgeInsets.only(bottom: 2),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 12, vertical: 2),
-                    decoration: AppDecoration.fillDeepOrange.copyWith(
-                        borderRadius: BorderRadiusStyle.roundedBorder17),
-                    child: Text("lbl_e".tr,
-                        style: CustomTextStyles.titleLargeDeeporange200)),
-                Padding(
-                    padding: EdgeInsets.only(left: 18, top: 4),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("msg_eki_sulungpati_mpd".tr,
-                              style: CustomTextStyles.labelLargeBluegray40001),
-                          Opacity(
-                              opacity: 0.5,
-                              child: Text("lbl_62898023450".tr,
-                                  style:
-                                      CustomTextStyles.bodySmallBluegray40001))
-                        ]))
-              ]),
-              SizedBox(height: 28),
-              Row(children: [
-                Container(
-                    width: 35,
-                    margin: EdgeInsets.only(bottom: 2),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 11, vertical: 2),
-                    decoration: AppDecoration.fillIndigoA.copyWith(
-                        borderRadius: BorderRadiusStyle.roundedBorder17),
-                    child: Text("lbl_s".tr,
-                        style: CustomTextStyles.titleLargeIndigoA10001)),
-                Padding(
-                    padding: EdgeInsets.only(left: 18, top: 4),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("msg_septiani_destri".tr,
-                              style: CustomTextStyles.labelLargeBluegray40001),
-                          Opacity(
-                              opacity: 0.5,
-                              child: Text("lbl_62898023450".tr,
-                                  style:
-                                      CustomTextStyles.bodySmallBluegray40001))
-                        ]))
-              ]),
-              SizedBox(height: 28),
-              _buildNuniEksitin(
-                  titleText: "lbl_n".tr,
-                  nameText: "lbl_nuni_eksitin".tr,
-                  mobileNumber: "lbl_62898023450".tr)
-            ]));
+        ));
   }
 
   /// Common widget

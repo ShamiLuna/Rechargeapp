@@ -56,19 +56,17 @@ class CustomOutlinedButton extends BaseButton {
         child: OutlinedButton(
           style: buttonStyle,
           onPressed: isDisabled ?? false ? null : onPressed ?? () {},
-          child: Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                leftIcon ?? const SizedBox.shrink(),
-                Text(
-                  text,
-                  style: buttonTextStyle ?? theme.textTheme.labelLarge,
-                ),
-                rightIcon ?? const SizedBox.shrink(),
-              ],
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              leftIcon ?? const SizedBox.shrink(),
+              Text(
+                text,
+                style: buttonTextStyle ?? theme.textTheme.labelLarge,
+              ),
+              rightIcon ?? const SizedBox.shrink(),
+            ],
           ),
         ),
       );

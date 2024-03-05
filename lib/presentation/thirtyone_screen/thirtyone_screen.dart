@@ -24,7 +24,8 @@ class ThirtyoneScreen extends GetWidget<ThirtyoneController> {
                 key: _formKey,
                 child: SingleChildScrollView(
                     child: Container(
-                        margin: EdgeInsets.only(bottom: 5),
+                      width: 400,
+                        margin: EdgeInsets.only(bottom: 5,right: 10),
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Column(children: [
                           SizedBox(height: 60),
@@ -51,7 +52,7 @@ class ThirtyoneScreen extends GetWidget<ThirtyoneController> {
         leadingWidth: 67,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 35, top: 22, bottom: 22),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),
@@ -87,11 +88,12 @@ class ThirtyoneScreen extends GetWidget<ThirtyoneController> {
           Align(
               alignment: Alignment.center,
               child: Container(
-                  padding: EdgeInsets.fromLTRB(17, 1, 17, 15),
+                  padding: EdgeInsets.fromLTRB(1, 1, 17, 1),
                   decoration: AppDecoration.fillGray.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder14),
                   child: Column(
                       mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(height: 2),
@@ -108,17 +110,17 @@ class ThirtyoneScreen extends GetWidget<ThirtyoneController> {
                               return null;
                             },
                             borderDecoration:
-                                TextFormFieldStyleHelper.underLineGray,
+                            TextFormFieldStyleHelper.underLineGray,
                             filled: false),
-                        SizedBox(height: 12),
+                        SizedBox(height: 1),
                         Container(
-                            width: 296,
-                            margin: EdgeInsets.only(right: 3),
-                            child: Text("msg_press_the_menu_button".tr,
-                                maxLines: 2,
+                            width: 282,
+                            margin: EdgeInsets.only(right: 17),
+                            child: Text("msg_press_the_menu_button2".tr,
+                                maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
                                 style:
-                                    CustomTextStyles.bodySmallDMSansGray60003))
+                                CustomTextStyles.bodySmallDMSansGray60003))
                       ])))
         ]));
   }

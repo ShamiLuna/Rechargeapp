@@ -1,3 +1,4 @@
+import '../../otp/Logincontroller.dart';
 import '../controller/two_controller.dart';
 import 'package:get/get.dart';
 
@@ -11,3 +12,6 @@ class TwoBinding extends Bindings {
     Get.lazyPut(() => TwoController());
   }
 }
+// Login and two same controllers when needed comment any one
+    //noti time new project
+// popup codeEnter field controller fuctions submit phone auth credential

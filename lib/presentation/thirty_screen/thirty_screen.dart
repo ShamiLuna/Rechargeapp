@@ -1,3 +1,7 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
+
+import '../../widgets/custom_outlined_button.dart';
 import 'controller/thirty_controller.dart';
 import 'package:faz/core/app_export.dart';
 import 'package:faz/widgets/app_bar/appbar_leading_image.dart';
@@ -15,34 +19,70 @@ class ThirtyScreen extends GetWidget<ThirtyController> {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: _buildAppBar(),
-            body: SizedBox(
-                width: 480,
-                child: SingleChildScrollView(
-                    child: Container(
-                        margin: EdgeInsets.only(bottom: 5),
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(children: [
-                          SizedBox(height: 60),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgRectangle1064,
-                              height: 173,
-                              width: 334,
-                              radius: BorderRadius.circular(6)),
-                          SizedBox(height: 17),
-                          Padding(
-                              padding: EdgeInsets.only(left: 20, right: 21),
-                              child: CustomSearchView(
-                                  controller: controller.searchController,
-                                  hintText: "lbl_search".tr)),
-                          SizedBox(height: 12),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgFrame33653,
-                              height: 159,
-                              width: 337,
-                              radius: BorderRadius.circular(8)),
-                          SizedBox(height: 17),
-                          _buildFrame()
-                        ]))))));
+            body: SingleChildScrollView(
+              child: SizedBox(
+                  height: 1300,
+                  width: 480,
+                  child: Container(
+                    height: 1000,
+                      width: double.maxFinite,
+                      margin: EdgeInsets.only(bottom: 5),
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Column(children: [
+                        SizedBox(height: 60),
+                        CustomImageView(
+                            imagePath: ImageConstant.imgRectangle1064,
+                            height: 173,
+                            width: 334,
+                            radius: BorderRadius.circular(6)),
+                        SizedBox(height: 17),
+                        Padding(
+                            padding: EdgeInsets.only(left: 20, right: 21),
+                            child: CustomSearchView(
+                                controller: controller.searchController,
+                                hintText: "lbl_search".tr)),
+                        SizedBox(height: 12),
+                        // CustomImageView(
+                        //     imagePath: ImageConstant.imgFrame33653,
+                        //     height: 159,
+                        //     width: 337,
+                        //     radius: BorderRadius.circular(8)),
+                        // SizedBox(height: 17),
+                        SizedBox(
+                            width: 320,
+                            child: Text("msg_never_miss_paying".tr,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: CustomTextStyles.titleSmallBluegray40001)),
+                        SizedBox(height: 14),
+                        Divider(color: appTheme.blueGray4003a),
+                        SizedBox(height: 17),
+                        Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                          SizedBox(height: 4,
+                            width: 30,
+
+                          ),
+                          SizedBox(
+                              width: 230,
+                              child: Text("msg_allow_the_app_to".tr,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: CustomTextStyles.titleSmallBluegray40001)),
+
+                          CustomOutlinedButton(
+                              height: 29,
+                              width: 100,
+                              text: "lbl_allow".tr,
+                              margin: EdgeInsets.only(left: 4, top: 6, bottom: 8),
+                              buttonStyle: CustomButtonStyles.outlinePrimary,
+                              buttonTextStyle: CustomTextStyles.titleSmallPrimary)
+                        ]),
+                        _buildFrame(),
+                        SizedBox(
+                          height: 10,
+                        ),
+                      ]))),
+            )));
   }
 
   /// Section Widget
@@ -51,7 +91,7 @@ class ThirtyScreen extends GetWidget<ThirtyController> {
         leadingWidth: 67,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 35, top: 22, bottom: 22),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),
@@ -68,25 +108,39 @@ class ThirtyScreen extends GetWidget<ThirtyController> {
         padding: EdgeInsets.symmetric(horizontal: 36),
         decoration: AppDecoration.fillGray
             .copyWith(borderRadius: BorderRadiusStyle.roundedBorder6),
-        child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 26),
-              Text("lbl_dth".tr, style: CustomTextStyles.titleMediumGray60004),
-              SizedBox(height: 29),
-              _buildDianiRow1(titleText: "msg_airtel_digital_tv".tr),
-              SizedBox(height: 30),
-              _buildDianiRow2(channelName: "msg_colors_rishtey_tv".tr),
-              SizedBox(height: 30),
-              _buildDianiRow1(titleText: "msg_airtel_digital_tv".tr),
-              SizedBox(height: 76),
-              _buildDianiRow2(channelName: "msg_colors_rishtey_tv".tr),
-              SizedBox(height: 141),
-              _buildDianiRow1(titleText: "msg_airtel_digital_tv".tr),
-              SizedBox(height: 206),
-              _buildDianiRow2(channelName: "msg_colors_rishtey_tv".tr)
-            ]));
+        child: SingleChildScrollView(
+          child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 26),
+                Text("lbl_dth".tr, style: CustomTextStyles.titleMediumGray60004),
+                SizedBox(height: 29),
+                GestureDetector(
+                    onTap: (){
+                      Get.offNamed(AppRoutes.thirtyoneScreen);
+                    },
+                    child: _buildDianiRow1(titleText: "msg_airtel_digital_tv".tr)),
+                SizedBox(height: 30),
+                GestureDetector(
+                    onTap: (){
+                      Get.offNamed(AppRoutes.thirtyoneScreen);
+                    },
+                    child: _buildDianiRow2(channelName: "msg_colors_rishtey_tv".tr)),
+                SizedBox(height: 30),
+                GestureDetector(
+                    onTap: (){
+                      Get.offNamed(AppRoutes.thirtyoneScreen);
+                    },
+                    child: _buildDianiRow1(titleText: "msg_airtel_digital_tv".tr)),
+                SizedBox(height: 76),
+                _buildDianiRow2(channelName: "msg_colors_rishtey_tv".tr),
+                SizedBox(height: 141),
+                _buildDianiRow1(titleText: "msg_airtel_digital_tv".tr),
+                SizedBox(height: 206),
+                _buildDianiRow2(channelName: "msg_colors_rishtey_tv".tr)
+              ]),
+        ));
   }
 
   /// Common widget

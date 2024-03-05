@@ -26,27 +26,26 @@ class Frame33729Screen extends GetWidget<Frame33729Controller> {
                       child:
                           Divider(color: appTheme.black900.withOpacity(0.42))),
                   SizedBox(height: 1),
-                  Expanded(
-                      child: SizedBox(
-                          width: double.maxFinite,
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                    padding: EdgeInsets.only(left: 19),
-                                    child: Text("lbl_recent".tr,
-                                        style: CustomTextStyles
-                                            .titleMediumWhiteA700Medium_1)),
-                                SizedBox(height: 15),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: _buildTransferHistory(),
-                                ),
-                                SizedBox(height: 1),
-                                _buildYesterday(),
-                                SizedBox(height: 27),
-                                _buildCart()
-                              ]))),
+                  SizedBox(
+                      width: double.maxFinite,
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                                padding: EdgeInsets.only(left: 19),
+                                child: Text("lbl_recent".tr,
+                                    style: CustomTextStyles
+                                        .titleMediumWhiteA700Medium_1)),
+                            SizedBox(height: 15),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: _buildTransferHistory(),
+                            ),
+                            SizedBox(height: 1),
+                            _buildYesterday(),
+                            SizedBox(height: 27),
+                            _buildCart()
+                          ])),
                   SizedBox(height: 5)
                 ]))));
   }
@@ -66,29 +65,28 @@ class Frame33729Screen extends GetWidget<Frame33729Controller> {
 
   /// Section Widget
   Widget _buildTransferHistory() {
-    return Expanded(
-        child: Obx(() => ListView.separated(
-            physics: ScrollPhysics(),
-            shrinkWrap: true,
-            separatorBuilder: (context, index) {
-              return Opacity(
-                  opacity: 0.2,
-                  child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.5),
-                      child: SizedBox(
-                          width: double.maxFinite,
-                          child: Divider(
-                              height: 1,
-                              thickness: 1,
-                              color: appTheme.whiteA700.withOpacity(0.42)))));
-            },
-            itemCount: controller
-                .frame33729ModelObj.value.transferhistoryItemList.value.length,
-            itemBuilder: (context, index) {
-              TransferhistoryItemModel model = controller.frame33729ModelObj
-                  .value.transferhistoryItemList.value[index];
-              return TransferhistoryItemWidget(model);
-            })));
+    return Obx(() => ListView.separated(
+        physics: ScrollPhysics(),
+        shrinkWrap: true,
+        separatorBuilder: (context, index) {
+          return Opacity(
+              opacity: 0.2,
+              child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10.5),
+                  child: SizedBox(
+                      width: double.maxFinite,
+                      child: Divider(
+                          height: 1,
+                          thickness: 1,
+                          color: appTheme.whiteA700.withOpacity(0.42)))));
+        },
+        itemCount: controller
+            .frame33729ModelObj.value.transferhistoryItemList.value.length,
+        itemBuilder: (context, index) {
+          TransferhistoryItemModel model = controller.frame33729ModelObj
+              .value.transferhistoryItemList.value[index];
+          return TransferhistoryItemWidget(model);
+        }));
   }
 
   /// Section Widget

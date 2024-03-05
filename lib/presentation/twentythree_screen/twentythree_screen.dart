@@ -111,7 +111,7 @@ class TwentythreeScreen extends GetWidget<TwentythreeController> {
         leadingWidth: 67,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 35, top: 22, bottom: 22),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),

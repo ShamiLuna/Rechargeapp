@@ -15,15 +15,16 @@ class ThirtytwoScreen extends GetWidget<ThirtytwoController> {
         child: Scaffold(
             appBar: _buildAppBar(),
             body: SizedBox(
-                width: 450,
+                width: 400,
                 child: SingleChildScrollView(
                     child: GestureDetector(
                         onTap: () {
                           navi33();
                         },
                         child: Container(
-                            margin: EdgeInsets.only(bottom: 5),
-                            padding: EdgeInsets.symmetric(horizontal: 10),
+                          // width: 340,
+                            // margin: EdgeInsets.only(bottom: 5),
+                            // padding: EdgeInsets.symmetric(horizontal: 10),
                             child: Column(children: [
                               SizedBox(height: 60),
                               CustomImageView(
@@ -36,7 +37,7 @@ class ThirtytwoScreen extends GetWidget<ThirtytwoController> {
                               SizedBox(height: 22),
                               _buildView3(),
                               SizedBox(height: 26),
-                              _buildConfirmColumn()
+                              // _buildConfirmColumn()
                             ])))))));
   }
 
@@ -46,7 +47,7 @@ class ThirtytwoScreen extends GetWidget<ThirtytwoController> {
         leadingWidth: 67,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 35, top: 22, bottom: 22),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),
@@ -57,23 +58,17 @@ class ThirtytwoScreen extends GetWidget<ThirtytwoController> {
 
   /// Section Widget
   Widget _buildPriceRow() {
-    return Container(
+    return
+      Container(
         margin: EdgeInsets.symmetric(horizontal: 13),
         decoration: AppDecoration.fillGray
             .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
         child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                  height: 154,
-                  width: 11,
-                  decoration: BoxDecoration(
-                      color: theme.colorScheme.primary,
-                      borderRadius: BorderRadius.horizontal(
-                          left: Radius.circular(11)))),
               Padding(
-                  padding: EdgeInsets.only(left: 16, top: 9, bottom: 22),
+                  padding: EdgeInsets.only(left: 1, top: 9, bottom: 22),
                   child: _buildView(
                       offerText: "msg_offer_23_days".tr,
                       priceText: "lbl_249".tr,
@@ -82,7 +77,8 @@ class ThirtytwoScreen extends GetWidget<ThirtytwoController> {
                       voiceText: "msg_voice_unlimited".tr,
                       specialOfferText: "msg_special_offer".tr,
                       additionalBenefitsText: "msg_additional_benefits".tr))
-            ]));
+            ])
+          );
   }
 
   /// Section Widget
@@ -95,13 +91,6 @@ class ThirtytwoScreen extends GetWidget<ThirtytwoController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                  height: 154,
-                  width: 11,
-                  decoration: BoxDecoration(
-                      color: theme.colorScheme.primary,
-                      borderRadius: BorderRadius.horizontal(
-                          left: Radius.circular(11)))),
               Padding(
                   padding: EdgeInsets.only(left: 16, top: 9, bottom: 22),
                   child: _buildView(
@@ -133,70 +122,69 @@ class ThirtytwoScreen extends GetWidget<ThirtytwoController> {
     required String specialOfferText,
     required String additionalBenefitsText,
   }) {
-    return Expanded(
-        child: SizedBox(
-            width: double.maxFinite,
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Container(
-                  width: 135,
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 10, vertical: 1),
-                  decoration: AppDecoration.fillPrimary
-                      .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
-                  child: Text(offerText,
-                      style: CustomTextStyles.bodySmallDMSansWhiteA700_1
-                          .copyWith(
-                              color: appTheme.whiteA700.withOpacity(0.55)))),
-              SizedBox(height: 8),
-              SizedBox(
-                  width: 295,
-                  child: Row(children: [
-                    Text(priceText,
+    return SizedBox(
+        width: 320,
+        child:
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Container(
+              width: 135,
+              padding:
+                  EdgeInsets.symmetric(horizontal: 10, vertical: 1),
+              decoration: AppDecoration.fillPrimary
+                  .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
+              child: Text(offerText,
+                  style: CustomTextStyles.bodySmallDMSansWhiteA700_1
+                      .copyWith(
+                          color: appTheme.whiteA700.withOpacity(0.55)))),
+          SizedBox(height: 8),
+          SizedBox(
+              width: 295,
+              child: Row(children: [
+                Text(priceText,
+                    style: CustomTextStyles.titleSmallDMSansWhiteA700
+                        .copyWith(
+                            color: appTheme.whiteA700.withOpacity(0.55))),
+                Spacer(),
+                Text(dataText,
+                    style: CustomTextStyles.titleSmallDMSansWhiteA700
+                        .copyWith(
+                            color: appTheme.whiteA700.withOpacity(0.55))),
+                Padding(
+                    padding: EdgeInsets.only(left: 23),
+                    child: Text(validityText,
                         style: CustomTextStyles.titleSmallDMSansWhiteA700
                             .copyWith(
-                                color: appTheme.whiteA700.withOpacity(0.55))),
-                    Spacer(),
-                    Text(dataText,
-                        style: CustomTextStyles.titleSmallDMSansWhiteA700
-                            .copyWith(
-                                color: appTheme.whiteA700.withOpacity(0.55))),
-                    Padding(
-                        padding: EdgeInsets.only(left: 23),
-                        child: Text(validityText,
-                            style: CustomTextStyles.titleSmallDMSansWhiteA700
-                                .copyWith(
-                                    color:
-                                        appTheme.whiteA700.withOpacity(0.55))))
-                  ])),
-              SizedBox(height: 4),
-              Padding(
-                  padding: EdgeInsets.only(left: 1),
-                  child: Text(voiceText,
-                      style: CustomTextStyles.bodyMediumDMSansWhiteA700
-                          .copyWith(
-                              color: appTheme.whiteA700.withOpacity(0.55)))),
-              SizedBox(height: 8),
-              Padding(
-                  padding: EdgeInsets.only(left: 1),
-                  child: Text(specialOfferText,
-                      style: CustomTextStyles.bodyMediumDMSansWhiteA700
-                          .copyWith(
-                              color: appTheme.whiteA700.withOpacity(0.55)))),
-              SizedBox(height: 3),
-              Padding(
-                  padding: EdgeInsets.only(left: 1),
-                  child: RichText(
-                      text: TextSpan(children: [
-                        TextSpan(
-                            text: "msg_additional_benefits2".tr,
-                            style: CustomTextStyles.labelLargeDMSans8cffffff),
-                        TextSpan(
-                            text: "lbl_more_details".tr,
-                            style: CustomTextStyles.labelLargeDMSansffa456f6)
-                      ]),
-                      textAlign: TextAlign.left))
-            ])));
+                                color:
+                                    appTheme.whiteA700.withOpacity(0.55))))
+              ])),
+          SizedBox(height: 4),
+          Padding(
+              padding: EdgeInsets.only(left: 1),
+              child: Text(voiceText,
+                  style: CustomTextStyles.bodyMediumDMSansWhiteA700
+                      .copyWith(
+                          color: appTheme.whiteA700.withOpacity(0.55)))),
+          SizedBox(height: 8),
+          Padding(
+              padding: EdgeInsets.only(left: 1),
+              child: Text(specialOfferText,
+                  style: CustomTextStyles.bodyMediumDMSansWhiteA700
+                      .copyWith(
+                          color: appTheme.whiteA700.withOpacity(0.55)))),
+          SizedBox(height: 3),
+          Padding(
+              padding: EdgeInsets.only(left: 1),
+              child: RichText(
+                  text: TextSpan(children: [
+                    TextSpan(
+                        text: "msg_additional_benefits2".tr,
+                        style: CustomTextStyles.labelLargeDMSans8cffffff),
+                    TextSpan(
+                        text: "lbl_more_details".tr,
+                        style: CustomTextStyles.labelLargeDMSansffa456f6)
+                  ]),
+                  textAlign: TextAlign.left))
+        ]));
   }
 
   /// Navigates to the thirtyoneScreen when the action is triggered.

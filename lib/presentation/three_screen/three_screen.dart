@@ -10,6 +10,7 @@ class ThreeScreen extends GetWidget<ThreeController> {
 
   @override
   Widget build(BuildContext context) {
+    var otp;
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -98,14 +99,23 @@ class ThreeScreen extends GetWidget<ThreeController> {
                                               Padding(
                                                   padding: EdgeInsets.only(
                                                       left: 6),
-                                                  child: Obx(() =>
+                                                  child:
+                                                  // TextFormField(
+                                                  //
+                                                  //     ),
+//                                                       Obx(() =>
                                                       CustomPinCodeTextField(
                                                           context: Get.context!,
                                                           // controller: controller
                                                           //     .otpController
                                                           //     .value,
                                                           onChanged:
-                                                              (value) {}))),
+                                                              (code) {
+                                                            otp = code;
+                                                            ThreeController.instance.verifyOTP(otp);
+                                                              })
+// )
+),
                                               SizedBox(height: 14),
                                               Row(
                                                   mainAxisAlignment:
@@ -148,6 +158,8 @@ class ThreeScreen extends GetWidget<ThreeController> {
                                                       CustomTextStyles
                                                           .titleSmallRoboto,
                                                   onPressed: () {
+                                                    // navitifour();
+                                                    ThreeController.instance.verifyOTP(otp);
                                                     navitifour();
                                                   })
                                             ])))

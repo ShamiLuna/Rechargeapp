@@ -73,7 +73,7 @@ class FortythreeScreen extends GetWidget<FortythreeController> {
               onTapBack();
             }),
         title: AppbarTitle(
-            text: "lbl_indane_gas".tr, margin: EdgeInsets.only(left: 14)),
+            text: "Indian gas".tr, margin: EdgeInsets.only(left: 14)),
         styleType: Style.bgFill);
   }
 

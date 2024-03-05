@@ -13,7 +13,7 @@ class FortysevenScreen extends GetWidget<FortysevenController> {
         child: Scaffold(
             appBar: _buildAppBar(),
             body: Container(
-                height: 893,
+                height: 900,
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(vertical: 30),
                 child: Column(children: [
@@ -85,7 +85,7 @@ class FortysevenScreen extends GetWidget<FortysevenController> {
                                 //     margin: EdgeInsets.only(
                                 //         left: 81, top: 4, bottom: 6))
                               ]))),
-                  SizedBox(height: 70),
+                  SizedBox(height: 20),
                   CustomElevatedButton(
                       width: 215,
                       text: "lbl_confirm".tr.toUpperCase(),

@@ -37,7 +37,7 @@ class WaterHomefiftysevenScreen
         leadingWidth: 57,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 25, top: 22, bottom: 22)),
+        margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),),
         title: AppbarTitle(
             text: "lbl_water".tr, margin: EdgeInsets.only(left: 21)),
         styleType: Style.bgFill);
@@ -96,99 +96,104 @@ class WaterHomefiftysevenScreen
   /// Section Widget
   Widget _buildSearchFrame() {
     return Container(
-        width: 337,
+        width: 400,
         padding: EdgeInsets.symmetric(horizontal: 36),
         decoration: AppDecoration.fillGray
             .copyWith(borderRadius: BorderRadiusStyle.roundedBorder6),
-        child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 26),
-              Text("msg_billers_in_tamilnadu".tr,
-                  style: CustomTextStyles.titleMediumGray60004),
-              SizedBox(height: 29),
-              GestureDetector(
-                  onTap: () {
-                    onTapDiani();
-                  },
-                  child: Padding(
-                      padding: EdgeInsets.only(right: 66),
-                      child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CustomImageView(
-                                imagePath: ImageConstant.imgEllipse776,
-                                height: 35,
-                                width: 35,
-                                radius: BorderRadius.circular(17)),
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    left: 18, top: 6, bottom: 10),
-                                child: Text("msg_grampachayat_nevari".tr,
-                                    style:
-                                        CustomTextStyles.labelLargeGray60004))
-                          ]))),
-              SizedBox(height: 37),
-              Padding(
-                  padding: EdgeInsets.only(right: 50),
-                  child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImageView(
-                            imagePath: ImageConstant.imgEllipse776,
-                            height: 35,
-                            width: 35,
-                            radius: BorderRadius.circular(17)),
-                        Padding(
-                            padding: EdgeInsets.only(
-                                left: 18, top: 6, bottom: 10),
-                            child: Text("msg_grampachayat_ambegan".tr,
-                                style: CustomTextStyles.labelLargeGray60004))
-                      ])),
-              SizedBox(height: 37),
-              Padding(
-                  padding: EdgeInsets.only(right: 26),
-                  child: Row(children: [
-                    CustomImageView(
-                        imagePath: ImageConstant.imgEllipse776,
-                        height: 35,
-                        width: 35,
-                        radius: BorderRadius.circular(17)),
-                    Padding(
-                        padding:
-                            EdgeInsets.only(left: 18, top: 8, bottom: 8),
-                        child: Text("msg_grampachayat_hingangaon".tr,
-                            style: CustomTextStyles.labelLargeGray60004))
-                  ])),
-              SizedBox(height: 37),
-              Padding(
-                  padding: EdgeInsets.only(right: 14),
-                  child: Row(children: [
-                    CustomImageView(
-                        imagePath: ImageConstant.imgEllipse776,
-                        height: 35,
-                        width: 35,
-                        radius: BorderRadius.circular(17)),
-                    Padding(
-                        padding:
-                            EdgeInsets.only(left: 18, top: 8, bottom: 8),
-                        child: Text("msg_grampachayat_kheradewangi".tr,
-                            style: CustomTextStyles.labelLargeGray60004))
-                  ])),
-              SizedBox(height: 40),
-              Row(children: [
-                CustomImageView(
-                    imagePath: ImageConstant.imgEllipse772,
-                    height: 35,
-                    width: 35,
-                    radius: BorderRadius.circular(17)),
+        child: GestureDetector(
+          onTap: () {
+            onTapDiani();
+          },
+          child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 26),
+                Text("msg_billers_in_tamilnadu".tr,
+                    style: CustomTextStyles.titleMediumGray60004),
+                SizedBox(height: 29),
+                GestureDetector(
+                    onTap: () {
+                      onTapDiani();
+                    },
+                    child: Padding(
+                        padding: EdgeInsets.only(right: 5),
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomImageView(
+                                  imagePath: ImageConstant.imgEllipse776,
+                                  height: 35,
+                                  width: 35,
+                                  radius: BorderRadius.circular(17)),
+                              Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 18, top: 6, bottom: 10),
+                                  child: Text("msg_grampachayat_nevari".tr,
+                                      style:
+                                          CustomTextStyles.labelLargeGray60004))
+                            ]))),
+                SizedBox(height: 37),
                 Padding(
-                    padding: EdgeInsets.only(left: 18, top: 9, bottom: 8),
-                    child: Text("msg_colors_rishtey_tv".tr,
-                        style: CustomTextStyles.labelLargeBlack900))
-              ])
-            ]));
+                    padding: EdgeInsets.only(right: 5),
+                    child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomImageView(
+                              imagePath: ImageConstant.imgEllipse776,
+                              height: 35,
+                              width: 35,
+                              radius: BorderRadius.circular(17)),
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 18, top: 6, bottom: 10),
+                              child: Text("msg_grampachayat_ambegan".tr,
+                                  style: CustomTextStyles.labelLargeGray60004))
+                        ])),
+                SizedBox(height: 37),
+                Padding(
+                    padding: EdgeInsets.only(right: 2),
+                    child: Row(children: [
+                      CustomImageView(
+                          imagePath: ImageConstant.imgEllipse776,
+                          height: 35,
+                          width: 35,
+                          radius: BorderRadius.circular(17)),
+                      Padding(
+                          padding:
+                              EdgeInsets.only(left: 18, top: 8, bottom: 8),
+                          child: Text("msg_grampachayat_hingangaon".tr,
+                              style: CustomTextStyles.labelLargeGray60004))
+                    ])),
+                SizedBox(height: 37),
+                Padding(
+                    padding: EdgeInsets.only(right: 1),
+                    child: Row(children: [
+                      CustomImageView(
+                          imagePath: ImageConstant.imgEllipse776,
+                          height: 35,
+                          width: 35,
+                          radius: BorderRadius.circular(17)),
+                      Padding(
+                          padding:
+                              EdgeInsets.only(left: 18, top: 8, bottom: 8),
+                          child: Text("msg_grampachayat_kheradewangi".tr,
+                              style: CustomTextStyles.labelLargeGray60004))
+                    ])),
+                SizedBox(height: 40),
+                Row(children: [
+                  CustomImageView(
+                      imagePath: ImageConstant.imgEllipse772,
+                      height: 35,
+                      width: 35,
+                      radius: BorderRadius.circular(17)),
+                  Padding(
+                      padding: EdgeInsets.only(left: 18, top: 9, bottom: 8),
+                      child: Text("msg_colors_rishtey_tv".tr,
+                          style: CustomTextStyles.labelLargeBlack900))
+                ])
+              ]),
+        ));
   }
 
   /// Navigates to the water258Screen when the action is triggered.

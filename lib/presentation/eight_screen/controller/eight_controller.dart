@@ -1,5 +1,8 @@
 import 'package:faz/core/app_export.dart';
 import 'package:faz/presentation/eight_screen/models/eight_model.dart';
+import 'package:faz/presentation/eight_screen/models/framelist_item_model.dart';
+
+import '../models/userprofilelist_item_model.dart';
 
 /// A controller class for the EightScreen.
 ///
@@ -7,6 +10,9 @@ import 'package:faz/presentation/eight_screen/models/eight_model.dart';
 /// current eightModelObj
 class EightController extends GetxController {
   Rx<EightModel> eightModelObj = EightModel().obs;
+  Rx<FramelistItemModel> framelistItemModelObj = FramelistItemModel().obs;
+  // Rx<EightModel> UserprofilelistItemModelObj = UserprofilelistItemModel().obs;
+  Rx<UserprofilelistItemModel> userprofilelistItemModelObj = UserprofilelistItemModel().obs;
   // void onInit(){
   //   Get.offNamed(
   //     AppRoutes.nineScreen,
@@ -14,6 +20,10 @@ class EightController extends GetxController {
   // }
   void onReady()
   {
+    Get.offNamed(
+          AppRoutes.nineScreen,
+        );
+
     Get.offNamed(
       AppRoutes.fortyScreen,
 
@@ -42,10 +52,14 @@ class EightController extends GetxController {
   }
   @override
   void onInit(){
+    // super.onInit();
     Get.offNamed(
       AppRoutes.eightScreen,
-
     );
+    // EightModel();
+    // FramelistItemModel();
+    // UserprofilelistItemModel();
+
   }
 
 }

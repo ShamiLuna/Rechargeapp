@@ -59,12 +59,12 @@ class Water359Screen extends GetWidget<Water359Controller> {
         leadingWidth: 57,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 25, top: 22, bottom: 22),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),
         title: AppbarTitle(
-            text: "lbl_indane_gas".tr, margin: EdgeInsets.only(left: 14)),
+            text: "Water connection".tr, margin: EdgeInsets.only(left: 14)),
         styleType: Style.bgFill);
   }
 
@@ -159,7 +159,7 @@ class Water359Screen extends GetWidget<Water359Controller> {
 
   /// Section Widget
   Widget _buildNameKevin() {
-    return CustomOutlinedButton(width: 106, text: "lbl_name_kevin".tr);
+    return CustomOutlinedButton(width: 147, text: "lbl_name_kevin".tr);
   }
 
   /// Section Widget
@@ -178,7 +178,7 @@ class Water359Screen extends GetWidget<Water359Controller> {
 
   /// Section Widget
   Widget _buildTotalUnit() {
-    return CustomOutlinedButton(width: 106, text: "msg_total_unit_163".tr);
+    return CustomOutlinedButton(width: 147, text: "msg_total_unit_163".tr);
   }
 
   /// Section Widget
@@ -193,12 +193,12 @@ class Water359Screen extends GetWidget<Water359Controller> {
   /// Section Widget
   Widget _buildMeterReading() {
     return CustomOutlinedButton(
-        width: 171, text: "msg_meter_reading_73t3".tr);
+        width: 187, text: "msg_meter_reading_73t3".tr);
   }
 
   /// Section Widget
   Widget _buildReceipt() {
-    return CustomOutlinedButton(width: 106, text: "lbl_receipt_6540".tr);
+    return CustomOutlinedButton(width: 147, text: "lbl_receipt_6540".tr);
   }
 
   /// Section Widget
@@ -213,7 +213,7 @@ class Water359Screen extends GetWidget<Water359Controller> {
   /// Section Widget
   Widget _buildTotalAmount() {
     return CustomOutlinedButton(
-        width: 171,
+        width: 190,
         text: "msg_total_amount_762".tr,
         margin: EdgeInsets.only(left: 1),
         alignment: Alignment.centerLeft);
@@ -239,7 +239,7 @@ class Water359Screen extends GetWidget<Water359Controller> {
   /// Navigates to the amountwsixtyScreen when the action is triggered.
   onTapDone() {
     Get.toNamed(
-      AppRoutes.amountwsixtyScreen,
+      AppRoutes.twentythreeScreen,
     );
   }
 }

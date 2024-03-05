@@ -39,7 +39,7 @@ class GasBillfiftythreeScreen extends GetWidget<GasBillfiftythreeController> {
         leadingWidth: 57,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 25, top: 22, bottom: 22),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),
@@ -107,12 +107,12 @@ class GasBillfiftythreeScreen extends GetWidget<GasBillfiftythreeController> {
         child: Column(mainAxisSize: MainAxisSize.min, children: [
           Container(
               width: 290,
-              margin: EdgeInsets.only(left: 7, right: 16),
+              margin: EdgeInsets.only(left: 7, right: 16,bottom: 5),
               child: Text("msg_now_use_payment".tr,
-                  maxLines: 2,
+                  maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                   style: CustomTextStyles.bodySmallDMSansWhiteA700)),
-          SizedBox(height: 13),
+          SizedBox(height: 20),
           Align(
               alignment: Alignment.centerLeft,
               child: Padding(
@@ -181,7 +181,7 @@ class GasBillfiftythreeScreen extends GetWidget<GasBillfiftythreeController> {
   /// Navigates to the amount154Screen when the action is triggered.
   onTapPay() {
     Get.toNamed(
-      AppRoutes.amount154Screen,
+      AppRoutes.twentythreeScreen,
     );
   }
 }

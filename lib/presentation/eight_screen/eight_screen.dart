@@ -11,113 +11,112 @@ class EightScreen extends GetWidget<EightController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            body: SizedBox(
-                width: 415,
-                height: 810,
-                child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  SizedBox(height: 20),
-                  Expanded(
-                      child: Container(
-                          height: 720,
-                          width: double.maxFinite,
-                          margin: EdgeInsets.symmetric(horizontal: 20),
-                          child:
-                              Stack(alignment: Alignment.topCenter, children: [
-                            Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 12),
-                                  child: SingleChildScrollView(
-                                    child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            height: 320,
-                                          ),
-                                          _buildOperationsRow(),
-                                          SizedBox(height: 5),
-                                          _buildUserProfileList(),
-                                          SizedBox(height: 10),
-                                          Opacity(
-                                              opacity: 0.8,
-                                              child: Text(
-                                                  "lbl_subscriptions".tr,
-                                                  style: CustomTextStyles
-                                                      .bodyLargePoppinsWhiteA700)),
-                                          SizedBox(height: 1),
-                                          _buildFrameList(),
-                                          SizedBox(height: 21),
-                                          _buildWidgetStack(),
-                                          SizedBox(height: 20),
-                                          Container(
-                                            height: 80,
-                                            child: ListView(
-                                                scrollDirection:
-                                                    Axis.horizontal,
-                                                // alignment: Alignment
-                                                //     .bottomRight,
-                                                children: [
-                                                  Align(
-                                                      alignment:
-                                                          Alignment.bottomRight,
-                                                      child: Padding(
-                                                          padding:
-                                                              EdgeInsets.only(
-                                                                  right: 2),
-                                                          child: Text(
-                                                              "lbl_25_mar_2022"
-                                                                  .tr,
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .right,
-                                                              style: theme
-                                                                  .textTheme
-                                                                  .labelLarge))),
-                                                  Align(
-                                                      alignment:
-                                                          Alignment.bottomRight,
+    return Scaffold(
+        body: SizedBox(
+            width: 415,
+            height: 810,
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+              SizedBox(height: 20),
+              Expanded(
+                  child: Container(
+                      height: 720,
+                      width: double.maxFinite,
+                      margin: EdgeInsets.symmetric(horizontal: 20),
+                      child:
+                          Stack(alignment: Alignment.topCenter, children: [
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Padding(
+                              padding:
+                                  EdgeInsets.symmetric(horizontal: 12),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        height: 320,
+                                      ),
+                                      _buildOperationsRow(),
+                                      SizedBox(height: 5),
+                                      _buildUserProfileList(),
+                                      SizedBox(height: 10),
+                                      Opacity(
+                                          opacity: 0.8,
+                                          child: Text(
+                                              "lbl_subscriptions".tr,
+                                              style: CustomTextStyles
+                                                  .bodyLargePoppinsWhiteA700)),
+                                      SizedBox(height: 1),
+                                      _buildFrameList(),
+                                      SizedBox(height: 21),
+                                      _buildWidgetStack(),
+                                      SizedBox(height: 20),
+                                      Container(
+                                        height: 80,
+                                        child: ListView(
+                                            scrollDirection:
+                                                Axis.horizontal,
+                                            // alignment: Alignment
+                                            //     .bottomRight,
+                                            children: [
+                                              Align(
+                                                  alignment:
+                                                      Alignment.bottomRight,
+                                                  child: Padding(
+                                                      padding:
+                                                          EdgeInsets.only(
+                                                              right: 2),
                                                       child: Text(
-                                                          "lbl_26_mar_2022".tr,
+                                                          "lbl_25_mar_2022"
+                                                              .tr,
                                                           textAlign:
-                                                              TextAlign.right,
-                                                          style: theme.textTheme
-                                                              .labelLarge)),
-                                                  Align(
-                                                      alignment:
-                                                          Alignment.bottomRight,
-                                                      child: Text(
-                                                          "lbl_28_mar_2022".tr,
-                                                          textAlign:
-                                                              TextAlign.right,
-                                                          style: theme.textTheme
-                                                              .labelLarge)),
-                                                  // _buildDynamicTextList()
-                                                ]),
-                                          )
-                                        ]),
-                                  )),
-                            ),
-                            Align(
-                                alignment: Alignment.topCenter,
-                                child: Container(
-                                    height: 280,
-                                    width: 400,
-                                    decoration: BoxDecoration(
-                                        color: theme.colorScheme.primary,
-                                        borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(20),
-                                            topRight: Radius.circular(20),
-                                            bottomLeft: Radius.circular(15),
-                                            bottomRight:
-                                                Radius.circular(15))))),
-                            _buildHomeStack()
-                          ])))
-                ]))));
+                                                              TextAlign
+                                                                  .right,
+                                                          style: theme
+                                                              .textTheme
+                                                              .labelLarge))),
+                                              Align(
+                                                  alignment:
+                                                      Alignment.bottomRight,
+                                                  child: Text(
+                                                      "lbl_26_mar_2022".tr,
+                                                      textAlign:
+                                                          TextAlign.right,
+                                                      style: theme.textTheme
+                                                          .labelLarge)),
+                                              Align(
+                                                  alignment:
+                                                      Alignment.bottomRight,
+                                                  child: Text(
+                                                      "lbl_28_mar_2022".tr,
+                                                      textAlign:
+                                                          TextAlign.right,
+                                                      style: theme.textTheme
+                                                          .labelLarge)),
+                                              // _buildDynamicTextList()
+                                            ]),
+                                      )
+                                    ]),
+                              )),
+                        ),
+                        Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                                height: 280,
+                                width: 400,
+                                decoration: BoxDecoration(
+                                    color: theme.colorScheme.primary,
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(20),
+                                        topRight: Radius.circular(20),
+                                        bottomLeft: Radius.circular(15),
+                                        bottomRight:
+                                            Radius.circular(15))))),
+                        _buildHomeStack()
+                      ])))
+            ])));
   }
 
   /// Section Widget

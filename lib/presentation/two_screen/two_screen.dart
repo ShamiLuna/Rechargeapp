@@ -1,7 +1,8 @@
-import 'dart:ui';
 
 import 'package:country_pickers/country.dart';
 import 'package:country_pickers/utils/utils.dart';
+import 'package:faz/presentation/four_screen/four_screen.dart';
+import 'package:faz/presentation/two_screen/controller/two_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:faz/core/app_export.dart';
@@ -11,173 +12,171 @@ import 'package:flutter/material.dart';
 import '../three_screen/three_screen.dart';
 import 'numericpad.dart';
 
-class Login extends StatefulWidget {
+class Login extends StatelessWidget {
   // const Login({super.key});
+ final TwoController controller = TwoController();
+  // @override
+  // State<Login> createState() => _LoginState();
 
-  @override
-  State<Login> createState() => _LoginState();
-}
+  // @override
+  // Widget build(BuildContext context) {
+  //
+ late BuildContext context;
+    String phoneNumber = "",
+        data = "";
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    String smscode = "";
+    // bool _validate = false;
+    // String? get _errorText {
+    //   // at any time, we can get the text from _controller.value.text
+    //   final text = _codecontroller.value.text;
+    //   // Note: you can do your own custom validation here
+    //   // Move this logic this outside the widget for more testable code
+    //   if (text.isEmpty) {
+    //     return 'Can\'t be empty';
+    //   }
+    //   if (text.length < 4) {
+    //     return 'Too short';
+    //   }
+    //   // return null if the text is valid
+    //   return null;
+    // }
+    // bool _submitted = false;
+    // void _submit() {
+    //   setState(() => _submitted = true);
+    //   if (_errorText == null) {
+    //     widget.onSubmit(_codecontroller.value.text);
+    //   }
+    // }
+ signInWithMobileNumber() async {
+   // UserCredential _credential;
+   // User user;
+   // Fail phoneverify;
+   try {
+     await _auth.verifyPhoneNumber(
+         phoneNumber: '+91' + data.trim(),
+         verificationCompleted: (PhoneAuthCredential authCredential) async {
+           await _auth.signInWithCredential(authCredential).then((value) {
+             // Navigator.push(
+             //     context, MaterialPageRoute(builder: (context) => ThreeScreen()));
+           });
+         },
+         verificationFailed: ((error) {
+           print(error);
+           showDialog(
+             context: context,
+             builder: (BuildContext context) {
+               // set up the button
+               Widget okButton = TextButton(
+                 child: Text("OK"),
+                 onPressed: () async {
+                   await Future.delayed(const Duration(seconds: 1));
+                   if (context.mounted) {
+                     Navigator.of(context).pop();
+                   }
+                 },
+               );
 
-class _LoginState extends State<Login> {
-  Country selectedCountry =
-  CountryPickerUtils.getCountryByPhoneCode('91');
-  TextEditingController _codecontroller = new TextEditingController();
-  String phoneNumber = "", data = "";
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  String smscode = "";
-  bool _validate = false;
-  String? get _errorText {
-    // at any time, we can get the text from _controller.value.text
-    final text = _codecontroller.value.text;
-    // Note: you can do your own custom validation here
-    // Move this logic this outside the widget for more testable code
-    if (text.isEmpty) {
-      return 'Can\'t be empty';
-    }
-    if (text.length < 4) {
-      return 'Too short';
-    }
-    // return null if the text is valid
-    return null;
-  }
-  // bool _submitted = false;
-  // void _submit() {
-  //   setState(() => _submitted = true);
-  //   if (_errorText == null) {
-  //     widget.onSubmit(_codecontroller.value.text);
-  //   }
-  // }
-
-  _signInWithMobileNumber() async {
-    UserCredential _credential;
-    User user;
-    // Fail phoneverify;
-    try {
-      await _auth.verifyPhoneNumber(
-          phoneNumber: '+91' + data.trim(),
-          verificationCompleted: (PhoneAuthCredential authCredential) async {
-            await _auth.signInWithCredential(authCredential).then((value) {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => ThreeScreen()));
-            });
-          },
-          verificationFailed: ((error) {
-            print(error);
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-
-              // set up the button
-              Widget okButton = TextButton(
-                child: Text("OK"),
-                onPressed: () async {
-                    await Future .delayed(const Duration(seconds: 1));
-                    if (context.mounted) {
-                      Navigator.of(context).pop();
-                    }
-                                  },
-              );
-
-              // set up the AlertDialog
-              AlertDialog alert = AlertDialog(
-                title: Text("Invalid number"),
-                content: Text("Please enter a valid number."),
-                actions: [
-                  okButton,
-                ],
-              );
-
-              // show the dialog
-              return alert;
-                },
-              );
-
-            // Text("Please Enter a valid phone number");
-
-            // showDialog(context: context,
-            //     // barrierLabel: (""),
-            //     builder: (BuildContext context) {return Container(
-            //       height: 200,
-            //       child: OutlinedButton(
-            //                     onPressed: () async {
-            //       await Future .delayed(const Duration(seconds: 1));
-            //       if (context.mounted) {
-            //         Navigator.of(context).pop();
-            //       }
-            //                     },
-            //                     child: const Text('Please enter a valid phone number'),
-            //                   ),
-            //     );}
-            // );
+               // set up the AlertDialog
+               AlertDialog alert = AlertDialog(
+                 title: Text("Invalid number"),
+                 content: Text("Please enter a valid number."),
+                 actions: [
+                   okButton,
+                 ],
+               );
+               // show the dialog
+               return alert;
+             },
+           );
+           // Text("Please Enter a valid phone number");
+           // showDialog(context: context,
+           //     // barrierLabel: (""),
+           //     builder: (BuildContext context) {return Container(
+           //       height: 200,
+           //       child: OutlinedButton(
+           //                     onPressed: () async {
+           //       await Future .delayed(const Duration(seconds: 1));
+           //       if (context.mounted) {
+           //         Navigator.of(context).pop();
+           //       }
+           //                     },
+           //                     child: const Text('Please enter a valid phone number'),
+           //                   ),
+           //     );}
+           // );
 
 
-             // _errorText;
+           //  _errorText;
+           //
+           //
+           // AlertDialog(
+           //   title: Text(_errorText!),
+           //   // Text(_errorText!)
+           // );
+         }),
+         codeSent: (String verificationId, [int? forceResendingToken]) {
+           showDialog(
+               context: context,
+               barrierDismissible: false,
+               builder: (context) =>
+                   AlertDialog(
+                     title: Text("Enter OTP"),
+                     content: Column(
+                       mainAxisSize: MainAxisSize.min,
+                       children: [
+                         TextField(
+                           controller: controller.code_controller,
+                           // errorText: _errorText,
+                           // validator:(str){}
+                           // onChanged: (text) => setState(() => phoneNumber+_errorText!),
+                         ),
+                         // AlertDialog(
+                         //   title: Text(_errorText!),
+                         //     // Text(_errorText!)
+                         // ),
+                       ],
+                     ),
+                     actions: [
+                       ElevatedButton(
+                           onPressed: () {
+                             FirebaseAuth auth = FirebaseAuth.instance;
+                             smscode = smscode;
+                             PhoneAuthCredential _credential =
+                             PhoneAuthProvider.credential(
+                                 verificationId: verificationId,
+                                 smsCode: smscode);
+                             auth
+                                 .signInWithCredential(_credential)
+                                 .then((result) {
+                               Navigator.pop(context);
 
+                               // Navigator.push(
+                               //     context,
+                               //     MaterialPageRoute(
+                               //         builder: (context) => const eight();
+                             }).catchError((e) {
+                               print(e);
+                             });
+                           },
+                           child: Text("Done"))
+                     ],
+                   ));
+         },
+         codeAutoRetrievalTimeout: (String verificationId) {
+           verificationId = verificationId;
+         },
+         timeout: Duration(seconds: 45));
+   } catch (e) {}
+ }
 
-            // AlertDialog(
-            //   title: Text(_errorText!),
-            //   // Text(_errorText!)
-            // );
-          }),
-          codeSent: (String verificationId, [int? forceResendingToken]) {
-            showDialog(
-                context: context,
-                barrierDismissible: false,
-                builder: (context) => AlertDialog(
-                  title: Text("Enter OTP"),
-                  content: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      TextField(
-                        controller: _codecontroller,
-                        // errorText: _errorText,
-                        // validator:(str){}
-                        onChanged: (text) => setState(() => phoneNumber+_errorText!),
-
-                      ),
-                      // AlertDialog(
-                      //   title: Text(_errorText!),
-                      //     // Text(_errorText!)
-                      // ),
-                    ],
-                  ),
-                  actions: [
-                    ElevatedButton(
-                        onPressed: () {
-                          FirebaseAuth auth = FirebaseAuth.instance;
-                          smscode = _codecontroller.text;
-                          PhoneAuthCredential _credential =
-                          PhoneAuthProvider.credential(
-                              verificationId: verificationId,
-                              smsCode: smscode);
-                          auth
-                              .signInWithCredential(_credential)
-                              .then((result) {
-                            Navigator.pop(context);
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => eight()));
-                                                    }).catchError((e) {
-                            print(e);
-                          });
-                        },
-                        child: Text("Done"))
-                  ],
-                ));
-          },
-          codeAutoRetrievalTimeout: (String verificationId) {
-            verificationId = verificationId;
-          },
-          timeout: Duration(seconds: 45));
-    } catch (e) {}
-  }
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: SizedBox(
-        width: 395,
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: SizedBox(
+          height: 1000,
+          width: double.maxFinite,
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             SizedBox(height: 10),
             Expanded(
@@ -194,7 +193,7 @@ class _LoginState extends State<Login> {
                           Align(
                               alignment: Alignment.center,
                               child: Container(
-                                  height: 810,
+                                  height: 950,
                                   width: 395,
                                   decoration: BoxDecoration(
                                       color: appTheme.gray90001,
@@ -263,235 +262,245 @@ class _LoginState extends State<Login> {
                                                               9)))
                                                 ])),
                                         SizedBox(height: 30),
+                                        // TextFormField(
+                                        //
+                                        // ),
+
+                                      //  old ui
                                         Align(
                                             alignment:
                                             Alignment.center,
-                                            child: GestureDetector(
-                                              onTap: (){
-
-                                                  // Get.snackbar("Snackbar Title1" , "Edhudan message",
-                                                  //     snackPosition: SnackPosition.BOTTOM,
-                                                  //     //
-                                                  //     // titleText: Text("Another but editable text"),
-                                                  //     // messageText: Text("Another ...",style: TextStyle(
-                                                  //     //   color: Colors.amber,height: 10,
-                                                  //     // ),),
-                                                  //     colorText: Colors.red,
-                                                  //     backgroundColor: Colors.black,
-                                                  //     borderRadius: 30,
-                                                  //     margin: EdgeInsets.all(10),
-                                                  //     // maxWidth: 100,
-                                                  //     // animationDuration: Duration(milliseconds: 3300),
-                                                  //     backgroundGradient: LinearGradient(
-                                                  //         colors: [Colors.transparent, Colors.white12],
-                                                  //     ),
-                                                  //   borderColor: Colors.amber,
-                                                  //   borderWidth: 4,
-                                                  //   boxShadows: [
-                                                  //     BoxShadow(
-                                                  //       color: Colors.black12,
-                                                  //       offset: Offset(30, 50),
-                                                  //       spreadRadius: 20,
-                                                  //       blurRadius: 5)
-                                                  //
-                                                  //   ],
-                                                  //   isDismissible: true,
-                                                  //   dismissDirection: DismissDirection.horizontal,
-                                                  //   forwardAnimationCurve: Curves.bounceInOut,
-                                                  //   duration: Duration(milliseconds: 5000),
-                                                  //   icon: Icon(
-                                                  //     Icons.send,
-                                                  //     color: Colors.black,
-                                                  //   ),
-                                                  //   // width podanu border color kooda
-                                                  // // shouldIconPulse: false,
-                                                  //   leftBarIndicatorColor: Colors.white,
-                                                  //   mainButton: TextButton(onPressed: (){
-                                                  //     print ("Retry");
-                                                  //   }, child: Text("Retry"),),
-                                                  //   onTap: (anthingvalokay){
-                                                  //   print("Snackbar clicked");
-                                                  //   },
-                                                  //   overlayBlur: 5,
-                                                  //   overlayColor: Colors.pink,
-                                                  //   padding: EdgeInsets.all(50),
-                                                  //   showProgressIndicator: true,
-                                                  //   progressIndicatorBackgroundColor: Colors.green,
-                                                  //   progressIndicatorValueColor:
-                                                  //     AlwaysStoppedAnimation<Color>(Colors.black),
-                                                  //   // reverseAnimationCurve: Curves.bounceInOut,
-                                                  //   snackbarStatus: (yedho){
-                                                  //   print(yedho);
-                                                  //   },
-                                                  //
-                                                  //   // userInputForm: Form(child: Row(
-                                                  //   //   children: [
-                                                  //   //     Expanded(child: TextField()),
-                                                  //   //   ],
-                                                  //   // ))
-                                                  //
-                                                  //
-                                                  //
-                                                  //
-                                                  // );
-
-
-                                                  //dialogboxpopup
+                                            child:
+                                            GestureDetector(
+                                              onTap: () {
+                                                // Get.snackbar("Snackbar Title1" , "Edhudan message",
+                                                //     snackPosition: SnackPosition.BOTTOM,
+                                                //     //
+                                                //     // titleText: Text("Another but editable text"),
+                                                //     // messageText: Text("Another ...",style: TextStyle(
+                                                //     //   color: Colors.amber,height: 10,
+                                                //     // ),),
+                                                //     colorText: Colors.red,
+                                                //     backgroundColor: Colors.black,
+                                                //     borderRadius: 30,
+                                                //     margin: EdgeInsets.all(10),
+                                                //     // maxWidth: 100,
+                                                //     // animationDuration: Duration(milliseconds: 3300),
+                                                //     backgroundGradient: LinearGradient(
+                                                //         colors: [Colors.transparent, Colors.white12],
+                                                //     ),
+                                                //   borderColor: Colors.amber,
+                                                //   borderWidth: 4,
+                                                //   boxShadows: [
+                                                //     BoxShadow(
+                                                //       color: Colors.black12,
+                                                //       offset: Offset(30, 50),
+                                                //       spreadRadius: 20,
+                                                //       blurRadius: 5)
+                                                //
+                                                //   ],
+                                                //   isDismissible: true,
+                                                //   dismissDirection: DismissDirection.horizontal,
+                                                //   forwardAnimationCurve: Curves.bounceInOut,
+                                                //   duration: Duration(milliseconds: 5000),
+                                                //   icon: Icon(
+                                                //     Icons.send,
+                                                //     color: Colors.black,
+                                                //   ),
+                                                //   // width podanu border color kooda
+                                                // // shouldIconPulse: false,
+                                                //   leftBarIndicatorColor: Colors.white,
+                                                //   mainButton: TextButton(onPressed: (){
+                                                //     print ("Retry");
+                                                //   }, child: Text("Retry"),),
+                                                //   onTap: (anthingvalokay){
+                                                //   print("Snackbar clicked");
+                                                //   },
+                                                //   overlayBlur: 5,
+                                                //   overlayColor: Colors.pink,
+                                                //   padding: EdgeInsets.all(50),
+                                                //   showProgressIndicator: true,
+                                                //   progressIndicatorBackgroundColor: Colors.green,
+                                                //   progressIndicatorValueColor:
+                                                //     AlwaysStoppedAnimation<Color>(Colors.black),
+                                                //   // reverseAnimationCurve: Curves.bounceInOut,
+                                                //   snackbarStatus: (yedho){
+                                                //   print(yedho);
+                                                //   },
+                                                //
+                                                //   // userInputForm: Form(child: Row(
+                                                //   //   children: [
+                                                //   //     Expanded(child: TextField()),
+                                                //   //   ],
+                                                //   // ))
+                                                //
+                                                //
+                                                //
+                                                //
+                                                // );
 
 
+                                                //dialogboxpopup
 
 
+                                                //  Get.defaultDialog(
+                                                //    title: "Diaglog Title",
+                                                //    titleStyle: TextStyle(fontSize: 25),
+                                                //    middleText: "This is middle text",
+                                                //    middleTextStyle: TextStyle(fontSize: 20),
+                                                //    backgroundColor: Colors.blue,
+                                                //    radius: 80,
+                                                //      // to customize the middle text
+                                                //    content: Row(
+                                                //      children: [
+                                                //        CircularProgressIndicator(),
+                                                //        SizedBox(
+                                                //          width: 20,
+                                                //        ),
+                                                //        Expanded(child: Text("Data Loading")),
+                                                //      ],
+                                                //    ),
+                                                //    textCancel: "Cancel",
+                                                //    cancelTextColor: Colors.white,
+                                                //    textConfirm: "Confirm",
+                                                //    confirmTextColor: Colors.blue,
+                                                //    onCancel: (){},
+                                                //    onConfirm: (){},
+                                                //    buttonColor: Colors.green,
+                                                //    cancel: Icon(Icons.abc),
+                                                //    confirm: Icon(Icons.ac_unit),
+                                                // //actions
+                                                //    actions: [
+                                                //      ElevatedButton(onPressed: (){
+                                                //        Get.back();
+                                                //      }, child: Text("Action1"),),
+                                                //      ElevatedButton(onPressed: (){
+                                                //        Get.back();
+                                                //      }, child: Text("Action2"),),
+                                                //    ],
+                                                //    barrierDismissible: false,
+                                                //
+                                                //  );
 
 
+                                                //bottomsheet
 
-
-
-
-                                                  //  Get.defaultDialog(
-                                                  //    title: "Diaglog Title",
-                                                  //    titleStyle: TextStyle(fontSize: 25),
-                                                  //    middleText: "This is middle text",
-                                                  //    middleTextStyle: TextStyle(fontSize: 20),
-                                                  //    backgroundColor: Colors.blue,
-                                                  //    radius: 80,
-                                                  //      // to customize the middle text
-                                                  //    content: Row(
-                                                  //      children: [
-                                                  //        CircularProgressIndicator(),
-                                                  //        SizedBox(
-                                                  //          width: 20,
-                                                  //        ),
-                                                  //        Expanded(child: Text("Data Loading")),
-                                                  //      ],
-                                                  //    ),
-                                                  //    textCancel: "Cancel",
-                                                  //    cancelTextColor: Colors.white,
-                                                  //    textConfirm: "Confirm",
-                                                  //    confirmTextColor: Colors.blue,
-                                                  //    onCancel: (){},
-                                                  //    onConfirm: (){},
-                                                  //    buttonColor: Colors.green,
-                                                  //    cancel: Icon(Icons.abc),
-                                                  //    confirm: Icon(Icons.ac_unit),
-                                                  // //actions
-                                                  //    actions: [
-                                                  //      ElevatedButton(onPressed: (){
-                                                  //        Get.back();
-                                                  //      }, child: Text("Action1"),),
-                                                  //      ElevatedButton(onPressed: (){
-                                                  //        Get.back();
-                                                  //      }, child: Text("Action2"),),
-                                                  //    ],
-                                                  //    barrierDismissible: false,
-                                                  //
-                                                  //  );
-
-
-                                                  //bottomsheet
-
-                                                  Get.bottomSheet(Container(
-                                                    height: 430,
-                                                    width: 400,
-                                                    child: Wrap(
-                                                      children: <Widget>[
-                                                        NumericPad(
-                                                          onNumberSelected: (value) {
-                                                            setState(() {
-                                                              if (value != -1) {
-                                                                phoneNumber = phoneNumber + value.toString();
-                                                              } else {
-                                                                phoneNumber =
-                                                                    phoneNumber.substring(0, phoneNumber.length - 1);
-                                                              }
-                                                            });
-                                                          },
-                                                        ),
-                                                      ],
+                                                Get.bottomSheet(Container(
+                                                  height: 430,
+                                                  width: 400,
+                                                  child: Wrap(
+                                                    children: <Widget>[
+                                                      NumericPad(
+                                                        onNumberSelected: (value) {
+                                                          (() {
+                                                            if (value != -1) {
+                                                              phoneNumber = phoneNumber + value.toString();
+                                                            } else {
+                                                              phoneNumber =
+                                                                  phoneNumber.substring(0, phoneNumber.length - 1);
+                                                            }
+                                                          });
+                                                        },
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                  // barrierColor: Colors.blue,
+                                                  backgroundColor: Colors
+                                                      .purple,
+                                                  isDismissible: true,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius: BorderRadius
+                                                        .circular(10.0),
+                                                    side: BorderSide(
+                                                        color: Colors.white,
+                                                        style: BorderStyle
+                                                            .solid,
+                                                        width: 2.0
                                                     ),
                                                   ),
-                                                    // barrierColor: Colors.blue,
-                                                    backgroundColor: Colors.purple,
-                                                    isDismissible: true,
-                                                    shape: RoundedRectangleBorder(
-                                                      borderRadius: BorderRadius.circular(10.0),
-                                                      side: BorderSide(
-                                                          color: Colors.white,
-                                                          style: BorderStyle.solid,
-                                                          width: 2.0
-                                                      ),
-                                                    ),
-                                                    enableDrag: true,
-                                                  );
+                                                  enableDrag: true,
+                                                );
+                                              },
+                                              // NumericPad(
+                                              //   onNumberSelected: (value) {
+                                              //     setState(() {
+                                              //       if (value != -1) {
+                                              //         phoneNumber = phoneNumber + value.toString();
+                                              //       } else {
+                                              //         phoneNumber =
+                                              //             phoneNumber.substring(0, phoneNumber.length - 1);
+                                              //       }
+                                              //     });
+                                              //   },
+                                              // );
+                                              child:
 
-                                                },
-                                                // NumericPad(
-                                                //   onNumberSelected: (value) {
-                                                //     setState(() {
-                                                //       if (value != -1) {
-                                                //         phoneNumber = phoneNumber + value.toString();
-                                                //       } else {
-                                                //         phoneNumber =
-                                                //             phoneNumber.substring(0, phoneNumber.length - 1);
-                                                //       }
-                                                //     });
-                                                //   },
-                                                // );
-                                              child: Container(
+                                              Container(
                                                 decoration: BoxDecoration(
                                                   // border: Border.all(),
-                                                  borderRadius: BorderRadius.circular(10),
+                                                  borderRadius: BorderRadius
+                                                      .circular(10),
                                                   color: Colors.black38,
                                                   // color: Colors.pule.shade400,
                                                 ),
-                                                height: 60,
-                                                width: 400,
+                                                height: 80,
+                                                width: 450,
                                                 child: Row(
                                                   children: [
                                                     // ElevatedButton(onPressed: (){
                                                     // }, child: Text(selectedCountry.isoCode)),
                                                     SizedBox(width: 8,),
-                                                    Text("+91",style: TextStyle(
-                                                      fontSize: 20
+                                                    Text(
+                                                      "+91", style: TextStyle(
+                                                        fontSize: 20
                                                     ),),
                                                     SizedBox(width: 8),
+                                                    // TextFormField(
+                                                    //   controller: _codecontroller,
+                                                    //
+                                                    // ),
                                                     Text(
                                                         phoneNumber,
-                                                         style: CustomTextStyles
+                                                        style: CustomTextStyles
                                                             .bodySmallRobotoWhiteA700_1),
                                                     SizedBox(width: 8,)
                                                   ],
                                                 ),
                                               ),
                                             )),
-                                        // GestureDetector(
-                                        //
-                                        //   child: Container(
-                                        //
-                                        //     height: 60,
-                                        //     width: 400,
-                                        //     decoration: BoxDecoration(
-                                        //       color: Colors.white,
-                                        //     ),
-                                        //
-                                        //     child: Text(
-                                        //       phoneNumber,style: TextStyle(color: Colors.purple),
-                                        //
-                                        //     ),
-                                        //   ),
-                                        // ),
-                                        // Obx(() => Text(
-                                        //   phoneNumber,
-                                        //   // country: controller
-                                        //   //     .selectedCountry.value,
-                                        //   // controller: controller
-                                        //   //     .phoneNumberController,
-                                        //   // onTap: (Country value) {
-                                        //   //   controller.selectedCountry
-                                        //   //       .value = value
-                                        //   //   ;
-                                        //   // }
-                                        // ),
-                                        // ),
+                                       // old ui
+
+
+                                        GestureDetector(
+
+                                          child: Container(
+
+                                            height: 60,
+                                            width: 400,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                            ),
+
+                                            child: Text(
+                                              phoneNumber,style: TextStyle(color: Colors.purple),
+
+                                            ),
+                                          ),
+                                        ),
+                                        Obx(() => Text(
+                                          phoneNumber,
+                                          // country: controller
+                                          //     .selectedCountry.value,
+                                          // controller: controller
+                                          //     .phoneNumberController,
+                                          // onTap: (Country value) {
+                                          //   controller.selectedCountry
+                                          //       .value = value
+                                          //   ;
+                                          // }
+                                        ),
+                                        ),
                                         SizedBox(height: 30),
                                         // CustomElevatedButton(
                                         //
@@ -542,13 +551,11 @@ class _LoginState extends State<Login> {
                                                 )), onPressed: () {
                                             data = phoneNumber;
                                             phoneNumber = "";
-
-                                            setState(() {});
-
-                                            _signInWithMobileNumber();
-                                            setState(() {
-                                              _validate = _codecontroller.text.isEmpty;
-                                            });
+                                            // setState(() {});
+                                            signInWithMobileNumber();
+                                            // setState(() {
+                                            //   _validate = _codecontroller.text.isEmpty;
+                                            // });
                                           },
                                           ),
                                         ),
@@ -560,7 +567,7 @@ class _LoginState extends State<Login> {
                                             // // ),
                                             // key:
                                             //     "lbl_get_started".tr.toUpperCase(),
-
+                                            //
                                             // buttonTextStyle:
                                             //     CustomTextStyles.titleSmallRoboto_1,
                                             // onPressed: () {
@@ -584,11 +591,17 @@ class _LoginState extends State<Login> {
                                                   borderRadius:
                                                   BorderRadius.circular(8),
                                                 )), onPressed: () {
+                                              navito();
 
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(builder: (context) =>  navito()),
-                                            );
+                                            // Navigator.push(
+                                            //   context,
+                                            //   MaterialPageRoute(builder: (context) =>  navito()),
+                                            // );
+                                            // Navigator.push(
+                                            //     context,
+                                            //     MaterialPageRoute(
+                                            //         builder: (context) =>
+                                            //             ()));
                                           },
                                           ),
                                         ),
@@ -619,28 +632,26 @@ class _LoginState extends State<Login> {
                                                 ]),
                                                 textAlign:
                                                 TextAlign.center)),
-
-
                                       ])))
                         ]))))
-          ])
-      ),
-    );
-  }
+          ]),
+        ),
+      );
+    }
 
-  eight() {
-    Get.offNamed(AppRoutes.eightScreen);
+    eight() {
+      Get.offNamed(AppRoutes.fourScreen);
+    }
+    navito() {
+      Get.offNamed(AppRoutes.fourScreen);
+    }
+    // @override
+    // void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    //   super.debugFillProperties(properties);
+    //   properties.add(DiagnosticsProperty<bool>('_validate', _validate));
+    // }
   }
-  navito() {
-    Get.offNamed(AppRoutes.eightScreen);
-  }
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty<bool>('_validate', _validate));
-  }
-}
-
+// }
 // class TwoScreen extends GetWidget<TwoController> {
 //   const TwoScreen({Key? key}) : super(key: key);
 //

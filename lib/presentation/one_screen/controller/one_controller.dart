@@ -7,11 +7,16 @@ import 'package:faz/presentation/one_screen/models/one_model.dart';
 /// current oneModelObj
 class OneController extends GetxController {
   Rx<OneModel> oneModelObj = OneModel().obs;
-
+  @override
+  void onInit() {
+    Get.offNamed(
+      AppRoutes.oneScreen,
+    );
+  }
   @override
   void onReady() {
     Get.offNamed(
-      AppRoutes.oneScreen,
+      AppRoutes.twoScreen,
     );
   }
 }

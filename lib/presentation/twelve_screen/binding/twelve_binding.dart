@@ -1,4 +1,6 @@
-import '../controller/twelve_controller.dart';
+import 'package:faz/presentation/twelve_screen/Razorpay.dart';
+import 'package:faz/presentation/twelve_screen/controller/twelve_controller.dart';
+
 import 'package:get/get.dart';
 
 /// A binding class for the TwelveScreen.

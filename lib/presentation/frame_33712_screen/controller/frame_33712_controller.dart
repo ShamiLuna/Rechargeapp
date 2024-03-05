@@ -9,7 +9,7 @@ class Frame33712Controller extends GetxController {
   Rx<Frame33712Model> frame33712ModelObj = Frame33712Model().obs;
 
   @override
-  void onReady() {
+  void onInit() {
     Future.delayed(const Duration(milliseconds: 2000), () {
       Get.offNamed(
         AppRoutes.oneScreen,

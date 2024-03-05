@@ -302,12 +302,10 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Expanded(
-                      child: Obx(
-                            () => Text(
-                          viewhierarchy1ItemModelObj.GasText!.value,
-                          style: CustomTextStyles.bodySmallWhiteA70011,
-                        ),
+                    child: Obx(
+                          () => Text(
+                        viewhierarchy1ItemModelObj.GasText!.value,
+                        style: CustomTextStyles.bodySmallWhiteA70011,
                       ),
                     ),
                   ),
@@ -357,7 +355,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
               ],
             ),
             SizedBox(
-              width: 167,
+              width: 220,
             ),
             // SizedBox(width: 180),
             // Column(

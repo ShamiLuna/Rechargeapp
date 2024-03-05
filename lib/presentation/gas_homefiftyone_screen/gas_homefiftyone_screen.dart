@@ -51,11 +51,7 @@ class GasHomefiftyoneScreen extends GetWidget<GasHomefiftyoneController> {
       leadingWidth: 57,
       leading: AppbarLeadingImage(
         imagePath: ImageConstant.imgBack,
-        margin: EdgeInsets.only(
-          left: 25,
-          top: 22,
-          bottom: 22,
-        ),
+        margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
       ),
       centerTitle: true,
       title: AppbarTitle(
@@ -127,29 +123,34 @@ class GasHomefiftyoneScreen extends GetWidget<GasHomefiftyoneController> {
           Padding(
             padding: EdgeInsets.only(right: 55),
             child: Obx(
-              () => ListView.separated(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                separatorBuilder: (
-                  context,
-                  index,
-                ) {
-                  return SizedBox(
-                    height: 37,
-                  );
+              () => GestureDetector(
+                onTap: (){
+                  Get.offNamed(AppRoutes.gasRegisterfiftytwoScreen);
                 },
-                itemCount: controller.gasHomefiftyoneModelObj.value
-                    .viewhierarchyItemList.value.length,
-                itemBuilder: (context, index) {
-                  ViewhierarchyItemModel model = controller
-                      .gasHomefiftyoneModelObj
-                      .value
-                      .viewhierarchyItemList
-                      .value[index];
-                  return ViewhierarchyItemWidget(
-                    model,
-                  );
-                },
+                child: ListView.separated(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  separatorBuilder: (
+                    context,
+                    index,
+                  ) {
+                    return SizedBox(
+                      height: 37,
+                    );
+                  },
+                  itemCount: controller.gasHomefiftyoneModelObj.value
+                      .viewhierarchyItemList.value.length,
+                  itemBuilder: (context, index) {
+                    ViewhierarchyItemModel model = controller
+                        .gasHomefiftyoneModelObj
+                        .value
+                        .viewhierarchyItemList
+                        .value[index];
+                    return ViewhierarchyItemWidget(
+                      model,
+                    );
+                  },
+                ),
               ),
             ),
           ),

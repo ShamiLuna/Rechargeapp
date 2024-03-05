@@ -52,9 +52,10 @@ class Water258Screen extends GetWidget<Water258Controller> {
                       onTap: () {
                         onTapFrame();
                       },
-                      child: Container(
-                          height: 53,
-                          width: 126,
+                      child:
+                      Container(
+                          height: 60,
+                          width: 140,
                           padding: EdgeInsets.symmetric(
                               horizontal: 35, vertical: 19),
                           decoration: AppDecoration.fillDeepPurpleA.copyWith(
@@ -76,7 +77,7 @@ class Water258Screen extends GetWidget<Water258Controller> {
         leadingWidth: 57,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgBack,
-            margin: EdgeInsets.only(left: 25, top: 22, bottom: 22),
+            margin: EdgeInsets.only(left: 8, top: 8, bottom: 8,right: 8),
             onTap: () {
               onTapBack();
             }),

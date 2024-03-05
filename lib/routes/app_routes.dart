@@ -10,6 +10,8 @@ import 'package:faz/presentation/ten_screen/ten_screen.dart';
 import 'package:faz/presentation/ten_screen/binding/ten_binding.dart';
 import 'package:faz/presentation/frame_33753_screen/frame_33753_screen.dart';
 import 'package:faz/presentation/frame_33753_screen/binding/frame_33753_binding.dart';
+import 'package:faz/presentation/twelve_screen/Razorpay.dart';
+import 'package:faz/presentation/two_screen/otpscreen.dart';
 import 'package:faz/presentation/water359_screen/water359_screen.dart';
 import 'package:faz/presentation/water359_screen/binding/water359_binding.dart';
 import 'package:faz/presentation/twentytwo_screen/twentytwo_screen.dart';
@@ -89,7 +91,6 @@ import 'package:faz/presentation/thirtyfive_screen/thirtyfive_screen.dart';
 import 'package:faz/presentation/thirtyfive_screen/binding/thirtyfive_binding.dart';
 import 'package:faz/presentation/transaction_succeswsixtyfive_screen/transaction_succeswsixtyfive_screen.dart';
 import 'package:faz/presentation/transaction_succeswsixtyfive_screen/binding/transaction_succeswsixtyfive_binding.dart';
-import 'package:faz/presentation/twelve_screen/twelve_screen.dart';
 import 'package:faz/presentation/twelve_screen/binding/twelve_binding.dart';
 import 'package:faz/presentation/thirtysix_screen/thirtysix_screen.dart';
 import 'package:faz/presentation/thirtysix_screen/binding/thirtysix_binding.dart';
@@ -131,6 +132,7 @@ import 'package:faz/presentation/app_navigation_screen/app_navigation_screen.dar
 import 'package:faz/presentation/app_navigation_screen/binding/app_navigation_binding.dart';
 import 'package:get/get.dart';
 
+import '../presentation/otp/Loginotp.dart';
 import '../presentation/two_screen/binding/two_binding.dart';
 
 class AppRoutes {
@@ -418,7 +420,7 @@ class AppRoutes {
     ),
     GetPage(
       name: twoScreen,
-      page: () => Login(),
+      page: () => Logins(),
       bindings: [
         TwoBinding(),
       ],
@@ -607,7 +609,7 @@ class AppRoutes {
     ),
     GetPage(
       name: twelveScreen,
-      page: () => TwelveScreen(),
+      page: () => Razorpays(),
       bindings: [
         TwelveBinding(),
       ],
