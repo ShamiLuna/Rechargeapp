@@ -10,6 +10,7 @@ class OneScreen extends GetWidget<OneController> {
 
   @override
   Widget build(BuildContext context) {
+    final message = ModalRoute.of(context)!.settings.arguments;
     return SafeArea(
         child: Scaffold(
             body: SizedBox(

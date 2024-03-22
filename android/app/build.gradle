@@ -1,6 +1,8 @@
 plugins {
     id "com.android.application"
-    id "kotlin-android"
+    id 'org.jetbrains.kotlin.android'
+    id("com.google.firebase.crashlytics")
+//    id "kotlin-android"
     id "com.google.gms.google-services"
     id "dev.flutter.flutter-gradle-plugin"
 //    id "com.google.firebase.firebase-crashlytics-gradle"
@@ -28,15 +30,18 @@ android {
     namespace "com.faz.app"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
-
+    defaultConfig {
+        multiDexEnabled true
+    }
     compileOptions {
+//        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
+//    kotlinOptions {
+//        jvmTarget = '1.8'
+//    }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -47,7 +52,7 @@ android {
         applicationId "com.faz.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 21
+        minSdkVersion 22
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -67,8 +72,23 @@ flutter {
 }
 
 dependencies {
-    implementation(platform("com.google.firebase:firebase-bom:32.7.3"))
+//    def appcompat_version = 1.2.0
+    implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
-    implementation 'com.razorpay:checkout:1.6.33'
+    implementation ("com.razorpay:checkout:1.6.37")
+//    implementation("androidx.core:core-ktx:2.2.0")
+//    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.4")
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//        classpath ("com.google.firebase:firebase-crashlytics-gradle:2.9.9")
+//    implementation'com.android.tools.build:gradle:4.2.2'
+//    implementation 'com.google.android.material:material: 1.2.1'
+//    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.appcompat:appcompat-resources:1.6.1"
+    implementation "com.android.support:support-core-utils:28.0.0"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

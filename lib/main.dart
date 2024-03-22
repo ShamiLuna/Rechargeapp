@@ -1,16 +1,26 @@
 import 'package:faz/auth_controller.dart';
+import 'package:faz/firebaseApi.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'core/app_export.dart';
 import 'defaultoptionsfirebase.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
+import 'firebase_options.dart';
+
+ final navigatorKey = GlobalKey<NavigatorState>();
 Future<void> main() async {
   // _razorpay = Razorpay();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   ).then((value) => Get.put(AuthController()));
+  // _flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()?.requestPermission();
+  await FirebaseAPi().initNotification();
+  // final fcmToken = await FirebaseMessaging.instance.getToken();
+
+  // print(fcmToken);
   //dependency injection we need to use it
   runApp
       (MyApp());
@@ -45,12 +55,14 @@ class MyApp extends StatelessWidget{
       initialBinding: InitialBindings(),
       initialRoute: AppRoutes.frame33712Screen,
       getPages: AppRoutes.pages,
-      navigatorKey: Get.key,
+      navigatorKey: navigatorKey,
     );
   }
 
 
+
 }
+
 // @override
 // void iniState(){
 //   super.initState();

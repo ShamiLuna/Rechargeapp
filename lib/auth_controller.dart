@@ -11,6 +11,7 @@ class AuthController extends GetxController{
    static AuthController instance = Get.find();
    //email,password,name...
    late Rx<User?>_user;
+   // late  bool Rate;
    FirebaseAuth _auth = FirebaseAuth.instance;
    var verificationId = "".obs;
 
@@ -37,6 +38,7 @@ class AuthController extends GetxController{
          );
       }
    }
+
 
    Future<void> register(String email,password) async {
       // firebase helper fumction
